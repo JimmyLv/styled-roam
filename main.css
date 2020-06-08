@@ -42,6 +42,7 @@ html, body, .roam-app {
 h1, h2, h3,  h4, h5, h6, h1 > a, h2 > a, h3 > a, h4 > a, .rm-title-textarea {
   font-family: var(--header-font) !important;
   color: var(--text-color) !important;
+  font-weight: bold !important;
 }
 
 h1.level2, h1.level2 > a, h2.level2 > a {
@@ -52,6 +53,11 @@ h1.level2, h1.level2 > a, h2.level2 > a {
 }
 h1.rm-title-display, .rm-title-textarea {
   margin-left: 20px;
+}
+
+h2.rm-level2 .rm-block-text, h2.rm-level2 textarea.rm-block-text {
+  font-size: 16px !important;
+  font-weight: 800 !important;
 }
 
 .bp3-button.bp3-minimal:hover {
