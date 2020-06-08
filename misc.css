@@ -191,7 +191,7 @@ canvas[data-id="layer2-node"] {
   line-height: 1.3em;
 }
 .kanban-column {
-  background-color: ;
+  background-color: #ededed;
   margin: 0px 4px 0px 4px;
   min-width: 200px;
   border-radius: 6px;
