@@ -8,21 +8,23 @@ My custom CSS files for [Roam Research](https://roamresearch.com)
 @import url('https://jimmylv.github.io/styled-roam/index.css');
 
 :root {
-    --page-links: #d4d4d4;
-    --external-links: #66B5F4;
-    --links-hover: #ff6f00;
-    --hashtags: #77c691;
-    --body-text: rgba(255, 255, 255, .70);
-    --background: #26272a;
-    --sidebar-background: #1e1e1e;
-    --sidebar-text: #c3bca8;
-    --headings: #da844f;
-    --icons: #75c6a3;
-    --icons-hover: #00f800;
-    --bullets: #b49d7d;
-    --references: #b49d7d;
-    --namespaces: #65bf38;
-    --all-pages-mentions: #ffbb5c;
+  --header-font: "Source Sans Pro", "Inter", sans-serif;
+  --body-font: "Source Sans Pro", "Inter", sans-serif;
+
+  --bg-color: #EEEEEE;
+  --page-color: rgba(255, 255, 255, 0.95);
+
+  --text-color: #000000;
+  --icon-color: #5c7080; /* #5c7080 */
+  --bullet-color: rgba(0, 0, 0, 0.2);
+
+  --page-shadow: 0px 8px 14px rgba(0, 0, 0, 0.05);
+
+  --color-primary: 73, 197, 91;
+  --color-primary-contrast: #FFFFFF;
+  --color-secondary: 147, 100, 235;
+  /*--color-secondary: 255, 165, 0;*/
+  --color-secondary-contrast: #FFFFFF;
 }
 ```
 
