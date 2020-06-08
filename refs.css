@@ -1,0 +1,23 @@
+/*
+* ⌗ for block refs 🚀
+* ref: [palashkaria/roam-modifiers: userscripts/custom CSS files for Roam Research](https://github.com/palashkaria/roam-modifiers)
+*/
+.rm-block-ref::before {
+  content: '⌗';
+  display: inline-block;
+  color: #4d94ff;
+  margin-right: 5px;
+  top: -2px;
+  position: relative;
+}
+.rm-block-ref {
+  display: inline-flex;
+  border-bottom: none;
+  font-size: 1em;
+  color: #627a9d;
+  background-color: #f5f7fa;
+}
+
+.rm-block-ref:hover {
+  cursor: pointer;
+}
