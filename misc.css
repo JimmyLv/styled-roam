@@ -2,6 +2,12 @@
 /*           MISC             */
 /* -------------------------- */
 
+/* fix the slide height and background color */
+div.slider {
+  position: static;
+  background-color: transparent;
+}
+
 /* for when filter is active on page */
 .bp3-icon-filter[style*="color"] {
   color: rgb(var(--color-secondary)) !important;
