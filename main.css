@@ -60,6 +60,11 @@ h2.rm-level2 .rm-block-text, h2.rm-level2 textarea.rm-block-text {
   font-weight: 800 !important;
 }
 
+@media (prefers-color-scheme: dark) {
+  h2.rm-level2 .rm-block-text, h2.rm-level2 textarea.rm-block-text {
+    font-size: 20px !important;
+  }
+}
 .bp3-button.bp3-minimal:hover {
   background: rgba(var(--color-primary), 0.4) !important;
   color: var(--text-color) !important;
@@ -142,7 +147,7 @@ textarea, a {
 
 .roam-article {
   padding: 0 !important;
-  width: 616px !important;
+  /*width: 616px !important;*/
 }
 .roam-article, #all-pages-search, #roam-right-sidebar-content > * {
   margin: 50px 0px 100px 0px !important;
@@ -151,7 +156,7 @@ textarea, a {
   position: sticky !important;
   left: 0;*/
   height: auto !important;
-  max-width: 616px;
+  /*max-width: 616px;*/
 }
 
 *[style*="background-color: white"] {
