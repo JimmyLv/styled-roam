@@ -147,7 +147,7 @@ textarea, a {
 
 .roam-article {
   padding: 0 !important;
-  /*width: 616px !important;*/
+  width: 616px !important;
 }
 .roam-article, #all-pages-search, #roam-right-sidebar-content > * {
   margin: 50px 0px 100px 0px !important;
@@ -156,7 +156,7 @@ textarea, a {
   position: sticky !important;
   left: 0;*/
   height: auto !important;
-  /*max-width: 616px;*/
+  max-width: 616px;
 }
 
 *[style*="background-color: white"] {
