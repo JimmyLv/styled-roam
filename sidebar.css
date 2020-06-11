@@ -45,7 +45,7 @@
 
 #roam-right-sidebar-content > * {
   display: block !important;
-  max-width: 616px;
+  max-width: var(--article-width);
   position: relative !important;
 }
 
@@ -66,7 +66,7 @@
 #roam-right-sidebar-content > * > div:last-child:not(:first-child) {
   border-radius: 0px 0px 10px 10px;
   padding-bottom: 50px !important;
-  width:616px;
+  width:var(--article-width);
 }
 #roam-right-sidebar-content > div > div:not(.flex-h-box) {
   padding: 0px 50px 0px 40px;
@@ -435,7 +435,7 @@ body > .bp3-portal .bp3-text-small {
 #find-or-create-input:active, #find-or-create-input:focus {
   opacity: 1;
   position: fixed;
-  width: 616px;
+  width: var(--article-width);
   top: 100px;
   left: calc(50% - 308px);
   cursor: text;
@@ -473,7 +473,7 @@ body > .bp3-portal .bp3-text-small {
 /* properly position search menu overlay */
 .rm-find-or-create-wrapper .bp3-overlay {
   top: 142px;
-  width: 616px;
+  width: var(--article-width);
   left: calc(50% - 308px);
   z-index: 999999;
 }
@@ -676,8 +676,8 @@ body > .bp3-portal .bp3-text-small {
   flex: 0 0 140px !important;
 }
 .rm-all-pages .table > div {
-  max-width: 616px !important;
-  min-width: 616px !important;
+  max-width: var(--article-width) !important;
+  min-width: var(--article-width) !important;
 }
 
 .sort-button::before {

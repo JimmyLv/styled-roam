@@ -19,6 +19,8 @@
   --color-secondary: 147, 100, 235;
   /*--color-secondary: 255, 165, 0;*/
   --color-secondary-contrast: #FFFFFF;
+
+  --article-width: 800px;
 }
 
 
@@ -147,7 +149,7 @@ textarea, a {
 
 .roam-article {
   padding: 0 !important;
-  width: 616px !important;
+  width: var(--article-width) !important;
 }
 .roam-article, #all-pages-search, #roam-right-sidebar-content > * {
   margin: 50px 0px 100px 0px !important;
@@ -156,7 +158,7 @@ textarea, a {
   position: sticky !important;
   left: 0;*/
   height: auto !important;
-  max-width: 616px;
+  max-width: var(--article-width);
 }
 
 *[style*="background-color: white"] {
