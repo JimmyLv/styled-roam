@@ -8,7 +8,7 @@
   background-color: transparent !important;
   border: none !important;
   flex-direction: row !important;
-  padding-right: 100px;
+  padding-right: 16px;
 }
 /* hide icon to close sidebar */
 #right-sidebar > .flex-h-box {
@@ -20,7 +20,7 @@
   margin: 0px 0px 0 20px !important;
   overflow-y: auto !important;
   max-height: 100vh;
-  padding: 50px 0px 100px 0px;
+  padding: 0 0px 20px 0px;
 
   /* pesky bottom border/outline in chrome won't go away! */
   /* this does not fix it */
@@ -31,7 +31,7 @@
 #roam-right-sidebar-content {
   visibility: visible;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   align-items: flex-start; /* allow pages to have their own height */
   justify-content: flex-end;
 }
@@ -50,8 +50,7 @@
 }
 
 #roam-right-sidebar-content > * > .flex-h-box {
-  display: block !important;
-
+  display: flex !important;
   padding: 15px 10px !important;
 }
 #roam-right-sidebar-content > * > div {
@@ -111,20 +110,20 @@
 }
 
 #roam-right-sidebar-content > div .bp3-icon-minus + * {
-  margin: 20px 20px 5px 50px !important;
+  margin: 40px 20px 5px 50px !important;
 }
 
 #roam-right-sidebar-content > div .bp3-icon-plus ~ h1 {
-  margin-top: 10px !important;
+  margin-left: 16px !important;
 }
-#roam-right-sidebar-content > div .bp3-icon-plus ~ .bp3-button:last-child { margin-top: 20px !important; }
+#roam-right-sidebar-content > div .bp3-icon-plus ~ .bp3-button:last-child {margin-left: 10px !important;}
 #roam-right-sidebar-content > div .bp3-icon-plus, #roam-right-sidebar-content > div .bp3-icon-plus ~ * {
   display: block;
   flex: none !important;
 }
 #roam-right-sidebar-content > div .bp3-icon-plus + * {
   white-space: nowrap;
-  writing-mode: vertical-rl;
+  writing-mode: horizontal-tb;
   min-width: 0;
 }
 #roam-right-sidebar-content > div .bp3-icon-plus + div {
