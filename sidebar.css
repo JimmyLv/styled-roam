@@ -12,6 +12,7 @@
   /* flex-direction: row !important; */
   padding-right: 20px;
   margin-top: 50px;
+  padding-bottom: 50px;
   /* max-height: 100vh; */
   /* overflow-y: scroll; */
 }
@@ -118,7 +119,7 @@
 }
 
 #roam-right-sidebar-content > div .bp3-icon-plus ~ h1 {
-  margin-left: 16px !important;
+  margin-left: 50px !important;
 }
 #roam-right-sidebar-content > div .bp3-icon-plus ~ .bp3-button:last-child {margin-left: 10px !important;}
 #roam-right-sidebar-content > div .bp3-icon-plus, #roam-right-sidebar-content > div .bp3-icon-plus ~ * {

@@ -20,7 +20,8 @@
   /*--color-secondary: 255, 165, 0;*/
   --color-secondary-contrast: #FFFFFF;
 
-  --article-width: 800px;
+  /*--article-width: 800px;*/
+  --article-width: 716px;
 }
 
 

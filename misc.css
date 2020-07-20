@@ -2,6 +2,36 @@
 /*           MISC             */
 /* -------------------------- */
 
+[style="color: rgb(245, 248, 250);"] {
+  display: none;
+}
+
+.kanban-title > span {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.rm-ref-page-view .kanban-board {
+  display: none !important;
+}
+
+div.kanban-board {
+  max-width: 620px;
+}
+
+div.rm-block-text, textarea.rm-block-text {
+  max-width: none;
+}
+
+.rm-embed-inner-block-hide span.roam-highlight, .rm-block-ref span.roam-highlight {
+  background-color: #202b33;
+}
+
+.rm-embed-inner-block-hide span.roam-highlight:hover, .rm-block-ref span.roam-highlight:hover {
+  background-color: #fef09f;
+}
+
 /* fix the slide height and background color */
 div.slider {
   position: static;
@@ -144,7 +174,7 @@ canvas[data-id="layer2-node"] {
 
 /* BUTTON */
 .block-bullet-view .bp3-button:not([class*="bp3-icon"]) {
-  background: transparent !important;
+  /*background: transparent !important;*/
   color: rgb(var(--color-primary)) !important;
   padding: 4px 14px;
   line-height: 2em;
