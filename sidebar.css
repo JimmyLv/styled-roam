@@ -3,12 +3,17 @@
 /* -------------------------- */
 
 #right-sidebar {
-  display: inline-flex !important;
+  display: inline-block !important;
   vertical-align: top;
+  overflow-y: scroll;
+  height: 100%;
   background-color: transparent !important;
   border: none !important;
-  flex-direction: row !important;
-  padding-right: 16px;
+  /* flex-direction: row !important; */
+  padding-right: 20px;
+  margin-top: 50px;
+  /* max-height: 100vh; */
+  /* overflow-y: scroll; */
 }
 /* hide icon to close sidebar */
 #right-sidebar > .flex-h-box {
@@ -29,9 +34,9 @@
 }
 
 #roam-right-sidebar-content {
-  visibility: visible;
+  /* visibility: visible; */
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: flex-start; /* allow pages to have their own height */
   justify-content: flex-end;
 }
@@ -74,7 +79,6 @@
   margin: auto !important;
   width: 20px !important;
   text-align: center;
-
 }
 #roam-right-sidebar-content > div > .flex-h-box > .bp3-button:first-child, #roam-right-sidebar-content .flex-h-box > .bp3-button:last-child {
   display: block;
@@ -110,7 +114,7 @@
 }
 
 #roam-right-sidebar-content > div .bp3-icon-minus + * {
-  margin: 40px 20px 5px 50px !important;
+  margin: 45px 20px 5px 50px !important;
 }
 
 #roam-right-sidebar-content > div .bp3-icon-plus ~ h1 {
