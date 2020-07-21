@@ -6,10 +6,14 @@
   display: none;
 }
 
-.kanban-title > span {
+div.kanban-title > span {
   display: flex;
   align-items:center;
   justify-content:center;
+}
+
+div.kanban-title > .rm-page-ref {
+  color: white !important;
 }
 
 .rm-ref-page-view .kanban-board {
