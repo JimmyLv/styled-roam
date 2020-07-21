@@ -361,7 +361,7 @@
   z-index: 9999999999 !important;
 }
 .bp3-popover {
-  min-width: 230px; /* fix width */
+  min-width: 630px; /* fix width */
   pointer-events: none; /* prevent from getting in the way of hover*/
 }
 .bp3-popover .bp3-menu, .bp3-popover .bp3-popover-content {
