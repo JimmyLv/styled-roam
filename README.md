@@ -2,12 +2,21 @@
 
 My custom CSS files for [Roam Research](https://roamresearch.com)
 
+## Quick Review
+
+![Roam 绿色主题样式](https://jimmylv.github.io/images/2020/Roam 绿色主题样式.jpg)
+
+![Roam 绿色主题黑夜样式](https://jimmylv.github.io/images/2020/Roam 绿色主题黑夜样式.jpg)
+
+> Dark 模式只需要多增加一条代码即可，Dark 模式生效的前提是 macOS 系统已经切换为夜间模式。
+
 ## Basic Usage
 
 > 可能屏幕适配会有个小问题：我是根据自己的屏幕尺寸设置的 content 宽度，如果大家发现左右宽度不合适，可以调整一下 article-width 这个参数。👇
 
 ```css
 @import url('https://jimmylv.github.io/styled-roam/index.css');
+@import url('https://jimmylv.github.io/styled-roam/dark.css');
 
 :root {
   --article-width: 716px;
