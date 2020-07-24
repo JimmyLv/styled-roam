@@ -6,6 +6,10 @@
   display: none;
 }
 
+[style="padding: 0px;"] > .flex-h-box {
+  align-items: center;
+}
+
 div.kanban-title > span {
   display: flex;
   align-items:center;
