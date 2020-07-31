@@ -1,5 +1,1 @@
-@import "main.min.css";
-@import "sidebar.min.css";
-@import "tags.min.css";
-@import "refs.min.css";
-@import "misc.min.css";
+@import "https://cdn.jsdelivr.net/combine/gh/JimmyLv/styled-roam/main.css,gh/JimmyLv/styled-roam/sidebar.css,gh/JimmyLv/styled-roam/tags.css,gh/JimmyLv/styled-roam/refs.css,gh/JimmyLv/styled-roam/misc.css";
