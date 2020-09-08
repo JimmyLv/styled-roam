@@ -1,3 +1,7 @@
+:root {
+  --page-width: calc(100vw - 550px);
+}
+
 .roam-center > div {
   padding: 0 12px !important;
 }
