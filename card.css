@@ -1,0 +1,46 @@
+.roam-center > div {
+  padding: 0 12px !important;
+}
+
+[style="margin-left: -27px;"] {
+  flex-direction: row;
+  flex-flow: row;
+  overflow-x: scroll;
+}
+
+[style="margin-left: -27px;"] > .roam-block-container {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 10px 16px 10px 0;
+  margin: 4px 26px;
+  min-height: 200px;
+  max-width: 400px;
+  min-width: 400px;
+}
+
+
+[style="margin-left: -27px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box {
+  /* .flex-v-box.roam-block-container.block-bullet-view { */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 6px 10px 10px 0;
+  min-height: 200px;
+  margin: 10px;
+}
+
+[style="flex: 1 1 100%; position: relative;"] {
+  width: 400px;
+}
+
+
+.rm-resize-img.react-resizable, svg {
+  max-width: 250px;
+}
+
+.roam-article .rm-full-width {
+  margin-right: 0;
+}
+
+.block-highlight-blue.block-bullet-view.block-border-left {
+  border-color: #7cccff;
+}
