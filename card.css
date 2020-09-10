@@ -12,11 +12,22 @@
   overflow-x: scroll;
 }
 
+body {
+  background: #f2f4f8;
+}
+
+.roam-topbar {
+  box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
+  background: #f2f4f8;
+}
+
 [style="margin-left: -27px;"] > .roam-block-container {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
+  border-radius: 8px;
   transition: 0.3s;
+  background: #f2f4f8;
   padding: 10px 16px 10px 0;
-  margin: 4px 26px;
+  margin: 20px 26px;
   min-height: 200px;
   max-width: 400px;
   min-width: 400px;
@@ -24,12 +35,25 @@
 
 
 [style="margin-left: -27px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box {
-  /* .flex-v-box.roam-block-container.block-bullet-view { */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+  border-radius: 8px;
   transition: 0.3s;
+  background: #f2f4f8;
   padding: 6px 10px 10px 0;
   min-height: 200px;
   margin: 10px;
+  caret-color: #f0bd66;
+}
+
+
+[style="margin-left: -27px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box {
+  box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+  border-radius: 8px;
+  caret-color: #f0bd66;
+  margin-bottom: 14px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 [style="flex: 1 1 100%; position: relative;"] {
@@ -47,4 +71,9 @@
 
 .block-highlight-blue.block-bullet-view.block-border-left {
   border-color: #7cccff;
+}
+
+span[data-link-title="{"] > span,
+span[data-link-title="}"] > span {
+  color: #DDDCDC !important;
 }
