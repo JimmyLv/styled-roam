@@ -4,9 +4,9 @@ My custom CSS files for [Roam Research](https://roamresearch.com)
 
 ## Quick Review
 
-![Roam 绿色主题样式](https://jimmylv.github.io/images/2020/Roam 绿色主题样式.jpg)
+![Roam 绿色主题样式](https://jimmylv.github.io/images/2020/Roam%20绿色主题样式.jpg)
 
-![Roam 绿色主题黑夜样式](https://jimmylv.github.io/images/2020/Roam 绿色主题黑夜样式.jpg)
+![Roam 绿色主题黑夜样式](https://jimmylv.github.io/images/2020/Roam%20绿色主题黑夜样式.jpg)
 
 > Dark 模式只需要多增加一条代码即可，Dark 模式生效的前提是 macOS 系统已经切换为夜间模式。
 
