@@ -2,35 +2,35 @@
   --page-width: calc(100vw - 550px);
 }
 
-.roam-topbar {
+.card-mode .roam-topbar {
   box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
 
-.roam-center > div {
+.card-mode .roam-center > div {
   padding: 0 12px !important;
 }
 
-body {
+.card-mode body {
   background: #f2f4f8;
 }
 
 /* Hover iFrame */
-iframe {
+.card-mode iframe {
   box-shadow: none !important;
 }
-div#app {
+.card-mode div#app {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
   border-radius: 8px !important;
 }
 
-[style="margin-left: -27px;"] {
+.card-mode [style="margin-left: -27px;"] {
   flex-direction: row;
   flex-flow: row;
   overflow-x: scroll;
 }
 
-[style="margin-left: -27px;"] > .roam-block-container,
-[style="margin-left: -20px;"] > .roam-block-container
+.card-mode [style="margin-left: -27px;"] > .roam-block-container,
+.card-mode [style="margin-left: -20px;"] > .roam-block-container
 {
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
   border-radius: 8px;
@@ -43,11 +43,11 @@ div#app {
   min-width: 400px;
 }
 
-[style="margin-left: -20px;"] > .roam-block-container {
+.card-mode [style="margin-left: -20px;"] > .roam-block-container {
   max-width: 740px;
 }
 
-[style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
+.card-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
 /*[style="margin-left: -20px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container*/
 {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
@@ -59,23 +59,23 @@ div#app {
   margin: 10px;
 }
 
-[style="margin-left: -27px;"] .rm-resize-img.react-resizable,
-[style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-[style="margin-left: -27px;"] svg {
+.card-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
+.card-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
+.card-mode [style="margin-left: -27px;"] svg {
   max-width: 290px !important;
 }
 
 /* After Zoom In */
-[style="margin-left: -20px;"] .rm-block-text,
+.card-mode [style="margin-left: -20px;"] .rm-block-text,
 .rm-reference-main .rm-block-text {
   max-width: initial;
 }
 
-.roam-article .rm-full-width {
+.card-mode .roam-article .rm-full-width {
   margin-right: 0;
 }
 
-.block-highlight-blue.block-bullet-view.block-border-left {
+.card-mode .block-highlight-blue.block-bullet-view.block-border-left {
   border-color: #7cccff;
 }
 
