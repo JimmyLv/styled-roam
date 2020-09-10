@@ -2,30 +2,31 @@
   --page-width: calc(100vw - 550px);
 }
 
-.roam-center > div {
-  padding: 0 12px !important;
+.roam-topbar {
+  box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
 
-[style="margin-left: -27px;"] {
-  flex-direction: row;
-  flex-flow: row;
-  overflow-x: scroll;
+.roam-center > div {
+  padding: 0 12px !important;
 }
 
 body {
   background: #f2f4f8;
 }
 
-.roam-topbar {
-  box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
-}
-
+/* Hover iFrame */
 iframe {
   box-shadow: none !important;
 }
 div#app {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
   border-radius: 8px !important;
+}
+
+[style="margin-left: -27px;"] {
+  flex-direction: row;
+  flex-flow: row;
+  overflow-x: scroll;
 }
 
 [style="margin-left: -27px;"] > .roam-block-container {
@@ -40,7 +41,9 @@ div#app {
   min-width: 400px;
 }
 
-[style="margin-left: -27px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box {
+[style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
+/*[style="margin-left: -20px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container*/
+{
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
   transition: 0.3s;
@@ -50,13 +53,16 @@ div#app {
   margin: 10px;
 }
 
-[style="flex: 1 1 100%; position: relative;"] {
-  width: 400px;
+[style="margin-left: -27px;"] .rm-resize-img.react-resizable,
+[style="margin-left: -27px;"] .hoverparent.rm-resize-img,
+[style="margin-left: -27px;"] svg {
+  max-width: 290px !important;
 }
 
-
-.rm-resize-img.react-resizable, svg {
-  max-width: 250px;
+/* After Zoom In */
+[style="margin-left: -20px;"] .rm-block-text,
+.rm-reference-main .rm-block-text {
+  max-width: initial;
 }
 
 .roam-article .rm-full-width {
@@ -70,4 +76,10 @@ div#app {
 span[data-link-title="{"] > span,
 span[data-link-title="}"] > span {
   color: #DDDCDC !important;
+}
+
+code {
+  margin-left: 2px;
+  border: none;
+  background-image: linear-gradient(to right, #F67280, #F8B195)
 }
