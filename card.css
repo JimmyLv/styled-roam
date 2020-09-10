@@ -20,7 +20,10 @@ body {
   box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
 
-iframe div#app {
+iframe {
+  box-shadow: none !important;
+}
+div#app {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
   border-radius: 8px !important;
 }
@@ -37,7 +40,6 @@ iframe div#app {
   min-width: 400px;
 }
 
-
 [style="margin-left: -27px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
@@ -46,15 +48,14 @@ iframe div#app {
   padding: 6px 10px 10px 0;
   min-height: 200px;
   margin: 10px;
-  caret-color: #f0bd66;
 }
-
 
 [style="margin-left: -27px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box > [style="margin-left: 20px;"] > .flex-v-box {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
   caret-color: #f0bd66;
   margin-bottom: 14px;
+  padding-right: 6px;
   min-height: 50px;
   display: flex;
   justify-content: center;
