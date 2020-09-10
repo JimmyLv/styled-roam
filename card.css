@@ -29,7 +29,9 @@ div#app {
   overflow-x: scroll;
 }
 
-[style="margin-left: -27px;"] > .roam-block-container {
+[style="margin-left: -27px;"] > .roam-block-container,
+[style="margin-left: -20px;"] > .roam-block-container
+{
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
   border-radius: 8px;
   transition: 0.3s;
@@ -39,6 +41,10 @@ div#app {
   min-height: 200px;
   max-width: 400px;
   min-width: 400px;
+}
+
+[style="margin-left: -20px;"] > .roam-block-container {
+  max-width: 740px;
 }
 
 [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
