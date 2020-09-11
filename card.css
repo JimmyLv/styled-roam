@@ -2,34 +2,42 @@
   --page-width: calc(100vw - 550px);
 }
 
-.card-mode .roam-topbar {
+.card-mode .roam-topbar,
+.edit-mode .roam-topbar {
   box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
 
-.card-mode .roam-center > div {
+.card-mode .roam-center > div,
+.edit-mode .roam-center > div {
   padding: 0 12px !important;
 }
 
-.card-mode body {
+.card-mode body,
+.edit-mode body {
   background: #f2f4f8;
 }
 
 /* Hover iFrame */
-.card-mode iframe {
+.card-mode iframe,
+.edit-mode iframe {
   box-shadow: none !important;
 }
-.card-mode div#app {
+.card-mode div#app,
+.edit-mode div#app {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
   border-radius: 8px !important;
 }
 
-.card-mode [style="margin-left: -27px;"] {
+.card-mode [style="margin-left: -27px;"],
+.edit-mode [style="margin-left: -27px;"] {
   flex-direction: row;
   flex-flow: row;
   overflow-x: scroll;
 }
 
 .card-mode [style="margin-left: -27px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -27px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -20px;"] > .roam-block-container,
 .card-mode [style="margin-left: -20px;"] > .roam-block-container
 {
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
@@ -43,11 +51,13 @@
   min-width: 400px;
 }
 
-.card-mode [style="margin-left: -20px;"] > .roam-block-container {
+.card-mode [style="margin-left: -20px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -20px;"] > .roam-block-container {
   max-width: 740px;
 }
 
-.card-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
+.card-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
 /*[style="margin-left: -20px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container*/
 {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
@@ -60,22 +70,28 @@
 }
 
 .card-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
+.edit-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
 .card-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-.card-mode [style="margin-left: -27px;"] svg {
+.edit-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
+.card-mode [style="margin-left: -27px;"] svg,
+.edit-mode [style="margin-left: -27px;"] svg {
   max-width: 290px !important;
 }
 
 /* After Zoom In */
 .card-mode [style="margin-left: -20px;"] .rm-block-text,
+.edit-mode [style="margin-left: -20px;"] .rm-block-text,
 .rm-reference-main .rm-block-text {
   max-width: initial;
 }
 
-.card-mode .roam-article .rm-full-width {
+.card-mode .roam-article .rm-full-width,
+.edit-mode .roam-article .rm-full-width {
   margin-right: 0;
 }
 
-.card-mode .block-highlight-blue.block-bullet-view.block-border-left {
+.card-mode .block-highlight-blue.block-bullet-view.block-border-left,
+.edit-mode .block-highlight-blue.block-bullet-view.block-border-left {
   border-color: #7cccff;
 }
 
