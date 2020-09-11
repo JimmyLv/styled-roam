@@ -8,7 +8,7 @@ const appendButton = function (type, clickHandler) {
   }[type]
   const navbar = document.querySelector('.roam-topbar > .flex-h-box')
   let hasMenuIcon = navbar.firstChild.classList.contains('bp3-icon-menu')
-  let targetElement = hasMenuIcon ? navbar.childNodes[2] : navbar.firstChild
+  let targetElement = hasMenuIcon ? navbar.childNodes[1] : navbar.firstChild
 
   targetElement.style.color = 'green'
   targetElement.style.display = 'flex'
