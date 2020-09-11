@@ -7,9 +7,11 @@ My custom CSS files for [Roam Research](https://roamresearch.com)
 `{{[[roam/js]]}}`
 
 ```js
+window.URLScriptServer = 'https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@dev/'
+
 var s = document.createElement('script')
 	s.type = "text/javascript"
-    s.src =  "https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@8073f4f/js/index.js"
+    s.src =  window.URLScriptServer + "js/index.js"
 	s.async = true
 document.getElementsByTagName('head')[0].appendChild(s)
 ```
