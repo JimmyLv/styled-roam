@@ -4,10 +4,11 @@ My custom CSS files for [Roam Research](https://roamresearch.com)
 
 ## Quick Start
 
-`{{[[roam/js]]}}`
+1. Add a `{{[[roam/js]]}}` tag
+2. Add a child JavaScript code block to it with this code...
 
 ```js
-window.URLScriptServer = 'https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@dev/'
+window.URLScriptServer = 'https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@0ad7cfe/'
 
 var s = document.createElement('script')
 	s.type = "text/javascript"
@@ -15,6 +16,11 @@ var s = document.createElement('script')
 	s.async = true
 document.getElementsByTagName('head')[0].appendChild(s)
 ```
+
+3. Press the big red button
+4. Change `0ad7cfe` to the latest Git commit hash whenever you're ready to upgrade
+
+![](./preview/git hash.png)
 
 ## Quick Review
 
