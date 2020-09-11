@@ -1,6 +1,8 @@
 # Styled Roam (Research)
 
-My custom CSS files for [Roam Research](https://roamresearch.com)
+Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme 🎨 
+
+> My custom CSS and JavaScript extension for [Roam Research](https://roamresearch.com)
 
 ## Quick Start
 
