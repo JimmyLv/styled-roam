@@ -31,7 +31,7 @@ appendButton('editCard', function () {
   document.querySelector('html').classList = 'edit-mode'
   let selected = document.querySelector('textarea[autocapitalize="none"]')
   if (selected) {
-    selected.parentNode.parentNode.querySelector('.simple-bullet-inner').click()
+    selected.parentNode.parentNode.parentNode.querySelector('.simple-bullet-inner').click()
   }
 })
 
