@@ -2,6 +2,18 @@
 
 My custom CSS files for [Roam Research](https://roamresearch.com)
 
+## Quick Start
+
+`{{[[roam/js]]}}`
+
+```js
+var s = document.createElement('script')
+	s.type = "text/javascript"
+    s.src =  "https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@8073f4f/js/index.js"
+	s.async = true
+document.getElementsByTagName('head')[0].appendChild(s)
+```
+
 ## Quick Review
 
 ![Roam Research 卡片式写作 Candy 主题](https://cdn.jsdelivr.net/gh/jimmylv/images@master/2020/09/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C%20Candy%20%E4%B8%BB%E9%A2%98.jpg)
