@@ -21,7 +21,7 @@ function addElementToPage(element, tagId, typeT ) {
   document.getElementsByTagName('head')[0].appendChild(element)
 }
 
-const URLScriptServer =  document.currentScript.src.replace('main.js','')
+const URLScriptServer =  'https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@dev/'
 
-addCSSToPage( 'cssCard',     'https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@dev/card.min.css' )
+addCSSToPage( 'cssCard',     URLScriptServer + 'css/card.min.css' )
 addScriptToPage( 'switchMode'  ,       URLScriptServer + 'js/switch.js'         )
