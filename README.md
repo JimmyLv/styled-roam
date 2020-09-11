@@ -12,17 +12,17 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 ```js
 window.URLScriptServer = 'https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@0ad7cfe/'
 
-var s = document.createElement('script')
-	s.type = "text/javascript"
+var s = document.createElement('script') 
+    s.type = "text/javascript"
     s.src =  window.URLScriptServer + "js/index.js"
-	s.async = true
+    s.async = true
 document.getElementsByTagName('head')[0].appendChild(s)
 ```
 
 3. Press the big red button
 4. Change `0ad7cfe` to the latest Git commit hash whenever you're ready to upgrade
 
-![](./preview/git hash.png)
+![](./preview/git%20hash.png)
 
 ## Quick Review
 
