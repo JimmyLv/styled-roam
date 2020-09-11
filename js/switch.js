@@ -10,7 +10,6 @@ const appendButton = function (type, clickHandler) {
   let hasMenuIcon = navbar.firstChild.classList.contains('bp3-icon-menu')
   let targetElement = hasMenuIcon ? navbar.childNodes[1] : navbar.firstChild
 
-  targetElement.style.color = 'green'
   targetElement.style.display = 'flex'
   targetElement.style.justifyContent = 'center'
 
