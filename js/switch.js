@@ -4,9 +4,12 @@ const appendButton = function (type, clickHandler) {
   const innerText = {
     cardList: 'Card List',
     editCard: 'Edit Card',
-    document: 'Document'
+    document: 'Document',
   }[type]
-  let targetElement = document.querySelector('.roam-topbar [style="flex: 1 1 0px;"]')
+  const navbar = document.querySelector('.roam-topbar > .flex-h-box')
+  let hasMenuIcon = navbar.firstChild.classList.contains('bp3-icon-menu')
+  let targetElement = hasMenuIcon ? navbar.childNodes[2] : navbar.firstChild
+
   targetElement.style.color = 'green'
   targetElement.style.display = 'flex'
   targetElement.style.justifyContent = 'center'
