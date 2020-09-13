@@ -67,7 +67,7 @@
 .edit-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
 .card-mode [style="margin-left: -27px;"] svg,
 .edit-mode [style="margin-left: -27px;"] svg {
-  max-width: 290px !important;
+  max-width: 270px !important;
 }
 .card-mode [style="margin-left: -20px;"] .rm-block-text,
 .edit-mode [style="margin-left: -20px;"] .rm-block-text,
