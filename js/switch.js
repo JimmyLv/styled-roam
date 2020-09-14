@@ -31,11 +31,14 @@ const switchToEditCard = function () {
   let selected = document.querySelector('textarea[autocapitalize="none"]')
   if (selected) {
     selected.parentNode.parentNode.parentNode.querySelector('.simple-bullet-inner').click()
+  } else {
+    document.querySelector('.block-highlight-blue').querySelector('.simple-bullet-inner').click()
   }
 }
 
 const switchToDocument = function () {
   document.querySelector('html').classList = 'document-mode'
+  document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
 }
 
 appendButton('cardList', switchToCardList)
