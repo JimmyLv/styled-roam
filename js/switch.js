@@ -21,19 +21,38 @@ const appendButton = function (type, clickHandler) {
   targetElement.appendChild(button)
 }
 
-appendButton('cardList', function () {
+const switchToCardList = function () {
   document.querySelector('html').classList = 'card-mode'
   document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
-})
+}
 
-appendButton('editCard', function () {
+const switchToEditCard = function () {
   document.querySelector('html').classList = 'edit-mode'
   let selected = document.querySelector('textarea[autocapitalize="none"]')
   if (selected) {
     selected.parentNode.parentNode.parentNode.querySelector('.simple-bullet-inner').click()
   }
-})
+}
 
-appendButton('document', function () {
+const switchToDocument = function () {
   document.querySelector('html').classList = 'document-mode'
-})
+}
+
+appendButton('cardList', switchToCardList)
+appendButton('editCard', switchToEditCard)
+appendButton('document', switchToDocument)
+
+setTimeout(() => {
+  hotkeys('alt+shift+1', function (event, handler) {
+    event.preventDefault()
+    switchToCardList()
+  })
+  hotkeys('alt+shift+2', function (event, handler) {
+    event.preventDefault()
+    switchToEditCard()
+  })
+  hotkeys('alt+shift+1', function (event, handler) {
+    event.preventDefault()
+    switchToDocument()
+  })
+}, 10000)
