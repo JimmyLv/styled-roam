@@ -38,7 +38,7 @@ const switchToEditCard = function () {
 
 const switchToDocument = function () {
   document.querySelector('html').classList = 'document-mode'
-  document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
+  // document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
 }
 
 appendButton('cardList', switchToCardList)
