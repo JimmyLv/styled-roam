@@ -51,8 +51,8 @@ setTimeout(() => {
     event.preventDefault()
     switchToEditCard()
   })
-  hotkeys('alt+shift+1', function (event, handler) {
+  hotkeys('alt+shift+3', function (event, handler) {
     event.preventDefault()
     switchToDocument()
   })
-}, 10000)
+}, 8000)
