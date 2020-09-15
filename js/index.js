@@ -15,5 +15,6 @@ function appendElementToPage(element, tagId, typeT) {
   document.getElementsByTagName('head')[0].appendChild(element)
 }
 
-appendCSSToPage('cssCard', window.URLScriptServer + 'css/card.min.css')
+appendCSSToPage('cssCardList', window.URLScriptServer + 'css/card.min.css')
+appendCSSToPage('cssCardChain', window.URLScriptServer + 'css/gingko.min.css')
 appendScriptToPage('switchMode', window.URLScriptServer + 'js/switch.js')
