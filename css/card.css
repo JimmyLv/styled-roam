@@ -1,0 +1,114 @@
+:root {
+  --page-width: calc(100vw - 550px);
+}
+.card-mode,
+.edit-mode {
+  /* Hover iFrame */
+  /* After Zoom In */
+}
+.card-mode .roam-topbar,
+.edit-mode .roam-topbar {
+  box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
+}
+.card-mode .roam-center > div,
+.edit-mode .roam-center > div {
+  padding: 0 !important;
+}
+.card-mode body,
+.edit-mode body {
+  background: #f2f4f8;
+}
+.card-mode iframe,
+.edit-mode iframe {
+  box-shadow: none !important;
+}
+.card-mode div#app,
+.edit-mode div#app {
+  box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
+  border-radius: 8px !important;
+}
+.card-mode [style="margin-left: -27px;"],
+.edit-mode [style="margin-left: -27px;"] {
+  flex-direction: row;
+  flex-flow: row;
+  overflow-x: scroll;
+}
+.card-mode [style="margin-left: -27px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -27px;"] > .roam-block-container,
+.card-mode [style="margin-left: -20px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -20px;"] > .roam-block-container {
+  box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
+  border-radius: 8px;
+  background: #f2f4f8;
+  padding: 10px 16px 10px 0;
+  margin: 16px 26px;
+  min-height: 200px;
+  max-width: 400px;
+  min-width: 400px;
+}
+.card-mode [style="margin-left: -20px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -20px;"] > .roam-block-container {
+  max-width: 740px;
+}
+.card-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container,
+.edit-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container {
+  box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+  border-radius: 8px;
+  background: #f2f4f8;
+  padding: 6px 10px 10px 0;
+  min-height: 200px;
+  margin: 10px;
+}
+.card-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
+.edit-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
+.card-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
+.edit-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
+.card-mode [style="margin-left: -27px;"] svg,
+.edit-mode [style="margin-left: -27px;"] svg {
+  max-width: 270px !important;
+}
+.card-mode [style="margin-left: -20px;"] .rm-block-text,
+.edit-mode [style="margin-left: -20px;"] .rm-block-text,
+.card-mode .rm-reference-main .rm-block-text,
+.edit-mode .rm-reference-main .rm-block-text {
+  max-width: initial;
+}
+.card-mode .roam-article .rm-full-width,
+.edit-mode .roam-article .rm-full-width {
+  margin-right: 0;
+}
+.card-mode .block-highlight-blue.block-bullet-view.block-border-left,
+.edit-mode .block-highlight-blue.block-bullet-view.block-border-left {
+  border-color: #7cccff;
+}
+span[data-link-title="{"] > span,
+span[data-link-title="}"] > span {
+  color: #DDDCDC !important;
+}
+code {
+  margin-left: 2px;
+  border: none;
+  background-image: linear-gradient(to right, #F67280, #F8B195);
+}
+button.mode-button {
+  border-radius: 8px;
+  letter-spacing: -0.5px;
+  padding: 0 30px 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 700;
+  background: #f2f4f8;
+  font-size: 14px;
+  color: #000;
+  height: 30px;
+  text-rendering: optimizeSpeed;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  border: none;
+  margin-right: 8px;
+}
+button.mode-button:hover {
+  color: #808c99;
+}

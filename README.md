@@ -1,6 +1,29 @@
 # Styled Roam (Research)
 
-My custom CSS files for [Roam Research](https://roamresearch.com)
+Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme 🎨 
+
+> My custom CSS and JavaScript extension for [Roam Research](https://roamresearch.com)
+
+## Quick Start
+
+1. Add a `{{[[roam/js]]}}` tag
+2. Add a child JavaScript code block to it with this code...
+
+```js
+const CARD_MODE_VERSION = 'cb1ded25'
+window.URLScriptServer = `https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@${CARD_MODE_VERSION}/`
+
+var s = document.createElement('script')
+	s.type = "text/javascript"
+    s.src =  window.URLScriptServer + "js/index.js"
+	s.async = true
+document.getElementsByTagName('head')[0].appendChild(s)
+```
+
+3. Press the BIG RED button (also works with [roam42](https://github.com/roamhacker/roam42), so you can just put them together)
+4. Change CARD_MODE_VERSION value `cb1ded25` to the latest Git commit hash whenever you're ready to upgrade
+
+![](./preview/git%20hash.png)
 
 ## Quick Review
 
