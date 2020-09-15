@@ -3,7 +3,7 @@ document.querySelector('html').classList = 'card-mode'
 const appendButton = function (type, clickHandler) {
   const innerText = {
     cardList: 'Card List',
-    editCard: 'Edit Card',
+    cardChain: 'Card Chain',
     document: 'Document',
   }[type]
   const navbar = document.querySelector('.roam-topbar > .flex-h-box')
@@ -41,8 +41,12 @@ const switchToDocument = function () {
   // document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
 }
 
+const switchToCardChain = function () {
+  document.querySelector('html').classList = 'chain-mode'
+}
+
 appendButton('cardList', switchToCardList)
-appendButton('editCard', switchToEditCard)
+appendButton('cardChain', switchToCardChain)
 appendButton('document', switchToDocument)
 
 setTimeout(() => {
@@ -52,7 +56,7 @@ setTimeout(() => {
   })
   hotkeys('alt+shift+2', function (event, handler) {
     event.preventDefault()
-    switchToEditCard()
+    switchToCardChain()
   })
   hotkeys('alt+shift+3', function (event, handler) {
     event.preventDefault()

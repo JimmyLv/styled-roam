@@ -12,7 +12,7 @@
 }
 .card-mode .roam-center > div,
 .edit-mode .roam-center > div {
-  padding: 0 12px !important;
+  padding: 0 !important;
 }
 .card-mode body,
 .edit-mode body {
