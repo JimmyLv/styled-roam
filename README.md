@@ -10,7 +10,7 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 2. Add a child JavaScript code block to it with this code...
 
 ```js
-const CARD_MODE_VERSION = "cb1ded25";
+const CARD_MODE_VERSION = "b31c8e09";
 window.URLScriptServer = `https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@${CARD_MODE_VERSION}/`;
 
 var s = document.createElement("script");
@@ -21,7 +21,7 @@ document.getElementsByTagName("head")[0].appendChild(s);
 ```
 
 3. Press the BIG RED button (also works with [roam42](https://github.com/roamhacker/roam42), so you can just put them together)
-4. Change CARD_MODE_VERSION value `cb1ded25` to the latest Git commit hash whenever you're ready to upgrade
+4. Change CARD_MODE_VERSION value `b31c8e09` to the latest Git commit hash whenever you're ready to upgrade
 
 ![](./preview/git%20hash.png)
 
