@@ -1,11 +1,26 @@
 document.querySelector('html').classList = 'card-mode'
 
+const MODES = {
+  cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart'},
+  cardFlow: { text: 'Card Flow', icon: 'bp3-icon-heat-grid'},
+  document: { text: 'Document', icon: 'bp3-icon-horizontal-bar-chart'},
+}
+
+function appendIcon(type, clickHandler) {
+  const mode = MODES[type]
+  const icon = document.createElement("div")
+  icon.id=`mode-button-${type}`
+  icon.className = `bp3-button bp3-minimal bp3-small ${mode.icon}`
+  icon.setAttribute('style','position:relative;left:2px')
+  icon.onclick = clickHandler
+  const spacer = document.createElement("div")
+  spacer.setAttribute('style','flex: 0 0 3px')
+  document.querySelector('.roam-topbar .flex-h-box').appendChild(spacer)
+  document.querySelector('.roam-topbar .flex-h-box').appendChild(icon)
+}
+
 const appendButton = function (type, clickHandler) {
-  const mode = {
-    cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart'},
-    cardFlow: { text: 'Card Flow', icon: 'bp3-icon-heat-grid'},
-    document: { text: 'Document', icon: 'bp3-icon-horizontal-bar-chart'},
-  }[type]
+  const mode = MODES[type]
   const navbar = document.querySelector('.roam-topbar > .flex-h-box')
   let hasMenuIcon = navbar.firstChild.classList.contains('bp3-icon-menu')
   let targetElement = hasMenuIcon ? navbar.childNodes[1] : navbar.firstChild
@@ -45,9 +60,9 @@ const switchToCardFlow = function () {
   document.querySelector('html').classList = 'flow-mode'
 }
 
-appendButton('cardList', switchToCardList)
-appendButton('cardFlow', switchToCardFlow)
-appendButton('document', switchToDocument)
+appendIcon('cardList', switchToCardList)
+appendIcon('cardFlow', switchToCardFlow)
+appendIcon('document', switchToDocument)
 
 setTimeout(() => {
   hotkeys('alt+shift+1', function (event, handler) {
