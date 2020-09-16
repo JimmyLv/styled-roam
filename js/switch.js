@@ -77,4 +77,23 @@ setTimeout(() => {
     event.preventDefault()
     switchToDocument()
   })
+
+  tippy('#mode-button-cardList', {
+    content: "Switch to Card List<sup>mode</sup>",
+    allowHTML: true,
+    theme: 'light-border',
+  });
+
+  tippy('#mode-button-cardFlow', {
+    content: "Switch to Card Flow<sup>mode</sup>",
+    allowHTML: true,
+    theme: 'light-border',
+  });
+
+  tippy('#mode-button-document', {
+    content: "Switch to Document<sup>mode</sup>",
+    allowHTML: true,
+    theme: 'light-border',
+  });
+
 }, 8000)
