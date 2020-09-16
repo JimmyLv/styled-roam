@@ -31,20 +31,20 @@ document.getElementsByTagName("head")[0].appendChild(s);
 
 ```css
 @import url("https://cdn.jsdelivr.net/gh/JimmyLv/Roam-Research-Themes@patch-1/Candy.css");
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/card.min.css");
+@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/css/card.min.css");
 ```
 
 ![Roam 绿色主题样式](https://jimmylv.github.io/images/2020/Roam%20绿色主题样式.jpg)
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/index.min.css");
+@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/css/index.min.css");
 ```
 
 ![Roam 绿色主题黑夜样式](https://jimmylv.github.io/images/2020/Roam%20绿色主题黑夜样式.jpg)
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/index.min.css");
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/dark.min.css");
+@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/css/index.min.css");
+@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/css/dark.min.css");
 ```
 
 > Dark 模式只需要多增加一条代码即可，Dark 模式生效的前提是 macOS 系统已经切换为夜间模式。
@@ -54,8 +54,8 @@ document.getElementsByTagName("head")[0].appendChild(s);
 > 可能屏幕适配会有个小问题：我是根据自己的屏幕尺寸设置的 content 宽度，如果大家发现左右宽度不合适，可以调整一下 article-width 这个参数。👇
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/index.min.css");
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/dark.min.css");
+@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/css/index.min.css");
+@import url("https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/css/dark.min.css");
 
 :root {
   --article-width: 716px;
