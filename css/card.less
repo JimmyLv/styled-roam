@@ -2,11 +2,8 @@
   --page-width: calc(100vw - 550px);
 }
 
-.document-mode {
-
-}
-
-.card-mode, .edit-mode {
+.card-mode,
+.edit-mode {
   .roam-topbar {
     box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
   }
@@ -26,7 +23,8 @@
   }
 
   div#app {
-    box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
+    box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06),
+      inset -3px -3px 6px 0px #fff !important;
     border-radius: 8px !important;
   }
 
@@ -54,7 +52,8 @@
 
   [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
     /*[style="margin-left: -20px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container*/ {
-    box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+    box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06),
+      inset -3px -3px 6px 0px #fff;
     border-radius: 8px;
     background: #f2f4f8;
     padding: 6px 10px 10px 0;
@@ -86,36 +85,43 @@
 
 span[data-link-title="{"] > span,
 span[data-link-title="}"] > span {
-  color: #DDDCDC !important;
+  color: #dddcdc !important;
 }
 
 code {
   margin-left: 2px;
   border: none;
-  background-image: linear-gradient(to right, #F67280, #F8B195)
+  background-image: linear-gradient(to right, #f67280, #f8b195);
 }
 
 button.mode-button {
-  border-radius: 8px;
-  letter-spacing: -0.5px;
-  padding: 0 30px 2px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-weight: 700;
-  background: #f2f4f8;
-  font-size: 14px;
-  color: #000;
-  height: 30px;
-  text-rendering: optimizeSpeed;
-  text-decoration: none;
-  list-style: none;
-  outline: none;
-  border: none;
-  margin-right: 8px;
-  //background-image: url(/images/image.svg);
+  padding: 10px 20px !important;
 }
 
 button.mode-button:hover {
   color: #808c99;
+}
+
+.document-mode button.mode-button.document,
+.card-mode button.mode-button.cardList,
+.flow-mode button.mode-button.cardFlow {
+  background: rgba(167, 182, 194, 0.3);
+}
+
+button.mode-button {
+  &.cardList {
+    background-image: url(https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/images/list.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &.cardFlow {
+    background-image: url(https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/images/flow.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &.document {
+    background-image: url(https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@master/images/doucment.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }

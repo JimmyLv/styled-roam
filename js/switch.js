@@ -1,7 +1,7 @@
 document.querySelector('html').classList = 'card-mode'
 
 const appendButton = function (type, clickHandler) {
-  const innerText = {
+  const buttonText = {
     cardList: 'Card List',
     cardFlow: 'Card Flow',
     document: 'Document',
@@ -14,8 +14,8 @@ const appendButton = function (type, clickHandler) {
   targetElement.style.justifyContent = 'center'
 
   const button = document.createElement('button')
-  button.innerHTML = innerText
-  button.className = 'mode-button' + ' ' + type
+  button.name = buttonText
+  button.className = `mode-button bp3-button bp3-minimal bp3-small ${type}`
   button.onclick = clickHandler
 
   targetElement.appendChild(button)
@@ -42,7 +42,7 @@ const switchToDocument = function () {
 }
 
 const switchToCardFlow = function () {
-  document.querySelector('html').classList = 'chain-mode'
+  document.querySelector('html').classList = 'flow-mode'
 }
 
 appendButton('cardList', switchToCardList)
