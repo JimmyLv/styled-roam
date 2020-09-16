@@ -1,10 +1,10 @@
 document.querySelector('html').classList = 'card-mode'
 
 const appendButton = function (type, clickHandler) {
-  const buttonText = {
-    cardList: 'Card List',
-    cardFlow: 'Card Flow',
-    document: 'Document',
+  const mode = {
+    cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart'},
+    cardFlow: { text: 'Card Flow', icon: 'bp3-icon-heat-grid'},
+    document: { text: 'Document', icon: 'bp3-icon-horizontal-bar-chart'},
   }[type]
   const navbar = document.querySelector('.roam-topbar > .flex-h-box')
   let hasMenuIcon = navbar.firstChild.classList.contains('bp3-icon-menu')
@@ -14,8 +14,8 @@ const appendButton = function (type, clickHandler) {
   targetElement.style.justifyContent = 'center'
 
   const button = document.createElement('button')
-  button.name = buttonText
-  button.className = `mode-button bp3-button bp3-minimal bp3-small ${type}`
+  button.name = mode.text
+  button.className = `mode-button bp3-button bp3-minimal bp3-small ${mode.icon} ${type}`
   button.onclick = clickHandler
 
   targetElement.appendChild(button)
