@@ -1,4 +1,5 @@
-document.querySelector('html').classList = 'card-mode'
+const initialMode = localStorage.getItem('INIT_MODE') || 'document'
+document.querySelector('html').classList = initialMode
 
 const MODES = {
   cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart'},
@@ -36,13 +37,18 @@ const appendButton = function (type, clickHandler) {
   targetElement.appendChild(button)
 }
 
+function switchTo(mode) {
+  document.querySelector('html').classList = mode
+  localStorage.setItem('INIT_MODE', mode)
+}
+
 const switchToCardList = function () {
-  document.querySelector('html').classList = 'card-mode'
+  switchTo('card-mode')
   document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
 }
 
 const switchToEditCard = function () {
-  document.querySelector('html').classList = 'edit-mode'
+  switchTo('edit-mode')
   let selected = document.querySelector('textarea[autocapitalize="none"]')
   if (selected) {
     selected.parentNode.parentNode.parentNode.querySelector('.simple-bullet-inner').click()
@@ -51,13 +57,13 @@ const switchToEditCard = function () {
   }
 }
 
-const switchToDocument = function () {
-  document.querySelector('html').classList = 'document-mode'
-  // document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
+const switchToCardFlow = function () {
+  switchTo('flow-mode')
 }
 
-const switchToCardFlow = function () {
-  document.querySelector('html').classList = 'flow-mode'
+const switchToDocument = function () {
+  switchTo('document-mode')
+  // document.querySelector('.zoom-path-view.rm-zoom').firstChild.click()
 }
 
 appendIcon('cardList', switchToCardList)
