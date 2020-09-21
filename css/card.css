@@ -101,3 +101,14 @@ button.mode-button:hover {
 .flow-mode button.mode-button.cardFlow {
   background: rgba(167, 182, 194, 0.3);
 }
+.document-mode .roam_navigator_hint,
+.card-mode .roam_navigator_hint,
+.flow-mode .roam_navigator_hint {
+  position: relative !important;
+}
+.document-mode .rm-title-display .roam_navigator_hint,
+.card-mode .rm-title-display .roam_navigator_hint,
+.flow-mode .rm-title-display .roam_navigator_hint {
+  display: inline-block;
+  margin-right: 14px;
+}
