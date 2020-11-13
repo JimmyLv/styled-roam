@@ -10,6 +10,11 @@
 .edit-mode .roam-topbar {
   box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
+.card-mode .roam-body-main > div:first-child,
+.edit-mode .roam-body-main > div:first-child {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .card-mode .roam-center > div,
 .edit-mode .roam-center > div {
   padding: 0 !important;

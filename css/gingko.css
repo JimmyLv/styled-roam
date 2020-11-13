@@ -35,10 +35,18 @@
   box-shadow: none;
 }
 .flow-mode .roam-article > div:first-child .controls + div {
+  /*      box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+      border-radius: 8px;
+      background: #f2f4f8;
+      min-height: 160px;
+      padding: 6px 10px 10px;*/
+  height: 160px;
+  overflow: scroll;
+}
+.flow-mode .roam-article > div:first-child .controls + div textarea {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
   background: #f2f4f8;
-  min-height: 160px;
   padding: 6px 10px 10px;
 }
 .flow-mode .roam-article > div:first-child [style="margin-left: 20px;"] {
