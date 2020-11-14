@@ -64,10 +64,10 @@ div.slider {
 }
 
 /* */
-.roam-center > div[style*="width: 100%; height: 100%;"] {
+.roam-body-main > div[style*="width: 100%; height: 100%;"] {
   width: var(--article-width) !important;
 }
-.roam-center > div[style*="width: 100%; height: 100%;"] > div {
+.roam-body-main > div[style*="width: 100%; height: 100%;"] > div {
   position: fixed !important;
   top: 0; left: 0;
   width: 100vw !important;
@@ -296,7 +296,7 @@ canvas[data-id="layer2-node"] {
 
 
 
-.roam-center > div > div > div svg {
+.roam-body-main > div > div > div svg {
   background-color: var(--bg-color) !important;
 }
 

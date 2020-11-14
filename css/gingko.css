@@ -7,7 +7,7 @@
 .flow-mode .block-highlight-blue {
   background-color: #f0bd66;
 }
-.flow-mode .roam-center > div {
+.flow-mode .roam-body-main > div {
   padding: 0 !important;
 }
 .flow-mode .roam-article > div:first-child .flex-v-box.roam-block-container.block-bullet-view {
@@ -47,6 +47,7 @@
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
   background: #f2f4f8;
+  min-height: 160px;
   padding: 6px 10px 10px;
 }
 .flow-mode .roam-article > div:first-child [style="margin-left: 20px;"] {

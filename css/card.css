@@ -15,8 +15,8 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.card-mode .roam-center > div,
-.edit-mode .roam-center > div {
+.card-mode .roam-body-main > div,
+.edit-mode .roam-body-main > div {
   padding: 0 !important;
 }
 .card-mode body,
