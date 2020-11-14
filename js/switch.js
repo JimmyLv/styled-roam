@@ -156,4 +156,4 @@ setTimeout(() => {
     allowHTML: true,
     theme: "light-border",
   });
-}, 8000);
+}, 30000);
