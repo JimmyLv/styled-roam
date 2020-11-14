@@ -111,17 +111,13 @@ function addFocusMode() {
     }
   }
 
-  hotkeys("alt+shift+4", function (event, handler) {
-    event.preventDefault();
-    toggleFocusMode();
-  });
-
   focusMode.addEventListener("click", toggleFocusMode);
 }
 
 appendIcon("cardList", switchToCardList);
 appendIcon("cardFlow", switchToCardFlow);
 appendIcon("document", switchToDocument);
+addFocusMode();
 
 setTimeout(() => {
   hotkeys("alt+shift+1", function (event, handler) {
@@ -136,7 +132,10 @@ setTimeout(() => {
     event.preventDefault();
     switchToDocument();
   });
-  addFocusMode();
+  hotkeys("alt+shift+4", function (event, handler) {
+    event.preventDefault();
+    toggleFocusMode();
+  });
 
   tippy("#mode-button-cardList", {
     content: "Switch to Card List<sup>mode</sup>",
