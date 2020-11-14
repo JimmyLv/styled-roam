@@ -31,6 +31,9 @@
   background: #f2f4f8;
   padding: 20px 16px 16px 0;
 }
+.flow-mode .roam-article > div:first-child .flex-h-box.flex-align-start.flex-justify-start:hover {
+  box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+}
 .flow-mode .roam-article > div:first-child .block-highlight-blue .flex-h-box.flex-align-start.flex-justify-start {
   box-shadow: none;
 }
@@ -42,13 +45,6 @@
       padding: 6px 10px 10px;*/
   height: 160px;
   overflow: scroll;
-}
-.flow-mode .roam-article > div:first-child .controls + div textarea {
-  box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
-  border-radius: 8px;
-  background: #f2f4f8;
-  min-height: 160px;
-  padding: 6px 10px 10px;
 }
 .flow-mode .roam-article > div:first-child [style="margin-left: 20px;"] {
   margin-left: 400px !important;
