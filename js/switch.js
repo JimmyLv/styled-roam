@@ -94,9 +94,6 @@ function addFocusMode() {
   focusMode.className = `bp3-button bp3-minimal bp3-icon-eye-open bp3-small`;
   wrapper.appendChild(focusMode);
 
-  const spacer = createSpacer()
-  wrapper.appendChild(spacer);
-
   function toggleFocusMode() {
     if (
       [].find.call(focusMode.classList, (name) => {
