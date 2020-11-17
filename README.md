@@ -23,7 +23,7 @@ document.getElementsByTagName("head")[0].appendChild(s);
 3. Press the BIG RED button (also works with [roam42](https://github.com/roamhacker/roam42), so you can just put them together)
 4. Change CARD_MODE_VERSION value `cb1ded25` to the latest Git commit hash whenever you're ready to upgrade
 
-![Roam Research 卡片式主题 Focus 模式](https://raw.staticdn.net/JimmyLv/images/master/2020/Roam Research 卡片式主题 Focus 模式.jpg)
+![Roam Research 卡片式主题 Focus 模式](https://raw.staticdn.net/JimmyLv/images/master/2020/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E4%B8%BB%E9%A2%98%20Focus%20%E6%A8%A1%E5%BC%8F.jpg)
 
 ## Quick Review
 
