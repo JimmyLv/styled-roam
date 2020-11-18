@@ -156,4 +156,6 @@ setTimeout(() => {
     allowHTML: true,
     theme: "light-border",
   });
+
+  console.log('init styled-roam')
 }, 30000);
