@@ -17,4 +17,6 @@ function appendElementToPage(element, tagId, typeT) {
 
 appendCSSToPage('cssCardList', window.URLScriptServer + 'css/card.css')
 appendCSSToPage('cssCardChain', window.URLScriptServer + 'css/gingko.css')
+appendScriptToPage( 'HOTKEYJS', 'https://unpkg.com/hotkeys-js/dist/hotkeys.min.js')
+appendScriptToPage( 'tippyjs', 'https://unpkg.com/tippy.js@6')
 appendScriptToPage('switchMode', window.URLScriptServer + 'js/switch.js')
