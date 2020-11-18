@@ -109,12 +109,14 @@ function addFocusMode() {
   }
 
   focusMode.addEventListener("click", toggleFocusMode);
+
+  return toggleFocusMode
 }
 
 appendIcon("cardList", switchToCardList);
 appendIcon("cardFlow", switchToCardFlow);
 appendIcon("document", switchToDocument);
-addFocusMode();
+const toggleFocusMode = addFocusMode()
 
 setTimeout(() => {
   hotkeys("alt+shift+1", function (event, handler) {
@@ -157,5 +159,5 @@ setTimeout(() => {
     theme: "light-border",
   });
 
-  console.log('init styled-roam')
-}, 30000);
+  console.log('started styled-roam')
+}, 3000);
