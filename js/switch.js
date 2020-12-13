@@ -87,6 +87,9 @@ function addFocusMode() {
 	.roam-block-container div[id]:hover{
  	 	opacity: 1;
 	}
+  .roam-toolkit-block-mode--highlight {
+    opacity: 1 !important;
+  }
 `;
 
   var focusMode = document.createElement("div");
