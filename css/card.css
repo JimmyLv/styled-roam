@@ -93,15 +93,16 @@ code {
   border: none;
   background-image: linear-gradient(to right, #f67280, #f8b195);
 }
-button.mode-button {
-  padding: 10px 20px !important;
+@media (max-width: 480px) {
+  /* smartphones, Android phones, landscape iPhone */
+  #mode-button-cardFlow,
+  #mode-button-cardList {
+    display: none;
+  }
 }
-button.mode-button:hover {
-  color: #808c99;
-}
-.document-mode button.mode-button.document,
-.card-mode button.mode-button.cardList,
-.flow-mode button.mode-button.cardFlow {
+.document-mode #mode-button-document,
+.card-mode #mode-button-cardList,
+.flow-mode #mode-button-cardFlow {
   background: rgba(167, 182, 194, 0.3);
 }
 .document-mode .roam-block-container,

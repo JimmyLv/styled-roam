@@ -17,7 +17,7 @@ function appendIcon(type, clickHandler) {
   const mode = MODES[type];
   const icon = document.createElement("div");
   icon.id = `mode-button-${type}`;
-  icon.className = `bp3-button bp3-minimal bp3-small ${mode.icon}`;
+  icon.className = `bp3-button bp3-minimal bp3-small ${mode.icon} mode-button`;
   icon.setAttribute("style", "position:relative;left:2px");
   icon.onclick = clickHandler;
   document.querySelector(".roam-topbar .flex-h-box").appendChild(icon);
@@ -140,24 +140,24 @@ setTimeout(() => {
   });
 
   tippy("#mode-button-cardList", {
-    content: "Switch to Card List<sup>mode</sup>",
+    content: `Card List<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-1)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
 
   tippy("#mode-button-cardFlow", {
-    content: "Switch to Card Flow<sup>mode</sup>",
+    content: `Card Flow<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-2)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
 
   tippy("#mode-button-document", {
-    content: "Switch to Document<sup>mode</sup>",
+    content: `Outliner<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-3)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
   tippy("#mode-toggle-focus", {
-    content: "Switch to Focus<sup>mode</sup>",
+    content: `Focus<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-4)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
