@@ -32,13 +32,13 @@
     border-radius: 8px !important;
   }
 
-  [style="margin-left: -27px;"] {
+  .rm-block__children.rm-level-0 {
     flex-direction: row;
     flex-flow: row;
     overflow-x: scroll;
   }
 
-  [style="margin-left: -27px;"] > .roam-block-container,
+  .rm-block__children.rm-level-0 > .roam-block-container,
   [style="margin-left: -20px;"] > .roam-block-container {
     box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
     border-radius: 8px;
@@ -54,7 +54,7 @@
     max-width: 740px;
   }
 
-  [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
+  .rm-block__children.rm-level-0 > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
     /*[style="margin-left: -20px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container*/ {
     box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06),
       inset -3px -3px 6px 0px #fff;
@@ -65,12 +65,12 @@
     margin: 10px;
   }
 
-  [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
-  [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-  [style="margin-left: -27px;"] svg {
-    max-width: 270px !important;
+  .rm-block__children.rm-level-0 {
+    img.rm-inline-img,
+    svg {
+      max-width: 270px !important;
+    }
   }
-
   /* After Zoom In */
 
   [style="margin-left: -20px;"] .rm-block-text,
@@ -112,7 +112,12 @@ button.mode-button:hover {
   background: rgba(167, 182, 194, 0.3);
 }
 
-.document-mode, .card-mode, .flow-mode {
+.document-mode,
+.card-mode,
+.flow-mode {
+  .roam-block-container {
+    max-width: none;
+  }
   .roam_navigator_hint {
     position: relative !important;
   }

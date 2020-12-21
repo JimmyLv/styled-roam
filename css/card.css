@@ -32,14 +32,14 @@
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
   border-radius: 8px !important;
 }
-.card-mode [style="margin-left: -27px;"],
-.edit-mode [style="margin-left: -27px;"] {
+.card-mode .rm-block__children.rm-level-0,
+.edit-mode .rm-block__children.rm-level-0 {
   flex-direction: row;
   flex-flow: row;
   overflow-x: scroll;
 }
-.card-mode [style="margin-left: -27px;"] > .roam-block-container,
-.edit-mode [style="margin-left: -27px;"] > .roam-block-container,
+.card-mode .rm-block__children.rm-level-0 > .roam-block-container,
+.edit-mode .rm-block__children.rm-level-0 > .roam-block-container,
 .card-mode [style="margin-left: -20px;"] > .roam-block-container,
 .edit-mode [style="margin-left: -20px;"] > .roam-block-container {
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
@@ -55,8 +55,8 @@
 .edit-mode [style="margin-left: -20px;"] > .roam-block-container {
   max-width: 740px;
 }
-.card-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container,
-.edit-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container {
+.card-mode .rm-block__children.rm-level-0 > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container,
+.edit-mode .rm-block__children.rm-level-0 > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
   background: #f2f4f8;
@@ -64,12 +64,10 @@
   min-height: 200px;
   margin: 10px;
 }
-.card-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
-.edit-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
-.card-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-.edit-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-.card-mode [style="margin-left: -27px;"] svg,
-.edit-mode [style="margin-left: -27px;"] svg {
+.card-mode .rm-block__children.rm-level-0 img.rm-inline-img,
+.edit-mode .rm-block__children.rm-level-0 img.rm-inline-img,
+.card-mode .rm-block__children.rm-level-0 svg,
+.edit-mode .rm-block__children.rm-level-0 svg {
   max-width: 270px !important;
 }
 .card-mode [style="margin-left: -20px;"] .rm-block-text,
@@ -105,6 +103,11 @@ button.mode-button:hover {
 .card-mode button.mode-button.cardList,
 .flow-mode button.mode-button.cardFlow {
   background: rgba(167, 182, 194, 0.3);
+}
+.document-mode .roam-block-container,
+.card-mode .roam-block-container,
+.flow-mode .roam-block-container {
+  max-width: none;
 }
 .document-mode .roam_navigator_hint,
 .card-mode .roam_navigator_hint,
