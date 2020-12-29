@@ -19,12 +19,13 @@ export default function Timings() {
   }, []);
 
   return html`<div className="timings">
-    <div
-      className="timing-current"
-      data-tippy-content=${currentTime}
-      data-tippy-arrow="false"
-      style="${{ marginTop: marginTop }}"
-    ></div>
+    <div className="timing-current" style="${{ marginTop: marginTop }}">
+      <span
+        className="timing-dot"
+        data-tippy-content=${currentTime}
+        data-tippy-arrow="false"
+      ></span>
+    </div>
     <div><span className="timing-whole"> 00:00 </span> AM</div>
     <div className="timing-half">00:30</div>
     <div><span className="timing-whole"> 01:00 </span> AM</div>
