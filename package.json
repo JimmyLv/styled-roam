@@ -7,6 +7,11 @@
     "dev": "parcel src/index.js --port 8080",
     "build": "parcel build src/index.js --out-dir js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JimmyLv/styled-roam.git"
@@ -19,6 +24,7 @@
   },
   "homepage": "https://github.com/JimmyLv/styled-roam#readme",
   "devDependencies": {
+    "husky": "^4.3.6",
     "less": "^4.0.0",
     "parcel-bundler": "^1.12.4"
   },

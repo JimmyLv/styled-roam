@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import React from "react";
 import { html } from "htm/react";
+import tippy from "tippy.js";
 
 const getTimeNow = () => {
   const time = dayjs().format("HH:MM");
@@ -17,12 +18,19 @@ export default function Timings() {
     const interval = setInterval(() => {
       setCurrentTime(getTimeNow()[0]);
       setMarginTop(getTimeNow()[1]);
+      tippy("[data-tippy-content]");
     }, 6000);
     return () => clearInterval(interval);
   }, []);
 
   return html`<div className="timings">
-    <div className="timing-current" style="${{ marginTop: marginTop }}"></div>
+    <div
+      className="timing-current"
+      data-tippy-content=${currentTime}
+      data-tippy-arrow="false"
+      data-tippy-theme="light-border"
+      style="${{ marginTop: marginTop }}"
+    ></div>
     <div><span className="timing-whole"> 00:00 </span> AM</div>
     <div className="timing-half">00:30</div>
     <div><span className="timing-whole"> 01:00 </span> AM</div>

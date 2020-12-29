@@ -1,11 +1,11 @@
-import hotkeys from 'hotkeys-js'
-import tippy from 'tippy.js'
-import addCalendarTimestamp from './calendar'
-import './css/card.less'
-import './css/gingko.less'
-import './css/calendar.less'
-import { addToggleMode } from './focus'
-import { appendIcon, switchTo } from './helper'
+import hotkeys from "hotkeys-js";
+import tippy from "tippy.js";
+import addCalendarTimestamp from "./calendar";
+import "./css/card.less";
+import "./css/gingko.less";
+import "./css/calendar.less";
+import { addToggleMode } from "./focus";
+import { appendIcon, switchTo } from "./helper";
 
 const initialMode = localStorage.getItem("INIT_MODE") || "document";
 document.querySelector("html").classList.add(initialMode);
