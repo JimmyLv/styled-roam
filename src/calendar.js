@@ -3,6 +3,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import { renderReact } from "./components/render";
 import { addToggleMode } from "./focus";
 import "./css/timings.less";
+import { switchTo } from "./helper";
 
 dayjs.extend(customParseFormat);
 
@@ -53,8 +54,12 @@ export default function addCalendarTimestamp() {
   }
 
   function turnOn() {
+    switchTo("calendar-mode");
     renderReact();
     toggleCalendarTimestamp();
+  }
+  function turnOff() {
+    switchTo("document-mode");
   }
 
   return addToggleMode({
@@ -63,5 +68,6 @@ export default function addCalendarTimestamp() {
     off: "cube",
     styleContent: ``,
     turnOn,
+    turnOff,
   });
 }

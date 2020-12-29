@@ -1,57 +1,59 @@
-.container {
-  height: 720px;
-  width: 900px;
-  display: inline-flex;
-}
-
 timings-root {
-  margin-right: 90px;
+  display: none;
 }
 
-.timings div {
-  min-height: 30px;
-  border-top: #dadce0 1px solid;
-  width: 100vw;
-
-  &.timing-half {
-    border: none;
+.calendar-mode {
+  timings-root {
+    display: block;
+    margin-right: 90px;
   }
-}
 
-.timings div.timing-current {
-  position: absolute;
-  border-top: #ea4335 solid 2px;
+  .timings div {
+    min-height: 30px;
+    border-top: #dadce0 1px solid;
+    width: 100vw;
 
-  &:before {
-    background: #ea4335;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    content: "";
+    &.timing-half {
+      border: none;
+    }
+  }
+
+  .timings div.timing-current {
     position: absolute;
-    height: 10px;
-    margin-left: -9px;
-    margin-top: -6px;
-    width: 10px;
+    border-top: #ea4335 solid 2px;
+    margin-left: 90px;
+
+    &:before {
+      background: #ea4335;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      height: 10px;
+      margin-left: -9px;
+      margin-top: -6px;
+      width: 10px;
+    }
   }
-}
 
-.timings {
-  //text-align: right;
-  padding-right: 10px;
-  width: 100px;
-  margin-top: 76px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: white;
-  font-size: 0.5em;
-  box-sizing: border-box;
-}
+  .timings {
+    //text-align: right;
+    padding-right: 10px;
+    width: 100px;
+    margin-top: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    font-size: 0.5em;
+    box-sizing: border-box;
+  }
 
-.timings span {
-  font-size: 200%;
-  color: #70757a;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-right: 20px;
+  .timings span {
+    font-size: 200%;
+    color: #70757a;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+  }
 }
