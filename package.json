@@ -1,0 +1,30 @@
+{
+  "name": "styled-roam",
+  "version": "1.0.0",
+  "description": "Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme 🎨",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.js --port 8080",
+    "build": "parcel build src/index.js --out-dir js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimmyLv/styled-roam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimmyLv/styled-roam/issues"
+  },
+  "homepage": "https://github.com/JimmyLv/styled-roam#readme",
+  "devDependencies": {
+    "less": "^4.0.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "dayjs": "^1.9.8",
+    "hotkeys-js": "^3.8.1",
+    "tippy.js": "^6.2.7"
+  }
+}

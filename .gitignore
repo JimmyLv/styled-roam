@@ -1,1 +1,5 @@
 .idea/
+.cache/
+dist/
+*.log
+node_modules
