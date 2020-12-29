@@ -3,14 +3,13 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import { renderReact } from "./components/render";
 import { addToggleMode } from "./focus";
 import "./css/timings.less";
-import { switchTo } from "./helper";
+import { switchTo } from "./utils/helper";
 
 dayjs.extend(customParseFormat);
 
 export default function addCalendarTimestamp() {
   function toggleCalendarTimestamp() {
     [...document.querySelectorAll(".roam-log-page")].forEach((dateDocument) => {
-      console.log("dateDocument", dateDocument);
       const dateTitle = dateDocument.querySelector("h1");
       const currentDateStr = (dateTitle && dateTitle.textContent) || "";
       console.log("currentDateStr", currentDateStr);
@@ -29,10 +28,12 @@ export default function addCalendarTimestamp() {
         ),
       ].forEach((el) => {
         // only support 22:00, TODO: support 10:00 PM
-        var timestamp = el.textContent && el.textContent.substring(0, 5);
+        let timestamp = el.textContent && el.textContent.substring(0, 5);
         if (!new RegExp(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/).test(timestamp)) {
-          prevHeight = prevHeight + el.clientHeight;
-          return;
+          // fallback to default create_time
+          const createTime = dateDocument.querySelector("[data-create-time]")
+            .dataset.createTime;
+          timestamp = new Date(createTime).toTimeString().substring(0, 5);
         }
 
         console.log("timestamp", timestamp);

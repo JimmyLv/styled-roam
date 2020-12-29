@@ -1,4 +1,4 @@
-import { generateStyleScript } from "./helper";
+import { generateStyleScript } from "./utils/helper";
 
 export function addToggleMode({
   id = "mode-toggle-focus",

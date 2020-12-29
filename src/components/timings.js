@@ -1,23 +1,18 @@
-import dayjs from "dayjs";
-import React from "react";
 import { html } from "htm/react";
+import React from "react";
 import tippy from "tippy.js";
-
-const getTimeNow = () => {
-  const time = dayjs().format("HH:MM");
-
-  const [h, m] = time.split(":");
-  const marginTop = Number(h) * 60 + Number(m);
-  return [time, marginTop];
-};
+import { getRelativeDuration } from "../utils/datetime";
 
 export default function Timings() {
-  const [currentTime, setCurrentTime] = React.useState(getTimeNow()[0]);
-  const [marginTop, setMarginTop] = React.useState(getTimeNow()[1]);
+  const duration = getRelativeDuration();
+  const [currentTime, setCurrentTime] = React.useState(duration[0]);
+  const [marginTop, setMarginTop] = React.useState(duration[1]);
+
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(getTimeNow()[0]);
-      setMarginTop(getTimeNow()[1]);
+      const relative = getRelativeDuration();
+      setCurrentTime(relative[0]);
+      setMarginTop(relative[1]);
       tippy("[data-tippy-content]");
     }, 6000);
     return () => clearInterval(interval);
