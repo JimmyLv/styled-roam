@@ -1,11 +1,14 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import utc from "dayjs/plugin/utc";
 import { renderReact } from "./components/render";
-import { addToggleMode } from "./focus";
 import "./css/timings.less";
+import { addToggleMode } from "./focus";
+import { getDuration } from "./utils/datetime";
 import { switchTo } from "./utils/helper";
 
 dayjs.extend(customParseFormat);
+dayjs.extend(utc);
 
 export default function addCalendarTimestamp() {
   function toggleCalendarTimestamp() {
@@ -31,12 +34,15 @@ export default function addCalendarTimestamp() {
         let timestamp = el.textContent && el.textContent.substring(0, 5);
         if (!new RegExp(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/).test(timestamp)) {
           // fallback to default create_time
-          const createTime = dateDocument.querySelector("[data-create-time]")
-            .dataset.createTime;
-          timestamp = new Date(createTime).toTimeString().substring(0, 5);
+          const createTime = Number(
+            el.querySelector("[data-create-time]").dataset.createTime
+          );
+          timestamp = dayjs(createTime).format().substring(11, 16);
+          console.log("createTime timestamp", dayjs(createTime).format(), timestamp);
+        } else {
+          console.log("manual timestamp", timestamp);
         }
 
-        console.log("timestamp", timestamp);
         el.setAttribute("data-timestamp", timestamp);
         const duration = dayjs(`${currentDay} ${timestamp}`).diff(
           dayjs(`${currentDay} ${prevTimestamp}`),
@@ -44,9 +50,10 @@ export default function addCalendarTimestamp() {
         );
         console.log("duration", duration);
         const selfHeight = el.clientHeight;
-        const marginTop =
-          duration - prevHeight >= 0 ? duration - prevHeight : 0;
-        el.style.marginTop = `${marginTop}px`;
+        // const marginTop =
+        //   duration - prevHeight >= 0 ? duration - prevHeight : 0;
+        const durationTop = getDuration(timestamp);
+        el.style.top = `${durationTop}px`;
 
         prevTimestamp = timestamp;
         prevHeight = selfHeight;

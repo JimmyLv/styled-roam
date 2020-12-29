@@ -1,16 +1,16 @@
 import { html } from "htm/react";
 import React from "react";
 import tippy from "tippy.js";
-import { getRelativeDuration } from "../utils/datetime";
+import { getTimeNow } from "../utils/datetime";
 
 export default function Timings() {
-  const duration = getRelativeDuration();
+  const duration = getTimeNow();
   const [currentTime, setCurrentTime] = React.useState(duration[0]);
   const [marginTop, setMarginTop] = React.useState(duration[1]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const relative = getRelativeDuration();
+      const relative = getTimeNow();
       setCurrentTime(relative[0]);
       setMarginTop(relative[1]);
       tippy("[data-tippy-content]");
@@ -23,7 +23,6 @@ export default function Timings() {
       className="timing-current"
       data-tippy-content=${currentTime}
       data-tippy-arrow="false"
-      data-tippy-theme="light-border"
       style="${{ marginTop: marginTop }}"
     ></div>
     <div><span className="timing-whole"> 00:00 </span> AM</div>

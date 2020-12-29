@@ -54,9 +54,17 @@ export default function initCardifyTheme() {
     event.preventDefault();
     switchTo("document-mode");
   });
+  hotkeys("alt+shift+4", function (event, handler) {
+    event.preventDefault();
+    toggleFocusMode();
+  });
   hotkeys("alt+shift+f", function (event, handler) {
     event.preventDefault();
     toggleFocusMode();
+  });
+  hotkeys("alt+shift+5", function (event, handler) {
+    event.preventDefault();
+    toggleCalendarMode();
   });
   hotkeys("alt+shift+c", function (event, handler) {
     event.preventDefault();
@@ -81,12 +89,12 @@ export default function initCardifyTheme() {
     theme: "light-border",
   });
   tippy("#mode-toggle-focus", {
-    content: `Focus<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-f)</span>`,
+    content: `Focus<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-4/f)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
   tippy("#mode-toggle-calendar", {
-    content: `Calendar<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-c)</span>`,
+    content: `Calendar<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-5/c)</span>`,
     allowHTML: true,
     theme: "light-border",
   });

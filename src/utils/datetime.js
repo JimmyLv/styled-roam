@@ -1,9 +1,12 @@
 import dayjs from "dayjs";
 
-export const getRelativeDuration = (targetTime = undefined) => {
-  const time = dayjs(targetTime).format("HH:MM");
-
+export function getDuration(time) {
   const [h, m] = time.split(":");
-  const marginTop = Number(h) * 60 + Number(m);
-  return [time, marginTop];
+  return Number(h) * 60 + Number(m);
+}
+
+export const getTimeNow = () => {
+  const time = dayjs().format("HH:MM");
+  const duration = getDuration(time);
+  return [time, duration];
 };

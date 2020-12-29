@@ -25,13 +25,30 @@
       }
     }
 
+    .rm-block__children.rm-level-0 {
+      position: relative;
+    }
+
     [data-timestamp] {
       background: #e4e9ec;
-      //border-bottom: 1px solid white;
+      position: absolute;
+      width: 100%;
+      border: 1px solid #e4e9ec;
       /*
       max-height: 45px;
       overflow: scroll;
       */
+      &.rm-focused {
+        z-index: 2;
+      }
+      .rm-block-children.rm-block__children.rm-level-1 {
+        z-index: 3;
+        color: #355c7d;
+        background: #e4e9ec;
+      }
+    }
+    .roam-toolkit-block-mode--highlight {
+      z-index: 2;
     }
   }
 }
@@ -39,5 +56,6 @@
 .document-mode {
   [data-timestamp] {
     margin-top: 0 !important;
+    position: static;
   }
 }
