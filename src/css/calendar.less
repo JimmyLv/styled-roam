@@ -2,17 +2,33 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 
+  .roam-article {
+    background: #fff;
+  }
+
   .flex-v-box.roam-log-container {
     flex-direction: row;
     overflow: scroll;
   }
-}
+  .roam-log-container {
+    .roam-log-page {
+      padding: 0 20px 16px 30px;
+      margin-bottom: 16px;
+      margin-top: 0;
+      width: 33vw;
+      min-width: 33vw;
+      min-height: 90vh;
+      border-left: #dadce0 1px solid;
+      border-top: none;
+    }
+  }
 
-.roam-log-container .roam-log-page {
-  padding: 0 20px 16px 30px;
-  margin-bottom: 16px;
-  margin-top: 0;
-  min-width: 33vw;
-  border-left: 1px solid rgb(115, 134, 148);
-  border-top: none;
+  [data-timestamp] {
+    background: #e4e9ec;
+    border-bottom: 1px solid white;
+    /*
+    max-height: 45px;
+    overflow: scroll;
+    */
+  }
 }

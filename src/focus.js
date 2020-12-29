@@ -3,7 +3,9 @@ import { generateStyleScript } from "./helper";
 export function addToggleMode({
   id = "mode-toggle-focus",
   on = "eye-on",
+  turnOn,
   off = "eye-open",
+  turnOff,
   styleContent = "",
 }) {
   var styleScript = generateStyleScript(styleContent);
@@ -23,9 +25,11 @@ export function addToggleMode({
     ) {
       modeIcon.className = `bp3-button bp3-minimal bp3-icon-${off} bp3-small`;
       document.head.removeChild(styleScript);
+      turnOff && turnOff();
     } else {
       modeIcon.className = `bp3-button bp3-minimal bp3-icon-${on} bp3-small`;
       document.head.appendChild(styleScript);
+      turnOn && turnOn();
     }
   }
 
