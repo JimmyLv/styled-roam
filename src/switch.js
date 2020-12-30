@@ -1,6 +1,6 @@
 import hotkeys from "hotkeys-js";
 import tippy from "tippy.js";
-import addCalendarTimestamp from "./calendar";
+import toggleCalendarTimestamp from "./calendar";
 import "./css/card.less";
 import "./css/gingko.less";
 import "./css/calendar.less";
@@ -23,7 +23,7 @@ appendIcon("cardFlow", function () {
 appendIcon("document", function () {
   switchTo("document-mode");
 });
-const toggleCalendarMode = addCalendarTimestamp();
+const toggleCalendarMode = toggleCalendarTimestamp();
 const toggleFocusMode = addToggleMode({
   id: "mode-toggle-focus",
   on: "eye-on",

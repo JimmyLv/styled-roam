@@ -1,6 +1,7 @@
 import { html } from "htm/react";
 import React from "react";
 import tippy from "tippy.js";
+import addCalendarTimestamp from "../addCalendarTimestamp";
 import { getTimeNow } from "../utils/datetime";
 
 export default function Timings() {
@@ -21,6 +22,8 @@ export default function Timings() {
     });
 
     function refreshTimestamp() {
+      addCalendarTimestamp();
+
       const relative = getTimeNow();
       setCurrentTime(relative[0]);
       setMarginTop(relative[1]);
