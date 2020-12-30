@@ -23,7 +23,12 @@ function appendElementToPage(element, tagId, typeT) {
   document.getElementsByTagName("head")[0].appendChild(element);
 }
 
-appendCSSToPage("cssCalendar", window.URLScriptServer + "js/index.css");
+console.log("window.URLScriptServer", window.URLScriptServer);
+if (window.URLScriptServer.includes("localhost")) {
+  appendCSSToPage("cssCalendar", "http://localhost:8080/index.css");
+} else {
+  appendCSSToPage("cssCalendar", window.URLScriptServer + "js/index.css");
+}
 
 if (module.hot) {
   module.hot.dispose(function () {

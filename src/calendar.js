@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import utc from "dayjs/plugin/utc";
 import { renderReact } from "./components/render";
 import "./css/timings.less";
 import { addToggleMode } from "./focus";
@@ -8,7 +7,6 @@ import { getDuration } from "./utils/datetime";
 import { switchTo } from "./utils/helper";
 
 dayjs.extend(customParseFormat);
-dayjs.extend(utc);
 
 export default function addCalendarTimestamp() {
   function toggleCalendarTimestamp() {
