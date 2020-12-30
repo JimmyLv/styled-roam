@@ -83,7 +83,7 @@ export default function addCalendarTimestamp() {
     toggleCalendarTimestamp();
   }
   function turnOff() {
-    switchTo("document-mode");
+    switchTo("simple-calendar-mode");
   }
 
   return addToggleMode({

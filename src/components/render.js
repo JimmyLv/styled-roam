@@ -1,7 +1,6 @@
 import { html } from "htm/react";
 import React from "react";
 import ReactDOM from "react-dom";
-import { Counter } from "./count";
 import Timings from "./timings";
 
 export function renderReact() {
