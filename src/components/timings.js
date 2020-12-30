@@ -73,6 +73,11 @@ export default function Timings() {
     <div><span className="timing-whole"> 22:00 </span> PM</div>
     <div className="timing-half">22:30</div>
     <div><span className="timing-whole"> 23:00 </span> PM</div>
-    <div className="timing-half">23:30</div>
+    <div
+      className="timing-half"
+      style="${{ width: "100vw", borderBottom: "#dadce0 1px solid" }}"
+    >
+      23:30
+    </div>
   </div> `;
 }

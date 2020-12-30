@@ -24,6 +24,7 @@ export default function addCalendarTimestamp() {
 
       let prevTimestamp = "00:00";
       let prevHeight = 0;
+      let prevElement = null;
 
       [
         ...dateDocument.querySelectorAll(
@@ -54,7 +55,22 @@ export default function addCalendarTimestamp() {
         //   duration - prevHeight >= 0 ? duration - prevHeight : 0;
         const durationTop = getDuration(timestamp);
         el.style.top = `${durationTop}px`;
+        if (duration - prevHeight < 0) {
+          el.style.width = '50%';
 
+          // 已经修改过上一个的 right，即上上个已经 left
+          if (prevElement.style.right) {
+            el.style.left = '50%';
+          } else if (prevElement.style.left) {
+            el.style.right = '50%';
+          } else {
+            prevElement.style.left = '50%';
+            prevElement.style.width = '50%';
+            el.style.right = '50%';
+          }
+        }
+
+        prevElement = el;
         prevTimestamp = timestamp;
         prevHeight = selfHeight;
       });
