@@ -9,22 +9,24 @@ export default function Timings() {
   const [marginTop, setMarginTop] = React.useState(duration[1]);
 
   React.useEffect(() => {
-    const interval = setInterval(() => {
+    tippy("[data-tippy-content]", {
+      arrow: false,
+    });
+
+    function refreshTimestamp() {
       const relative = getTimeNow();
+      console.log("current time", relative[0]);
       setCurrentTime(relative[0]);
       setMarginTop(relative[1]);
-      tippy("[data-tippy-content]");
-    }, 6000);
+    }
+    refreshTimestamp();
+    const interval = setInterval(refreshTimestamp, 6000);
     return () => clearInterval(interval);
   }, []);
 
   return html`<div className="timings">
     <div className="timing-current" style="${{ marginTop: marginTop }}">
-      <span
-        className="timing-dot"
-        data-tippy-content=${currentTime}
-        data-tippy-arrow="false"
-      ></span>
+      <span className="timing-dot" data-tippy-content=${currentTime}></span>
     </div>
     <div><span className="timing-whole"> 00:00 </span> AM</div>
     <div className="timing-half">00:30</div>

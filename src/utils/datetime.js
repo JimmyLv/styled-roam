@@ -6,7 +6,7 @@ export function getDuration(time) {
 }
 
 export const getTimeNow = () => {
-  const time = dayjs().format("HH:MM");
+  const time = dayjs().format("HH:mm");
   const duration = getDuration(time);
   return [time, duration];
 };
