@@ -1,0 +1,63 @@
+timings-root {
+  display: none;
+}
+
+.calendar-mode {
+  timings-root {
+    display: block;
+    margin-right: 90px;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .timings div {
+    min-height: 30px;
+    border-top: #dadce0 1px dotted;
+    width: 100vw;
+
+    &.timing-half {
+      border: none;
+      width: 90px;
+    }
+  }
+
+  .timings div.timing-current {
+    position: absolute;
+    border-top: #ea4335 solid 2px;
+    margin-left: 90px;
+    z-index: 9999;
+
+    .timing-dot {
+      background: #ea4335;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      height: 10px;
+      margin-left: -9px;
+      margin-top: -6px;
+      width: 10px;
+    }
+  }
+
+  .timings {
+    //text-align: right;
+    padding-right: 10px;
+    border-right: #dadce0 1px solid;
+    width: 90px;
+    padding-top: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.5em;
+    box-sizing: border-box;
+  }
+
+  .timings span {
+    font-size: 200%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+  }
+}

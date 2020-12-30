@@ -42,7 +42,7 @@
   justify-content: flex-end;
 }
 
-.roam-center > div:first-child {
+.roam-body-main > div:first-child {
   padding: 0 !important;
 }
 .roam-body-main > * {
@@ -537,11 +537,11 @@ body > .bp3-portal .bp3-text-small {
   border-color: var(--bg-color) !important;
 }
 
-.roam-center svg > g > rect:first-child, #roam-right-sidebar-content > div svg  > g > rect:first-child {
+.roam-body-main svg > g > rect:first-child, #roam-right-sidebar-content > div svg  > g > rect:first-child {
   display: none;
 }
 
-.roam-center svg > g > foreignObject, #roam-right-sidebar-content > div svg > g > foreignObject {
+.roam-body-main svg > g > foreignObject, #roam-right-sidebar-content > div svg > g > foreignObject {
   background-color: var(--page-color);
   border-radius: 8px;
   filter: drop-shadow( 0px 4px 6px rgba(0, 0, 0, .05));
@@ -550,35 +550,35 @@ body > .bp3-portal .bp3-text-small {
 
 /* SELECTION */
 
-.roam-center svg > g > rect[stroke="red"] + foreignObject,
+.roam-body-main svg > g > rect[stroke="red"] + foreignObject,
 #roam-right-sidebar-content > div svg > g > rect[stroke="red"] + foreignObject {
   border-color: rgb(var(--color-secondary));
 }
 
-.roam-center svg > g > rect[style*="stroke: red"] + foreignObject,
+.roam-body-main svg > g > rect[style*="stroke: red"] + foreignObject,
 #roam-right-sidebar-content > div svg > g > rect[style*="stroke: red"] + foreignObject{
   border-color: rgb(var(--color-secondary));
 
 }
 
-.roam-center svg > g > rect[style*="rgba"] + foreignObject,
+.roam-body-main svg > g > rect[style*="rgba"] + foreignObject,
 #roam-right-sidebar-content > div svg > g > rect[style*="rgba"] + foreignObject{
   background-color: rgba(255, 255, 255, 0.4)
 }
 
-.roam-center svg > g > foreignObject > input:first-child,
+.roam-body-main svg > g > foreignObject > input:first-child,
 #roam-right-sidebar-content > div svg > g > foreignObject > input:first-child{
   background-color: rgb(var(--color-primary)) !important;
   color: var(--color-primary-contrast);
   height: 30px;
 }
 
-.roam-center svg > line[style*="stroke: red"],
+.roam-body-main svg > line[style*="stroke: red"],
 #roam-right-sidebar-content > div svg > line[style*="stroke: red"]{
   stroke: rgb(var(--color-secondary)) !important;
 }
 
-.roam-center svg > rect[style*="fill: rgba(55, 141, 240, 0.5)"],
+.roam-body-main svg > rect[style*="fill: rgba(55, 141, 240, 0.5)"],
 #roam-right-sidebar-content > div svg > rect[style*="fill: rgba(55, 141, 240, 0.5)"]{
   fill: rgba(var(--color-secondary), 0.5) !important;
   stroke: rgb(var(--color-secondary)) !important;

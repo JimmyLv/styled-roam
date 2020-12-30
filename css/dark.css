@@ -45,7 +45,7 @@
     background: var(--main-background-color) !important;
   }
 
-  .roam-center {
+  .roam-body-main {
     border-left: 1px solid var(--border-color) !important;
     border-top: 1px solid var(--border-color) !important;
     border-right: 1px solid var(--border-color) !important;
@@ -57,7 +57,7 @@
     margin-left: 12px;
   }
 
-  .roam-center > div:first-child {
+  .roam-body-main > div:first-child {
     padding-right: calc(0.5 * (100% - 820px)) !important;
     padding-left: calc(0.5 * (100% - 820px)) !important;
   }

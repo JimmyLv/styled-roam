@@ -1,4 +1,4 @@
-.chain-mode {
+.flow-mode {
   body {
     background: #f2f4f8;
   }
@@ -11,56 +11,67 @@
     background-color: #f0bd66;
   }
 
-  .roam-center > div {
+  .roam-body-main > div {
     padding: 0 !important;
   }
 
   .roam-article > div:first-child {
-    .flex-v-box.roam-block-container.block-bullet-view {
+    .roam-block-container.block-bullet-view {
       flex-direction: row;
       width: 400px;
     }
 
-    [style="margin-left: -27px;"], [style="margin-left: -20px;"] {
+    .rm-block__children.rm-level-0,
+    [style="margin-left: -20px;"] {
       overflow-x: auto;
       padding-bottom: 10px;
     }
 
-    [style="margin-left: -27px;"] > .roam-block-container {
+    .rm-block__children.rm-level-0 > .roam-block-container {
       width: 100vw !important;
     }
 
-    .flex-h-box.flex-align-start.flex-justify-start {
+    .rm-block-main.rm-block__self {
       width: 370px;
-      min-height: 100px;
+      height: 200px;
       margin: 20px;
       box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
       border-radius: 8px;
       background: #f2f4f8;
       padding: 20px 16px 16px 0;
+
+      &:hover {
+        box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06),
+          inset -3px -3px 6px 0px #fff;
+      }
     }
 
-    .block-highlight-blue .flex-h-box.flex-align-start.flex-justify-start {
+    .block-highlight-blue .rm-block-main.rm-block__self {
       box-shadow: none;
     }
 
     .controls + div {
-      box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
+      /*      box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
       border-radius: 8px;
       background: #f2f4f8;
       min-height: 160px;
-      padding: 6px 10px 10px;
+      padding: 6px 10px 10px;*/
+      height: 160px;
+      overflow: scroll;
     }
 
     [style="margin-left: 20px;"] {
       margin-left: 400px !important;
     }
 
-    [style="margin-left: -27px;"] .rm-resize-img.react-resizable, [style="margin-left: -27px;"] .hoverparent.rm-resize-img, [style="margin-left: -27px;"] svg {
-      max-width: 294px !important;
+    .rm-block__children.rm-level-0 {
+      img.rm-inline-img,
+      svg {
+        max-width: 294px !important;
+      }
     }
 
-    [style="margin-left: -27px;"] .kanban-board {
+    .rm-block__children.rm-level-0 .kanban-board {
       max-width: 320px !important;
     }
   }

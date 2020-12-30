@@ -10,8 +10,13 @@
 .edit-mode .roam-topbar {
   box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
-.card-mode .roam-center > div,
-.edit-mode .roam-center > div {
+.card-mode .roam-body-main > div:first-child,
+.edit-mode .roam-body-main > div:first-child {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.card-mode .roam-body-main > div,
+.edit-mode .roam-body-main > div {
   padding: 0 !important;
 }
 .card-mode body,
@@ -27,14 +32,14 @@
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff !important;
   border-radius: 8px !important;
 }
-.card-mode [style="margin-left: -27px;"],
-.edit-mode [style="margin-left: -27px;"] {
+.card-mode .rm-block__children.rm-level-0,
+.edit-mode .rm-block__children.rm-level-0 {
   flex-direction: row;
   flex-flow: row;
   overflow-x: scroll;
 }
-.card-mode [style="margin-left: -27px;"] > .roam-block-container,
-.edit-mode [style="margin-left: -27px;"] > .roam-block-container,
+.card-mode .rm-block__children.rm-level-0 > .roam-block-container,
+.edit-mode .rm-block__children.rm-level-0 > .roam-block-container,
 .card-mode [style="margin-left: -20px;"] > .roam-block-container,
 .edit-mode [style="margin-left: -20px;"] > .roam-block-container {
   box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
@@ -50,8 +55,8 @@
 .edit-mode [style="margin-left: -20px;"] > .roam-block-container {
   max-width: 740px;
 }
-.card-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container,
-.edit-mode [style="margin-left: -27px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container {
+.card-mode .rm-block__children.rm-level-0 > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container,
+.edit-mode .rm-block__children.rm-level-0 > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container {
   box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06), inset -3px -3px 6px 0px #fff;
   border-radius: 8px;
   background: #f2f4f8;
@@ -59,12 +64,10 @@
   min-height: 200px;
   margin: 10px;
 }
-.card-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
-.edit-mode [style="margin-left: -27px;"] .rm-resize-img.react-resizable,
-.card-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-.edit-mode [style="margin-left: -27px;"] .hoverparent.rm-resize-img,
-.card-mode [style="margin-left: -27px;"] svg,
-.edit-mode [style="margin-left: -27px;"] svg {
+.card-mode .rm-block__children.rm-level-0 img.rm-inline-img,
+.edit-mode .rm-block__children.rm-level-0 img.rm-inline-img,
+.card-mode .rm-block__children.rm-level-0 svg,
+.edit-mode .rm-block__children.rm-level-0 svg {
   max-width: 270px !important;
 }
 .card-mode [style="margin-left: -20px;"] .rm-block-text,
@@ -83,32 +86,38 @@
 }
 span[data-link-title="{"] > span,
 span[data-link-title="}"] > span {
-  color: #DDDCDC !important;
+  color: #dddcdc !important;
 }
 code {
   margin-left: 2px;
   border: none;
-  background-image: linear-gradient(to right, #F67280, #F8B195);
+  background-image: linear-gradient(to right, #f67280, #f8b195);
 }
-button.mode-button {
-  border-radius: 8px;
-  letter-spacing: -0.5px;
-  padding: 0 30px 2px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-weight: 700;
-  background: #f2f4f8;
-  font-size: 14px;
-  color: #000;
-  height: 30px;
-  text-rendering: optimizeSpeed;
-  text-decoration: none;
-  list-style: none;
-  outline: none;
-  border: none;
-  margin-right: 8px;
+@media (max-width: 480px) {
+  /* smartphones, Android phones, landscape iPhone */
+  #mode-button-cardFlow,
+  #mode-button-cardList {
+    display: none;
+  }
 }
-button.mode-button:hover {
-  color: #808c99;
+.document-mode #mode-button-document,
+.card-mode #mode-button-cardList,
+.flow-mode #mode-button-cardFlow {
+  background: rgba(167, 182, 194, 0.3);
+}
+.document-mode .roam-block-container,
+.card-mode .roam-block-container,
+.flow-mode .roam-block-container {
+  max-width: none;
+}
+.document-mode .roam_navigator_hint,
+.card-mode .roam_navigator_hint,
+.flow-mode .roam_navigator_hint {
+  position: relative !important;
+}
+.document-mode .rm-title-display .roam_navigator_hint,
+.card-mode .rm-title-display .roam_navigator_hint,
+.flow-mode .rm-title-display .roam_navigator_hint {
+  display: inline-block;
+  margin-right: 14px;
 }
