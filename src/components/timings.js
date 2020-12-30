@@ -75,7 +75,11 @@ export default function Timings() {
     <div><span className="timing-whole"> 23:00 </span> PM</div>
     <div
       className="timing-half"
-      style="${{ width: "100vw", borderBottom: "#dadce0 1px solid" }}"
+      style="${{
+        width: "100vw",
+        borderBottom: "#dadce0 1px solid",
+        borderTop: "none",
+      }}"
     >
       23:30
     </div>

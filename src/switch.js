@@ -23,6 +23,7 @@ appendIcon("cardFlow", function () {
 appendIcon("document", function () {
   switchTo("document-mode");
 });
+const toggleCalendarMode = addCalendarTimestamp();
 const toggleFocusMode = addToggleMode({
   id: "mode-toggle-focus",
   on: "eye-on",
@@ -39,7 +40,6 @@ const toggleFocusMode = addToggleMode({
   }
 `,
 });
-const toggleCalendarMode = addCalendarTimestamp();
 
 export default function initCardifyTheme() {
   hotkeys("alt+shift+1", function (event, handler) {
@@ -56,19 +56,19 @@ export default function initCardifyTheme() {
   });
   hotkeys("alt+shift+4", function (event, handler) {
     event.preventDefault();
-    toggleFocusMode();
-  });
-  hotkeys("alt+shift+f", function (event, handler) {
-    event.preventDefault();
-    toggleFocusMode();
-  });
-  hotkeys("alt+shift+5", function (event, handler) {
-    event.preventDefault();
     toggleCalendarMode();
   });
   hotkeys("alt+shift+c", function (event, handler) {
     event.preventDefault();
     toggleCalendarMode();
+  });
+  hotkeys("alt+shift+5", function (event, handler) {
+    event.preventDefault();
+    toggleFocusMode();
+  });
+  hotkeys("alt+shift+f", function (event, handler) {
+    event.preventDefault();
+    toggleFocusMode();
   });
 
   tippy("#mode-button-cardList", {
@@ -88,13 +88,13 @@ export default function initCardifyTheme() {
     allowHTML: true,
     theme: "light-border",
   });
-  tippy("#mode-toggle-focus", {
-    content: `Focus<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-4/f)</span>`,
+  tippy("#mode-toggle-calendar", {
+    content: `Calendar<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-4/c)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
-  tippy("#mode-toggle-calendar", {
-    content: `Calendar<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-5/c)</span>`,
+  tippy("#mode-toggle-focus", {
+    content: `Focus<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-5/f)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
