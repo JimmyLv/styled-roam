@@ -11,8 +11,7 @@ export default function Timings() {
 
   React.useEffect(() => {
     tippy("#timing-dot", {
-      theme: "light",
-      arrow: false,
+      theme: "light-border",
       onShow(instance) {
         const tippyContent = instance.reference.dataset.tippyContent;
         instance.popper.hidden = !tippyContent;
