@@ -1,6 +1,7 @@
 import { html } from "htm/react";
 import React from "react";
 import tippy from "tippy.js";
+import addCalendarTimestamp from "../addCalendarTimestamp";
 import { getTimeNow } from "../utils/datetime";
 
 export default function Timings() {
@@ -9,24 +10,31 @@ export default function Timings() {
   const [marginTop, setMarginTop] = React.useState(duration[1]);
 
   React.useEffect(() => {
-    tippy("[data-tippy-content]", {
-      arrow: false,
+    tippy("#timing-dot", {
+      theme: "light-border",
+      onShow(instance) {
+        const tippyContent = instance.reference.dataset.tippyContent;
+        instance.popper.hidden = !tippyContent;
+        console.log("current time", tippyContent);
+        instance.setContent(tippyContent);
+      },
     });
 
     function refreshTimestamp() {
+      addCalendarTimestamp();
+
       const relative = getTimeNow();
-      console.log("current time", relative[0]);
       setCurrentTime(relative[0]);
       setMarginTop(relative[1]);
     }
     refreshTimestamp();
-    const interval = setInterval(refreshTimestamp, 6000);
+    const interval = setInterval(refreshTimestamp, 60000);
     return () => clearInterval(interval);
   }, []);
 
   return html`<div className="timings">
     <div className="timing-current" style="${{ marginTop: marginTop }}">
-      <span className="timing-dot" data-tippy-content=${currentTime}></span>
+      <span id="timing-dot" data-tippy-content=${currentTime}></span>
     </div>
     <div><span className="timing-whole"> 00:00 </span> AM</div>
     <div className="timing-half">00:30</div>

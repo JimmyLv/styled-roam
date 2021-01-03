@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.js --port 8080",
-    "build": "parcel build src/index.js --out-dir js"
+    "build": "parcel build src/index.js --out-dir js",
+    "deploy": "git commit -am 'updated version'"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build"
+      "pre-push": "npm run build && npm run deploy"
     }
   },
   "repository": {
