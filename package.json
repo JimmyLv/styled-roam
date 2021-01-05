@@ -10,7 +10,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run build && npm run deploy"
+      "post-commit": "npm run build && npm run deploy"
     }
   },
   "repository": {
