@@ -30,7 +30,9 @@ export default function addCalendarTimestamp() {
       if (!new RegExp(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/).test(timestamp)) {
         // fallback to default create_time
         const createTime = Number(
-          el.querySelector("[data-create-time]").dataset.createTime
+          el.querySelector("[data-create-time]") &&
+            el.querySelector("[data-create-time]").dataset &&
+            el.querySelector("[data-create-time]").dataset.createTime
         );
         timestamp = dayjs(createTime).format().substring(11, 16);
         console.log(
