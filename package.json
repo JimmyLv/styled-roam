@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.js --port 8080",
+    "prebuild": "rm -rf dist",
     "build": "parcel build src/index.js --out-dir dist/js",
     "deploy": "gh-pages -d dist"
   },
