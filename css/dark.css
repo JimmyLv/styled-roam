@@ -62,18 +62,18 @@
     padding-left: calc(0.5 * (100% - 820px)) !important;
   }
 
-  .roam-topbar {
+  .rm-topbar {
     background: var(--main-background-color) !important;
     border-bottom: none !important;
   }
 
-  .roam-topbar input#find-or-create-input {
+  .rm-topbar input#find-or-create-input {
     box-shadow: none !important;
     border: 1px solid var(--border-color) !important;
   }
 
   .roam-body,
-  .roam-topbar,
+  .rm-topbar,
   #right-sidebar,
   .roam-sidebar-container {
     background: var(--main-background-color) !important;

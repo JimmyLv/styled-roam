@@ -1,6 +1,6 @@
 export function createSpacer() {
   const spacer = document.createElement('div')
-  spacer.setAttribute('style', 'flex: 0 0 3px')
+  spacer.className = `rm-topbar__spacer-sm`
   return spacer
 }
 
@@ -17,28 +17,11 @@ export function appendIcon(type, clickHandler) {
   icon.className = `bp3-button bp3-minimal bp3-small ${mode.icon} mode-button`
   icon.setAttribute('style', 'position:relative;left:2px')
   icon.onclick = clickHandler
-  document.querySelector('.roam-topbar .flex-h-box').appendChild(icon)
+  document.querySelector('.rm-topbar').appendChild(icon)
 
   const spacer = createSpacer()
-  document.querySelector('.roam-topbar .flex-h-box').appendChild(spacer)
+  document.querySelector('.rm-topbar').appendChild(spacer)
 }
-
-const appendButton = function (type, clickHandler) {
-  const mode = MODES[type];
-  const navbar = document.querySelector(".roam-topbar > .flex-h-box");
-  let hasMenuIcon = navbar.firstChild.classList.contains("bp3-icon-menu");
-  let targetElement = hasMenuIcon ? navbar.childNodes[1] : navbar.firstChild;
-
-  targetElement.style.display = "flex";
-  targetElement.style.justifyContent = "center";
-
-  const button = document.createElement("button");
-  button.name = mode.text;
-  button.className = `mode-button bp3-button bp3-minimal bp3-small ${mode.icon} ${type}`;
-  button.onclick = clickHandler;
-
-  targetElement.appendChild(button);
-};
 
 export function switchTo(mode) {
   document.querySelector('html').classList = mode

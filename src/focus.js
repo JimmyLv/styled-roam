@@ -14,7 +14,7 @@ export function addToggleMode({
   modeIcon.id = id;
   modeIcon.className = `bp3-button bp3-minimal bp3-icon-${off} bp3-small`;
 
-  var wrapper = document.querySelector(".roam-topbar .flex-h-box");
+  var wrapper = document.querySelector(".rm-topbar");
   wrapper.appendChild(modeIcon);
 
   function toggleMode() {

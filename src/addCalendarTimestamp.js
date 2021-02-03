@@ -22,7 +22,7 @@ export default function addCalendarTimestamp() {
         ".rm-level-0 > div.roam-block-container"
       ),
     ].forEach((el) => {
-      // only support 22:00, TODO: support 10:00 PM and [11:00 - 11:30]
+      // only support 22:00 and [11:00 - 11:30], TODO: add AM, PM support
       let timestamp =
         el.textContent && el.textContent.startsWith("[")
           ? el.textContent.substring(1, 6)

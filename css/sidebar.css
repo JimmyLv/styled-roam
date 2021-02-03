@@ -136,17 +136,17 @@
 }
 
 
-.roam-topbar .bp3-icon-star::before {
+.rm-topbar .bp3-icon-star::before {
   color: rgb(var(--color-primary)) !important;
   color: rgb(var(--color-secondary)) !important;
 }
 /* fix positioning problems with menu icon */
-.roam-topbar *[class*="icon-menu"]::before {
+.rm-topbar *[class*="icon-menu"]::before {
   position: absolute !important;
   top: 4px !important;
   left: 4px !important;
 }
-.roam-topbar .bp3-icon-menu-open::before {
+.rm-topbar .bp3-icon-menu-open::before {
   content: ""; /* prevent menu icon from changing on hover */
 }
 
@@ -187,7 +187,7 @@
 }
 
 
-.roam-topbar {
+.rm-topbar {
   opacity: 1 !important;
   background-color: transparent !important;
 
@@ -264,7 +264,7 @@
   top: 5px;
 }
 
-.roam-topbar > .flex-h-box {
+.rm-topbar > .flex-h-box {
   width: 50px;
   flex-direction: column;
   height: 1px !important;
@@ -275,20 +275,20 @@
   position: sticky !important;
   left: 0px;
 }
-.roam-topbar > .flex-h-box > * {
+.rm-topbar > .flex-h-box > * {
   flex: 0 0 20px !important;
   margin: auto !important;
   max-width: 20px !important;
   max-height: 20px !important;
 }
-.roam-topbar > div >.bp3-button:first-child {
+.rm-topbar > div >.bp3-button:first-child {
   align-self: start !important;
   position: fixed !important;
   left: 16px;
   top: 78px;
   z-index: 9999999 !important;
 }
-.roam-topbar > div > *:nth-child(2) {
+.rm-topbar > div > *:nth-child(2) {
   margin-top:20px !important;
 }
 
@@ -310,7 +310,7 @@
 
 /* SOME BLACKMAGIC TO GET SEARCH ICON TO FUNCTION LIKE OTHER BUTTONS */
 
-.roam-topbar .bp3-icon-search {
+.rm-topbar .bp3-icon-search {
   padding: 4px;
   border-radius: 3px;
   margin: 0 !important;
@@ -321,13 +321,13 @@
 /* hovering search bar in this mode == hovering icon itself */
 /* we must however have the search bar in front of the icon (but invisible) so that it can focus on click */
 /* very hacky :P */
-.rm-find-or-create-wrapper[style*="200px"]:hover .bp3-icon-search, .roam-topbar .bp3-icon-search:hover {
+.rm-find-or-create-wrapper[style*="200px"]:hover .bp3-icon-search, .rm-topbar .bp3-icon-search:hover {
   background-color: rgba(var(--color-primary), 0.4);
   color: var(--text-color) !important;
 }
-.roam-topbar .bp3-icon-search svg { padding: 1px; }
+.rm-topbar .bp3-icon-search svg { padding: 1px; }
 /* fix centering on calendar icon */
-.roam-topbar .bp3-icon-calendar { margin: 0 !important }
+.rm-topbar .bp3-icon-calendar { margin: 0 !important }
 
 .rm-find-or-create-wrapper {
   width: 20px !important;

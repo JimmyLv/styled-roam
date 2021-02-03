@@ -6,8 +6,8 @@
   /* Hover iFrame */
   /* After Zoom In */
 }
-.card-mode .roam-topbar,
-.edit-mode .roam-topbar {
+.card-mode .rm-topbar,
+.edit-mode .rm-topbar {
   box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
 }
 .card-mode .roam-body-main > div:first-child,
