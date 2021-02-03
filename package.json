@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.js --port 8080",
-    "build": "parcel build src/index.js --out-dir js",
-    "deploy": "git commit -am 'updated version'"
+    "build": "parcel build src/index.js --out-dir dist/js",
+    "deploy": "gh-pages -d dist"
   },
   "husky": {
     "hooks": {
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "dayjs": "^1.9.8",
+    "gh-pages": "^3.1.0",
     "hotkeys-js": "^3.8.1",
     "htm": "^3.0.4",
     "react": "17.0.1",
