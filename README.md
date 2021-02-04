@@ -11,7 +11,7 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 
 ```js
 const CARD_MODE_VERSION = "gh-pages";
-window.URLScriptServer = `https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@${CARD_MODE_VERSION}/`;
+window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
 
 var s = document.createElement("script");
 s.type = "text/javascript";
