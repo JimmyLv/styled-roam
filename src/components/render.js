@@ -9,5 +9,5 @@ export function renderReact() {
     document.createElement("timings-root");
   document.querySelector(".flex-v-box.roam-log-container").prepend(root);
 
-  ReactDOM.render(html` <${Timings} /> `, root);
+  ReactDOM.render(html`<${Timings} />`, root);
 }

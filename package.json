@@ -35,8 +35,10 @@
     "gh-pages": "^3.1.0",
     "hotkeys-js": "^3.8.1",
     "htm": "^3.0.4",
+    "html2canvas": "^1.0.0-rc.7",
     "react": "17.0.1",
     "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
     "tippy.js": "^6.2.7"
   }
 }

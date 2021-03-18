@@ -1,4 +1,5 @@
 import initCardifyTheme from "./switch";
+import  './css/index.less';
 
 setTimeout(() => {
   initCardifyTheme();

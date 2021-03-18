@@ -1,9 +1,9 @@
 import hotkeys from "hotkeys-js";
+import { html } from "htm/react";
+import html2canvas from "html2canvas";
 import tippy from "tippy.js";
 import toggleCalendarTimestamp from "./calendar";
-import "./css/card.less";
-import "./css/gingko.less";
-import "./css/calendar.less";
+import { ShareMemex } from "./components/ShareMemex";
 import { addToggleMode } from "./focus";
 import { appendIcon, switchTo } from "./utils/helper";
 
@@ -22,6 +22,52 @@ appendIcon("cardFlow", function () {
 });
 appendIcon("document", function () {
   switchTo("document-mode");
+});
+appendIcon("download", function () {
+  const existing = document.getElementById("share-card");
+  if (!existing) {
+    const element = document.createElement("div");
+    element.id = "share-card";
+    document.querySelector(".bp3-portal").appendChild(element);
+  }
+  ReactDOM.render(
+    html`<${ShareMemex} />`,
+    document.getElementById("share-card")
+  );
+
+  const node = document.querySelector(".share-memex-container .card");
+  const memo = { slug: "jimmylv" };
+  // 制作图片中，请稍等...
+  html2canvas(node, {
+    logging: false,
+    scale: 3,
+    useCORS: true,
+    letterRendering: true,
+  }).then(function (canvas) {
+    const replaceAsImage = function (imgUrl) {
+      var shareImage = document.querySelector("img.share-card");
+      shareImage.src = imgUrl;
+    };
+    const downloadImage = function (imageUrl, filename) {
+      var anchorElement = document.createElement("a");
+      anchorElement.href = imageUrl;
+      anchorElement.download = filename;
+      var event = document.createEvent("MouseEvents");
+      event.initEvent("click", true, true);
+      anchorElement.dispatchEvent(event);
+    };
+    const height = canvas.height;
+    const width = canvas.width;
+    const imageSrc = canvas.toDataURL("image/png", 1);
+
+    const image = new Image();
+    image.src = imageSrc;
+    image.width = width;
+    image.height = height;
+    image.crossOrigin = "Anonymous";
+    replaceAsImage(image.src);
+    downloadImage(imageSrc, memo.slug + ".png");
+  });
 });
 const toggleCalendarMode = toggleCalendarTimestamp();
 const toggleFocusMode = addToggleMode({

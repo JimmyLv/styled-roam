@@ -2,7 +2,6 @@ import addCalendarTimestamp from "./addCalendarTimestamp";
 import { renderReact } from "./components/render";
 import { addToggleMode } from "./focus";
 import { switchTo } from "./utils/helper";
-import "./css/timings.less";
 
 export default function toggleCalendarTimestamp() {
   function turnOn() {
