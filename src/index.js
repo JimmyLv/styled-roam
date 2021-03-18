@@ -1,5 +1,8 @@
 import initCardifyTheme from "./switch";
-import  './css/index.less';
+import "./css/card.less";
+import "./css/gingko.less";
+import "./css/calendar.less";
+import "./css/share.less";
 
 setTimeout(() => {
   initCardifyTheme();

@@ -3,6 +3,7 @@ import React from "react";
 import tippy from "tippy.js";
 import addCalendarTimestamp from "../addCalendarTimestamp";
 import { getTimeNow } from "../utils/datetime";
+import "../css/timings.less";
 
 export default function Timings() {
   const duration = getTimeNow();

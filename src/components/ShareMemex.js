@@ -63,7 +63,7 @@ export const ShareMemex = ({ usageDays, blocksNum, onClose, onSave }) => {
               class="bp3-button bp3-intent-primary"
               onClick=${onSave}
             >
-              Save
+              Save Again
             </button>
           </div>
         </div>

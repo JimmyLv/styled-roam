@@ -7,7 +7,7 @@ import { addToggleMode } from "./focus";
 import { daysBetween } from "./utils/datetime";
 import { appendIcon, switchTo } from "./utils/helper";
 import { queryMinDate, queryNonCodeBlocks } from "./utils/queries";
-import { createMenuOption } from "./utils/roam-utils";
+import { initMenuOption } from "./utils/roam-utils";
 import { downloadImage, shareImage } from "./utils/share-image";
 
 const initialMode = localStorage.getItem("INIT_MODE") || "document";
@@ -50,7 +50,7 @@ appendIcon("download", async function () {
   );
 
   const imageSrc = await shareImage(memo);
-  createMenuOption("Share Card", shareImage);
+  // TODO: initMenuOption()
 });
 const toggleCalendarMode = toggleCalendarTimestamp();
 const toggleFocusMode = addToggleMode({
