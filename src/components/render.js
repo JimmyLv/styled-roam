@@ -1,7 +1,7 @@
 import { html } from "htm/react";
 import React from "react";
 import ReactDOM from "react-dom";
-import Timings from "./timings";
+import Timings from "./Timings";
 
 export function renderReact() {
   const root =

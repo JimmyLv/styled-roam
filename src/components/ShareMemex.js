@@ -1,13 +1,13 @@
 import { html } from "htm/react";
 import React from "react";
 
-export const ShareMemex = (props) => {
+export const ShareMemex = ({ usageDays, blocksNum }) => {
   return html`
     <div class="bp3-dialog-container share-memex-container">
       <div class="bp3-dialog">
         <div class="bp3-dialog-header">
-          <span class="bp3-icon-large bp3-icon-inbox"></span>
-          <h4 class="bp3-heading">Generate Shared Card Image</h4>
+          <span class="bp3-icon-large bp3-icon-media"></span>
+          <h4 class="bp3-heading">Share Zettel Image</h4>
           <button
             aria-label="Close"
             class="bp3-dialog-close-button bp3-button bp3-minimal bp3-icon-cross"
@@ -15,7 +15,7 @@ export const ShareMemex = (props) => {
         </div>
         <div class="bp3-dialog-body">
           <div class="tips">
-            <p>Long press or right click to save the picture when finished...</p>
+            <p>Long press or right click to save the image when finished...</p>
           </div>
           <div class="card">
             <div class="memo">
@@ -44,8 +44,8 @@ export const ShareMemex = (props) => {
             </div>
             <div class="footer">
               <div class="stat">
-                <span>34684 BLOCKS · </span>
-                <span>384 DAYS</span>
+                <span>${blocksNum} BLOCKS · </span>
+                <span>${usageDays} DAYS</span>
               </div>
               <div class="author">via JimmyLv</div>
             </div>
@@ -56,7 +56,7 @@ export const ShareMemex = (props) => {
           <div class="bp3-dialog-footer-actions">
             <button type="button" class="bp3-button">Close</button>
             <button type="submit" class="bp3-button bp3-intent-primary">
-              Save Card
+              Save
             </button>
           </div>
         </div>
