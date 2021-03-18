@@ -8,7 +8,7 @@ import { daysBetween } from "./utils/datetime";
 import { appendIcon, switchTo } from "./utils/helper";
 import { queryMinDate, queryNonCodeBlocks } from "./utils/queries";
 import { createMenuOption } from "./utils/roam-utils";
-import { shareImage } from "./utils/share-image";
+import { downloadImage, shareImage } from "./utils/share-image";
 
 const initialMode = localStorage.getItem("INIT_MODE") || "document";
 document.querySelector("html").classList.add(initialMode);
@@ -36,13 +36,21 @@ appendIcon("download", async function () {
   const min_date = await roamAlphaAPI.q(queryMinDate);
   const usageDays = daysBetween(new Date(), new Date(min_date));
   const blocksNum = await roamAlphaAPI.q(queryNonCodeBlocks);
-  shareImage()
-  createMenuOption("Share Card", shareImage);
 
+  const memo = { slug: "jimmylv" };
   ReactDOM.render(
-    html`<${ShareMemex} usageDays=${usageDays} blocksNum=${blocksNum} />`,
+    html`<${ShareMemex}
+      usageDays=${usageDays}
+      blocksNum=${blocksNum}
+      onSave=${() => downloadImage(imageSrc, memo.slug + ".png")}
+      onClose=${() =>
+        ReactDOM.unmountComponentAtNode(document.getElementById("share-card"))}
+    />`,
     document.getElementById("share-card")
   );
+
+  const imageSrc = await shareImage(memo);
+  createMenuOption("Share Card", shareImage);
 });
 const toggleCalendarMode = toggleCalendarTimestamp();
 const toggleFocusMode = addToggleMode({

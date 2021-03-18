@@ -1,7 +1,7 @@
 import { html } from "htm/react";
 import React from "react";
 
-export const ShareMemex = ({ usageDays, blocksNum }) => {
+export const ShareMemex = ({ usageDays, blocksNum, onClose, onSave }) => {
   return html`
     <div class="bp3-dialog-container share-memex-container">
       <div class="bp3-dialog">
@@ -11,6 +11,7 @@ export const ShareMemex = ({ usageDays, blocksNum }) => {
           <button
             aria-label="Close"
             class="bp3-dialog-close-button bp3-button bp3-minimal bp3-icon-cross"
+            onClick=${onClose}
           ></button>
         </div>
         <div class="bp3-dialog-body">
@@ -54,8 +55,14 @@ export const ShareMemex = ({ usageDays, blocksNum }) => {
         </div>
         <div class="bp3-dialog-footer">
           <div class="bp3-dialog-footer-actions">
-            <button type="button" class="bp3-button">Close</button>
-            <button type="submit" class="bp3-button bp3-intent-primary">
+            <button type="button" class="bp3-button" onClick=${onClose}>
+              Close
+            </button>
+            <button
+              type="submit"
+              class="bp3-button bp3-intent-primary"
+              onClick=${onSave}
+            >
               Save
             </button>
           </div>
