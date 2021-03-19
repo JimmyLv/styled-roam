@@ -102,5 +102,10 @@ export default function initCardifyTheme() {
     allowHTML: true,
     theme: "light-border",
   });
+  tippy("#mode-button-download", {
+    content: `Share Card<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-d)</span>`,
+    allowHTML: true,
+    theme: "light-border",
+  });
   console.log("started styled-roam");
 }

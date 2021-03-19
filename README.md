@@ -13,11 +13,11 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 const CARD_MODE_VERSION = "gh-pages";
 window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
 
-const existing = document.getElementById("styled-roam");
+var existing = document.getElementById("styled-roam");
 if (!existing) {
-  const extension = document.createElement("script");
+  var extension = document.createElement("script");
   extension.src = window.URLScriptServer + "js/index.js";
-  extension.id = "timeline";
+  extension.id = "styled-roam";
   extension.async = true;
   extension.type = "text/javascript";
   document.getElementsByTagName("head")[0].appendChild(extension);
