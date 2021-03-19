@@ -13,11 +13,15 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 const CARD_MODE_VERSION = "gh-pages";
 window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
 
-const s = document.createElement("script");
-s.type = "text/javascript";
-s.src = window.URLScriptServer + "js/index.js";
-s.async = true;
-document.getElementsByTagName("head")[0].appendChild(s);
+const existing = document.getElementById("styled-roam");
+if (!existing) {
+  const extension = document.createElement("script");
+  extension.src = window.URLScriptServer + "js/index.js";
+  extension.id = "timeline";
+  extension.async = true;
+  extension.type = "text/javascript";
+  document.getElementsByTagName("head")[0].appendChild(extension);
+}
 ```
 
 3. Press the BIG RED button (also works with [roam42](https://github.com/roamhacker/roam42), so you can just put them together)
