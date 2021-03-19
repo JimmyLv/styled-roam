@@ -55,7 +55,7 @@ export const shareAndDownloadImage = async function () {
   const blocksNum = await roamAlphaAPI.q(queryNonCodeBlocks);
   const activeBlock = queryCurrentActiveBlockUID();
   const blockInfo = await getBlockInfoByUID(activeBlock.uid);
-  console.log("blockInfo", activeBlock, blockInfo);
+  // console.log("blockInfo", activeBlock, blockInfo);
   // active element going to the 'download' button
 
   const memo = { ...activeBlock, ...blockInfo };
