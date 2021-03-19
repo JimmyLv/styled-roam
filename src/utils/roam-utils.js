@@ -30,9 +30,9 @@ export const initMenuOption = () => {
     if (!blockElementSelected) {
       return;
     }
-    const memo = { slug: "jimmylv" };
+    const memo = { uid: "jimmylv" };
     const imageSrc = await shareImage(memo);
-    downloadImage(imageSrc, memo.slug + ".png");
+    downloadImage(imageSrc, memo);
   };
 
   const option = createMenuOption("Share Image", optionCallback);

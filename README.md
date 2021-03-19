@@ -13,7 +13,7 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 const CARD_MODE_VERSION = "gh-pages";
 window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
 
-var s = document.createElement("script");
+const s = document.createElement("script");
 s.type = "text/javascript";
 s.src = window.URLScriptServer + "js/index.js";
 s.async = true;
@@ -31,7 +31,7 @@ document.getElementsByTagName("head")[0].appendChild(s);
 
 ![Roam Research 卡片式写作 Candy 主题](https://cdn.jsdelivr.net/gh/jimmylv/images@master/2020/09/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C%20Candy%20%E4%B8%BB%E9%A2%98.jpg)
 
-Related Twitter: 
+Related Twitter:
 
 - https://twitter.com/Jimmy_JingLv/status/1304451043594387456?s=20
 - https://twitter.com/Jimmy_JingLv/status/1343897637255143424?s=20

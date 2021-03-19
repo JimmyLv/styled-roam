@@ -1,14 +1,9 @@
-import hotkeys from "hotkeys-js";
-import { html } from "htm/react";
-import tippy from "tippy.js";
-import toggleCalendarTimestamp from "./calendar";
-import { ShareMemex } from "./components/ShareMemex";
-import { addToggleMode } from "./focus";
-import { daysBetween } from "./utils/datetime";
-import { appendIcon, switchTo } from "./utils/helper";
-import { queryMinDate, queryNonCodeBlocks } from "./utils/queries";
-import { initMenuOption } from "./utils/roam-utils";
-import { downloadImage, shareImage } from "./utils/share-image";
+import hotkeys from 'hotkeys-js'
+import tippy from 'tippy.js'
+import toggleCalendarTimestamp from './calendar'
+import { addToggleMode } from './focus'
+import { appendIcon, switchTo } from './utils/helper'
+import { shareAndDownloadImage } from './utils/share-image'
 
 const initialMode = localStorage.getItem("INIT_MODE") || "document";
 document.querySelector("html").classList.add(initialMode);
@@ -26,32 +21,8 @@ appendIcon("cardFlow", function () {
 appendIcon("document", function () {
   switchTo("document-mode");
 });
-appendIcon("download", async function () {
-  const existing = document.getElementById("share-card");
-  if (!existing) {
-    const element = document.createElement("div");
-    element.id = "share-card";
-    document.querySelector(".bp3-portal").appendChild(element);
-  }
-  const min_date = await roamAlphaAPI.q(queryMinDate);
-  const usageDays = daysBetween(new Date(), new Date(min_date));
-  const blocksNum = await roamAlphaAPI.q(queryNonCodeBlocks);
+appendIcon("download", shareAndDownloadImage);
 
-  const memo = { slug: "jimmylv" };
-  ReactDOM.render(
-    html`<${ShareMemex}
-      usageDays=${usageDays}
-      blocksNum=${blocksNum}
-      onSave=${() => downloadImage(imageSrc, memo.slug + ".png")}
-      onClose=${() =>
-        ReactDOM.unmountComponentAtNode(document.getElementById("share-card"))}
-    />`,
-    document.getElementById("share-card")
-  );
-
-  const imageSrc = await shareImage(memo);
-  // TODO: initMenuOption()
-});
 const toggleCalendarMode = toggleCalendarTimestamp();
 const toggleFocusMode = addToggleMode({
   id: "mode-toggle-focus",
@@ -98,6 +69,10 @@ export default function initCardifyTheme() {
   hotkeys("alt+shift+f", function (event, handler) {
     event.preventDefault();
     toggleFocusMode();
+  });
+  hotkeys("alt+shift+d", async function (event, handler) {
+    event.preventDefault();
+    await shareAndDownloadImage();
   });
 
   tippy("#mode-button-cardList", {
