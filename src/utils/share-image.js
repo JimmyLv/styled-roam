@@ -48,7 +48,7 @@ export async function shareImage(memo) {
   // replaceAsImage(imageSrc);
   downloadImage(imageSrc, memo);
   // reset header and footer
-  reset();
+  // reset();
   return imageSrc;
 }
 
@@ -63,12 +63,18 @@ export const shareAndDownloadImage = async function () {
   const usageDays = daysBetween(new Date(), new Date(min_date));
   const blocksNum = await roamAlphaAPI.q(queryNonCodeBlocks);
 
-  const currentBlock = document.querySelector(
+  const currentZoomContainer = document.querySelector(
+    '[style="margin-left: -20px;"]'
+  );
+  const currentHighlightBlock = document.querySelector(
     ".roam-toolkit-block-mode--highlight"
   );
+
   // block-highlight-blue rm-block__self rm-block__input
-  if (currentBlock) {
-    const blockContainer = currentBlock.parentElement?.parentElement;
+  if (currentZoomContainer || currentHighlightBlock) {
+    const blockContainer = currentZoomContainer
+      ? currentZoomContainer
+      : currentHighlightBlock.parentElement?.parentElement;
     blockContainer.classList.add("share-memex-container");
 
     const header = document.createElement("div");
@@ -79,7 +85,12 @@ export const shareAndDownloadImage = async function () {
     footer.id = "share-card-footer";
     blockContainer.appendChild(footer);
 
-    const activeBlock = queryCurrentActiveBlockUID(currentBlock);
+    const activeBlock = queryCurrentActiveBlockUID(
+      currentZoomContainer
+        ? currentZoomContainer.querySelector(".rm-block__self .rm-block-text")
+        : currentHighlightBlock,
+      blockContainer
+    );
     const blockInfo = await getBlockInfoByUID(activeBlock.uid);
     // console.log("blockInfo", activeBlock, blockInfo);
     // active element going to the 'download' button

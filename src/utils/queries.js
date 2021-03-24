@@ -18,11 +18,9 @@ export const queryMinDate =
 export const queryMinDateBlock = (min_date) =>
   `[:find (pull ?e [*]) :where [?e :node/title ?name] [?e :create/time ${min_date}]]`;
 
-export const queryCurrentActiveBlockUID = (blockElement) => {
+export const queryCurrentActiveBlockUID = (blockElement, blockContainer) => {
   // if (document.activeElement.localName == "textarea")
   //   return document.activeElement.id.slice(-9);
-
-  const blockContainer = blockElement.parentElement?.parentElement;
   return {
     uid: blockElement.id.slice(-9),
     username: document
