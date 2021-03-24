@@ -18,26 +18,18 @@ export const queryMinDate =
 export const queryMinDateBlock = (min_date) =>
   `[:find (pull ?e [*]) :where [?e :node/title ?name] [?e :create/time ${min_date}]]`;
 
-export const queryCurrentActiveBlockUID = () => {
+export const queryCurrentActiveBlockUID = (blockElement) => {
   // if (document.activeElement.localName == "textarea")
   //   return document.activeElement.id.slice(-9);
-  const currentBlock = document.querySelector(
-    ".roam-toolkit-block-mode--highlight"
-  );
-  if (currentBlock) {
-    return {
-      uid: currentBlock.id.slice(-9),
-      username: document
-        .querySelector("[data-edit-display-name]")
-        ?.getAttribute("data-edit-display-name"),
-      tags:
-        JSON.parse(
-          currentBlock.parentElement?.parentElement?.getAttribute(
-            "data-page-links"
-          )
-        ) || [],
-    };
-  } else return null;
+
+  const blockContainer = blockElement.parentElement?.parentElement;
+  return {
+    uid: blockElement.id.slice(-9),
+    username: document
+      .querySelector("[data-edit-display-name]")
+      ?.getAttribute("data-edit-display-name"),
+    tags: JSON.parse(blockContainer?.getAttribute("data-page-links")) || [],
+  };
 };
 
 export const getBlockInfoByUID = async (

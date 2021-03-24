@@ -1,6 +1,39 @@
 import { html } from "htm/react";
 import React from "react";
 
+export function Footer({ blocksNum, usageDays, block }) {
+  return (
+    <>
+      <div className="footer">
+        <div className="stat">
+          <span>{blocksNum} BLOCKS · </span>
+          <span>{usageDays} DAYS</span>
+        </div>
+        <div className="author">
+          <span className="at">𐃏</span>
+          <span>{block.username}</span>
+        </div>
+      </div>
+      <img src="" className="share-card" />
+    </>
+  );
+}
+
+export function Header({ block }) {
+  return (
+    <div className="memo">
+      <div className="time">{new Date(block.time).toLocaleString()}</div>
+      <div className="content">
+        <p>{block.string}</p>
+        <p />
+        <p>
+          <span className="tag">{"#" + block.tags.join("# ")}</span>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export const ShareMemex = ({
   block,
   usageDays,
@@ -25,24 +58,12 @@ export const ShareMemex = ({
             <p>Please waiting for the image to be generated...</p>
           </div>
           <div class="card">
-            <div class="memo">
-              <div class="time">${new Date(block.time).toLocaleString()}</div>
-              <div class="content">
-                <p>${block.string}</p>
-                <p></p>
-                <p>
-                  <span class="tag">${"#" + block.tags.join("# ")}</span>
-                </p>
-              </div>
-            </div>
-            <div class="footer">
-              <div class="stat">
-                <span>${blocksNum} BLOCKS · </span>
-                <span>${usageDays} DAYS</span>
-              </div>
-              <div class="author">via ${block.username}</div>
-            </div>
-            <img src="" class="share-card" />
+            <${Header} block=${block} />
+            <${Footer}
+              blocksNum=${blocksNum}
+              usageDays=${usageDays}
+              block=${block}
+            />
           </div>
         </div>
         <div class="bp3-dialog-footer">

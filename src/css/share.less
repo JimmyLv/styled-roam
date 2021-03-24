@@ -1,4 +1,36 @@
 .share-memex-container {
+  width: 600px;
+  .rm-block-main,
+  .rm-block-children {
+    margin-right: 20px;
+    .rm-block-separator {
+      display: none;
+    }
+  }
+  #share-card-header {
+    width: 100%;
+    margin-left: 40px;
+    .memo {
+      background-color: #fff;
+      padding-top: 30px;
+      padding-bottom: 15px;
+    }
+    .content {
+      display: none;
+    }
+  }
+
+  #share-card-footer {
+    width: 100%;
+    padding-left: 10px;
+    background-color: #f8f8f8;
+
+    img {
+      display: none;
+      width: 100%;
+    }
+  }
+
   .tips {
     margin: 0 20px 10px;
 
@@ -81,6 +113,10 @@
   .footer .author {
     font-size: 14px;
     color: #9d9d9d;
+    .at {
+      font-size: 12px;
+      margin-right: 2px;
+    }
   }
   .button {
     text-align: center;
