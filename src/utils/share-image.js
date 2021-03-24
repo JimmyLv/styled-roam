@@ -48,7 +48,7 @@ export async function shareImage(memo) {
   // replaceAsImage(imageSrc);
   downloadImage(imageSrc, memo);
   // reset header and footer
-  // reset();
+  reset();
   return imageSrc;
 }
 
