@@ -11,7 +11,7 @@ export function Footer({ blocksNum, usageDays, block }) {
         </div>
         <div className="author">
           <span className="at">𐃏</span>
-          <span>{block.username}</span>
+          <span className="username">{block.username}</span>
         </div>
       </div>
       <img src="" className="share-card" />
