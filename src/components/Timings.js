@@ -26,7 +26,8 @@ export default function Timings() {
 
       const relative = getTimeNow();
       setCurrentTime(relative[0]);
-      setMarginTop(relative[1]);
+      // start from 6:00 AM, each half time 30px/30mins
+      setMarginTop(relative[1] - 360);
     }
     refreshTimestamp();
     const interval = setInterval(refreshTimestamp, 60000);
@@ -37,18 +38,6 @@ export default function Timings() {
     <div className="timing-current" style="${{ marginTop: marginTop }}">
       <span id="timing-dot" data-tippy-content=${currentTime}></span>
     </div>
-    <div><span className="timing-whole"> 00:00 </span> AM</div>
-    <div className="timing-half">00:30</div>
-    <div><span className="timing-whole"> 01:00 </span> AM</div>
-    <div className="timing-half">01:30</div>
-    <div><span className="timing-whole"> 02:00 </span> AM</div>
-    <div className="timing-half">02:30</div>
-    <div><span className="timing-whole"> 03:00 </span> AM</div>
-    <div className="timing-half">03:30</div>
-    <div><span className="timing-whole"> 04:00 </span> AM</div>
-    <div className="timing-half">04:30</div>
-    <div><span className="timing-whole"> 05:00 </span> AM</div>
-    <div className="timing-half">05:30</div>
     <div><span className="timing-whole"> 06:00 </span> AM</div>
     <div className="timing-half">06:30</div>
     <div><span className="timing-whole"> 07:00 </span> AM</div>
@@ -84,6 +73,20 @@ export default function Timings() {
     <div><span className="timing-whole"> 22:00 </span> PM</div>
     <div className="timing-half">22:30</div>
     <div><span className="timing-whole"> 23:00 </span> PM</div>
+    <div className="timing-half">23:30</div>
+    <div style="border-top: 1px solid;">
+      <span className="timing-whole"> 00:00 </span> AM
+    </div>
+    <div className="timing-half">00:30</div>
+    <div><span className="timing-whole"> 01:00 </span> AM</div>
+    <div className="timing-half">01:30</div>
+    <div><span className="timing-whole"> 02:00 </span> AM</div>
+    <div className="timing-half">02:30</div>
+    <div><span className="timing-whole"> 03:00 </span> AM</div>
+    <div className="timing-half">03:30</div>
+    <div><span className="timing-whole"> 04:00 </span> AM</div>
+    <div className="timing-half">04:30</div>
+    <div><span className="timing-whole"> 05:00 </span> AM</div>
     <div
       className="timing-half"
       style="${{
@@ -92,7 +95,7 @@ export default function Timings() {
         borderTop: "none",
       }}"
     >
-      23:30
+      05:30
     </div>
   </div> `;
 }

@@ -49,11 +49,12 @@ export default function addCalendarTimestamp() {
         dayjs(`${currentDay} ${prevTimestamp}`),
         "minute"
       );
-      console.log("duration", duration);
+      console.log(`duration between ${prevTimestamp}~${timestamp}`, duration);
       const selfHeight = el.clientHeight;
       // const marginTop =
       //   duration - prevHeight >= 0 ? duration - prevHeight : 0;
-      const durationTop = getDuration(timestamp);
+      // start from 6:00 AM, each half time 30px/30mins
+      const durationTop = getDuration(timestamp) - 360;
       el.style.top = `${durationTop}px`;
       if (duration - prevHeight < 0) {
         el.style.width = "50%";

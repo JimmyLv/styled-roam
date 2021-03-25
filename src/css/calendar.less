@@ -28,7 +28,7 @@
 .calendar-mode {
   #rm-log-container {
     [style="margin-top: 24px;"] {
-      margin-top: 1440px !important;
+      margin-top: 1442px !important;
     }
     .rm-title-display {
       margin-bottom: 0;
@@ -58,6 +58,23 @@
     .rm-focused {
       z-index: 2;
     }
+    .controls,
+    .rm-block__controls {
+      z-index: 2;
+    }
+  }
+}
+
+.simple-calendar-mode {
+  #rm-log-container {
+    .rm-level-0 > .rm-multibar {
+      opacity: 1;
+    }
+    .roam-log-container {
+      div.roam-log-page {
+        border-right: 0;
+      }
+    }
   }
 }
 
@@ -77,7 +94,6 @@
     }
   }
 }
-
 
 .simple-calendar-mode,
 .calendar-mode,
