@@ -25,7 +25,6 @@ if (!existing) {
 ```
 
 3. Press the BIG RED button (also works with [roam42](https://github.com/roamhacker/roam42), so you can just put them together)
-4. Change the `CARD_MODE_VERSION` value from `dev` to the latest Git commit hash (e.g. `96a6c658`) whenever you're ready to upgrade
 
 ![Roam Research Calendar View switch-0001](https://raw.staticdn.net/JimmyLv/images/master/2021/Roam%20Research%20switch-0001.jpg)
 
