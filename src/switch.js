@@ -10,8 +10,8 @@ document.querySelector("html").classList.add(initialMode);
 
 const switchToCardList = function () {
   switchTo("card-mode");
-  document.querySelector(".zoom-path-view.rm-zoom") &&
-    document.querySelector(".zoom-path-view.rm-zoom").firstChild.click();
+  /*document.querySelector(".zoom-path-view.rm-zoom") &&
+    document.querySelector(".zoom-path-view.rm-zoom").firstChild.click();*/
 };
 
 appendIcon("cardList", switchToCardList);
