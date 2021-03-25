@@ -29,10 +29,14 @@ const toggleFocusMode = addToggleMode({
   on: "eye-on",
   off: "eye-open",
   styleContent: `
-	.roam-block-container div[id]{
+	.roam-block-container div[id], 
+	.rm-topbar, 
+	.cyxy-function {
   		opacity: 0.2;
     }
-	.roam-block-container div[id]:hover{
+	.roam-block-container div[id]:hover, 
+	.rm-topbar:hover, 
+	.cyxy-function:hover {
  	 	opacity: 1;
 	}
   .roam-toolkit-block-mode--highlight {
