@@ -78,6 +78,10 @@ export default function initCardifyTheme() {
     event.preventDefault();
     await shareAndDownloadImage();
   });
+  hotkeys("alt+shift+u", async function (event, handler) {
+    event.preventDefault();
+    document.querySelector('#unlink-finder-icon').click()
+  });
 
   tippy("#mode-button-cardList", {
     content: `Card List<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-1)</span>`,
@@ -108,6 +112,11 @@ export default function initCardifyTheme() {
   });
   tippy("#mode-button-download", {
     content: `Share Card<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-d)</span>`,
+    allowHTML: true,
+    theme: "light-border",
+  });
+  tippy("#unlink-finder-icon", {
+    content: `Find Unlink<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-u)</span>`,
     allowHTML: true,
     theme: "light-border",
   });
