@@ -1,5 +1,6 @@
-import { html } from "htm/react";
-import React from "react";
+import { html } from 'htm/react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 export function Footer({ blocksNum, usageDays, block }) {
   return (
@@ -84,3 +85,14 @@ export const ShareMemex = ({
     </div>
   `;
 };
+
+export function renderFooter(blocksNum, usageDays, memo) {
+  ReactDOM.render(
+    html`<${Footer} blocksNum=${blocksNum} usageDays=${usageDays} block=${memo} />`,
+    document.getElementById('share-card-footer'),
+  );
+}
+
+export function renderHeader(memo) {
+  ReactDOM.render(html`<${Header} block=${memo} />`, document.getElementById('share-card-header'));
+}

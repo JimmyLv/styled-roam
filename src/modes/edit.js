@@ -1,4 +1,4 @@
-import { switchTo } from "./utils/helper";
+import { switchTo } from "../utils/dom-helper";
 
 export const switchToEditCard = function () {
   switchTo("edit-mode");

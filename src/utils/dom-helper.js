@@ -1,14 +1,9 @@
+import { MODES } from '../modes'
+
 export function createSpacer() {
   const spacer = document.createElement('div')
   spacer.className = `rm-topbar__spacer-sm`
   return spacer
-}
-
-const MODES = {
-  cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart' },
-  cardFlow: { text: 'Card Flow', icon: 'bp3-icon-heat-grid' },
-  document: { text: 'Document', icon: 'bp3-icon-horizontal-bar-chart' },
-  download: { text: 'Download', icon: 'bp3-icon-download' },
 }
 
 export function appendIcon(type, clickHandler) {
@@ -28,7 +23,8 @@ export function switchTo(mode) {
   console.log(`🎨 switch styled-roam to ${mode} mode.`)
   const classList = document.querySelector('html').classList
   const previousMode = localStorage.getItem('INIT_MODE') || 'document'
-  classList.toggle(previousMode).toggle(mode)
+  classList.toggle(previousMode)
+  classList.toggle(mode)
   localStorage.setItem('INIT_MODE', mode)
 }
 
@@ -37,4 +33,23 @@ export function generateStyleScript(styleContent) {
   styleScript.innerHTML = styleContent
 
   return styleScript
+}
+
+export function appendCSSToPage(tagId, cssToAdd) {
+  appendElementToPage(
+    Object.assign(document.createElement('link'), {
+      href: cssToAdd,
+      rel: 'stylesheet',
+    }),
+    tagId,
+    'text/css',
+  )
+}
+
+function appendElementToPage(element, tagId, typeT) {
+  try {
+    document.getElementById(tagId).remove()
+  } catch (e) {} //Delete any existing reference
+  Object.assign(element, { type: typeT, async: false, tagId: tagId })
+  document.getElementsByTagName('head')[0].appendChild(element)
 }

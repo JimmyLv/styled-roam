@@ -1,7 +1,8 @@
-import addCalendarTimestamp from './addCalendarTimestamp'
+import { renderTimings } from '../components/Timings'
 import addToggleMode from './addToggleMode'
-import { renderTimings } from './components/render'
-import { switchTo } from './utils/helper'
+import { switchTo } from '../utils/dom-helper'
+import addCalendarTimestamp from './addCalendarTimestamp'
+import './calendar.less'
 
 export default function toggleCalendarTimestamp() {
   function turnOn() {

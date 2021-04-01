@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { getDuration } from "./utils/datetime";
+import { getDuration } from "../utils/datetime";
 
 dayjs.extend(customParseFormat);
 

@@ -1,5 +1,5 @@
 import addToggleMode from './addToggleMode'
-import { toggleClass } from './utils/helper'
+import './focus.less'
 
 export const toggleFocusMode = addToggleMode({
   id: 'mode-toggle-focus',
