@@ -18,8 +18,8 @@
     "type": "git",
     "url": "git+https://github.com/JimmyLv/styled-roam.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Roam Research", "Roam", "Note-Taking", "React"],
+  "author": "JimmyLv",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JimmyLv/styled-roam/issues"
