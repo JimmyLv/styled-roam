@@ -1,19 +1,16 @@
-import { MODES } from '../modes'
-
 export function createSpacer() {
   const spacer = document.createElement('div')
   spacer.className = `rm-topbar__spacer-sm`
   return spacer
 }
 
-export function appendIcon(type, clickHandler) {
-  const mode = MODES[type]
-  const icon = document.createElement('div')
-  icon.id = `mode-button-${type}`
-  icon.className = `bp3-button bp3-minimal bp3-small ${mode.icon} mode-button`
-  icon.setAttribute('style', 'position:relative;left:2px')
-  icon.onclick = clickHandler
-  document.querySelector('.rm-topbar').appendChild(icon)
+export function appendIcon(mode, icon, clickHandler) {
+  const iconElement = document.createElement('div')
+  iconElement.id = `mode-button-${mode}`
+  iconElement.className = `bp3-button bp3-minimal bp3-small bp3-icon-${icon} mode-button`
+  iconElement.setAttribute('style', 'position:relative;left:2px')
+  iconElement.onclick = clickHandler
+  document.querySelector('.rm-topbar').appendChild(iconElement)
 
   const spacer = createSpacer()
   document.querySelector('.rm-topbar').appendChild(spacer)

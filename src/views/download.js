@@ -55,7 +55,7 @@ const shareAndDownloadImage = async function () {
 }
 
 export default function initDownloadMode() {
-  appendIcon('download', shareAndDownloadImage)
+  appendIcon('download', 'share', shareAndDownloadImage)
   addHotKeys({
     shortcutKeys: 's',
     modeId: '#mode-button-download',

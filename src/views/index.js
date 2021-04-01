@@ -1,10 +1,11 @@
-import initCalendarMode from './modes/calendar'
-import initCardListMode from './modes/card-list'
-import initDocumentMode from './modes/document'
-import initDownloadMode from './modes/download'
-import initCardFlowMode from './modes/card-flow'
-import initFocusMode from './modes/focus'
-import addHotKeys from './utils/hotkey'
+import initCalendarMode from './calendar'
+import initCardListMode from './card-list'
+import initDocumentMode from './document'
+import initDownloadMode from './download'
+import initCardFlowMode from './card-flow'
+import initFocusMode from './focus'
+import addHotKeys from '../utils/hotkey'
+import './index.less'
 
 const initialMode = localStorage.getItem('INIT_MODE') || 'document'
 document.querySelector('html').classList.add(initialMode)

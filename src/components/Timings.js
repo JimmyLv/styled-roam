@@ -2,7 +2,7 @@ import { html } from 'htm/react'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import tippy from 'tippy.js'
-import addCalendarTimestamp from '../modes/addCalendarTimestamp'
+import addCalendarTimestamp from '../views/addCalendarTimestamp'
 import { getTimeNow } from '../utils/datetime'
 import './Timings.less'
 

@@ -1,9 +1,9 @@
-import { appendIcon, switchTo } from '../utils/dom-helper';
-import addHotKeys from '../utils/hotkey';
+import { appendIcon, switchTo } from '../utils/dom-helper'
+import addHotKeys from '../utils/hotkey'
 import './card-flow.less'
 
 export default function initCardFlowMode() {
-  appendIcon('cardFlow', function () {
+  appendIcon('cardFlow', 'heat-grid', function () {
     switchTo('flow-mode')
   })
 

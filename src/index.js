@@ -1,4 +1,4 @@
-import initModes from './init'
+import initModes from './views'
 import { appendCSSToPage } from './utils/dom-helper'
 
 setTimeout(() => {
