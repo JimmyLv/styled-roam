@@ -10,12 +10,12 @@ const initialMode = localStorage.getItem('INIT_MODE') || 'document'
 document.querySelector('html').classList.add(initialMode)
 
 export default function initModes() {
-  initDownloadMode()
   initCardListMode()
   initCardFlowMode()
   initDocumentMode()
   initCalendarMode()
   initFocusMode()
+  initDownloadMode()
 
   addHotKeys({
     shortcutKeys: 'u',
