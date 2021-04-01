@@ -15,8 +15,8 @@ export default function initModes() {
   initCardFlowMode()
   initDocumentMode()
   initCalendarMode()
-  initFocusMode()
   initDownloadMode()
+  initFocusMode()
 
   addHotKeys({
     shortcutKeys: 'u',

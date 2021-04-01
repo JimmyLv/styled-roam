@@ -2,10 +2,10 @@ import { renderFooter, renderHeader } from '../components/ShareMemex'
 import { daysBetween } from '../utils/datetime'
 import { appendIcon } from '../utils/dom-helper'
 import addHotKeys from '../utils/hotkey'
-import { getBlockInfoByUID, queryCurrentActiveBlockUID, queryMinDate, queryNonCodeBlocks } from '../utils/queries'
+import { getBlockInfoByUID, queryCurrentActiveBlockUID, queryMinDate, queryNonCodeBlocks } from '../services/queries'
 import { shareImage } from '../utils/share-image'
 
-const shareAndDownloadImage = async function () {
+async function shareAndDownloadImage() {
   const existing = document.getElementById('share-card')
   if (!existing) {
     const element = document.createElement('div')
@@ -51,6 +51,8 @@ const shareAndDownloadImage = async function () {
 
     const imageSrc = await shareImage(memo)
     // TODO: initMenuOption()
+  } else {
+    alert('🎨 Please Zoom into(CMD+.) the block you want to share...')
   }
 }
 
