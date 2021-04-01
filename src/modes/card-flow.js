@@ -8,7 +8,7 @@ export default function initCardFlowMode() {
   })
 
   addHotKeys({
-    shortcutKeys: '2',
+    shortcutKeys: '2/w',
     modeId: '#mode-button-cardFlow',
     modeName: 'Card Flow',
     modeAction() {

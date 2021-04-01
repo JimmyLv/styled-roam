@@ -17,7 +17,7 @@ export default function initFocusMode() {
 
   addHotKeys({
     shortcutKeys: '5/f',
-    modeId: '#mode-button-focus',
+    modeId: '#mode-toggle-focus',
     modeName: 'Focus',
     modeAction() {
       toggleFocusMode()

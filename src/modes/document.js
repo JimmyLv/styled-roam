@@ -6,7 +6,7 @@ export default function initDocumentMode() {
     switchTo('document-mode')
   })
   addHotKeys({
-    shortcutKeys: '3',
+    shortcutKeys: '3/d',
     modeId: '#mode-button-document',
     modeName: 'Document',
     modeAction() {

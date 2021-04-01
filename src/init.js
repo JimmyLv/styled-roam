@@ -26,5 +26,14 @@ export default function initModes() {
     },
   })
 
+  addHotKeys({
+    shortcutKeys: 'r',
+    modeId: '#toggle-reading-mode',
+    modeName: 'Toggle Reading',
+    async modeAction() {
+      document.querySelector('#toggle-reading-mode').click()
+    },
+  })
+
   console.log('🎨 started styled-roam.')
 }

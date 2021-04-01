@@ -10,7 +10,7 @@ export default function addHotKeys({ shortcutKeys, modeId, modeName, modeAction 
   })
 
   tippy(modeId, {
-    content: `${modeName}<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-${shortcutKeys})</span>`,
+    content: `${modeName}<sup>mode</sup> <span style="font-size:7pt">(Alt-Shift-${shortcutKeys.toUpperCase()})</span>`,
     allowHTML: true,
     theme: 'light-border',
   })

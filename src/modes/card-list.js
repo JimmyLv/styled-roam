@@ -7,7 +7,7 @@ export default function initCardListMode() {
     switchTo('card-mode')
   })
   addHotKeys({
-    shortcutKeys: '1',
+    shortcutKeys: '1/l',
     modeId: '#mode-button-cardList',
     modeName: 'Card List',
     modeAction() {

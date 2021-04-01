@@ -22,7 +22,7 @@ export default function initCalendarMode() {
 
   addHotKeys({
     shortcutKeys: '4/c',
-    modeId: '#mode-button-calendar',
+    modeId: '#mode-toggle-calendar',
     modeName: 'Calendar',
     modeAction() {
       toggleCalendarMode()
