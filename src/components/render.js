@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Timings from "./Timings";
 
-export function renderReact() {
+export function renderTimings() {
   const root =
     document.getElementsByTagName("timings-root")[0] ||
     document.createElement("timings-root");

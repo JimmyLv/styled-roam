@@ -3,6 +3,7 @@ import "./css/card.less";
 import "./css/gingko.less";
 import "./css/calendar.less";
 import "./css/share.less";
+import "./css/focus.less";
 
 setTimeout(() => {
   initCardifyTheme();

@@ -5,11 +5,11 @@ export function createSpacer() {
 }
 
 const MODES = {
-  cardList: { text: "Card List", icon: "bp3-icon-full-stacked-chart" },
-  cardFlow: { text: "Card Flow", icon: "bp3-icon-heat-grid" },
-  document: { text: "Document", icon: "bp3-icon-horizontal-bar-chart" },
-  download: { text: "Download", icon: "bp3-icon-download" },
-};
+  cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart' },
+  cardFlow: { text: 'Card Flow', icon: 'bp3-icon-heat-grid' },
+  document: { text: 'Document', icon: 'bp3-icon-horizontal-bar-chart' },
+  download: { text: 'Download', icon: 'bp3-icon-download' },
+}
 
 export function appendIcon(type, clickHandler) {
   const mode = MODES[type]
@@ -25,7 +25,10 @@ export function appendIcon(type, clickHandler) {
 }
 
 export function switchTo(mode) {
-  document.querySelector('html').classList = mode
+  console.log(`🎨 switch styled-roam to ${mode} mode.`)
+  const classList = document.querySelector('html').classList
+  const previousMode = localStorage.getItem('INIT_MODE') || 'document'
+  classList.toggle(previousMode).toggle(mode)
   localStorage.setItem('INIT_MODE', mode)
 }
 
