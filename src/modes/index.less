@@ -2,93 +2,8 @@
   --page-width: calc(100vw - 550px);
 }
 
-.card-mode,
-.edit-mode {
-  .rm-topbar {
-    box-shadow: 0 0 14px 0px rgba(0, 0, 0, 0.06);
-  }
-
-  .roam-body-main > div:first-child {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .roam-body-main > div {
-    padding: 0 !important;
-  }
-
-  body {
-    background: #f2f4f8;
-  }
-
-  /* Hover iFrame */
-
-  iframe {
-    box-shadow: none !important;
-  }
-
-  div#app {
-    box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06),
-      inset -3px -3px 6px 0px #fff !important;
-    border-radius: 8px !important;
-  }
-
-  .rm-block__children.rm-level-0 {
-    flex-direction: row;
-    flex-flow: row;
-    overflow-x: scroll;
-  }
-
-  .rm-block__children.rm-level-0 > .roam-block-container,
-  [style="margin-left: -20px;"] > .roam-block-container {
-    box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
-    border-radius: 8px;
-    background: #f2f4f8;
-    padding: 10px 16px 10px 0;
-    margin: 16px;
-    min-height: 200px;
-    max-width: 400px;
-    min-width: 400px;
-  }
-
-  [style="margin-left: -20px;"] > .roam-block-container {
-    max-width: 740px;
-  }
-
-  .rm-block__children.rm-level-0 > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container
-    /*[style="margin-left: -20px;"] > .roam-block-container > [style="margin-left: 20px;"] > .roam-block-container*/ {
-    box-shadow: inset 3px 3px 6px 0px rgba(0, 0, 0, 0.06),
-      inset -3px -3px 6px 0px #fff;
-    border-radius: 8px;
-    background: #f2f4f8;
-    padding: 6px 10px 10px 0;
-    min-height: 200px;
-    margin: 10px;
-  }
-
-  .rm-block__children.rm-level-0 {
-    img.rm-inline-img,
-    svg {
-      max-width: 270px !important;
-    }
-  }
-  /* After Zoom In */
-
-  [style="margin-left: -20px;"] .rm-block-text,
-  .rm-reference-main .rm-block-text {
-    max-width: initial;
-  }
-
-  .roam-article .rm-full-width {
-    margin-right: 0;
-  }
-
-  .block-highlight-blue.block-bullet-view.block-border-left {
-    border-color: #7cccff;
-  }
-}
-
-span[data-link-title="{"] > span,
-span[data-link-title="}"] > span {
+span[data-link-title='{'] > span,
+span[data-link-title='}'] > span {
   color: #dddcdc !important;
 }
 
@@ -100,6 +15,7 @@ code {
 
 @media (max-width: 480px) {
   /* smartphones, Android phones, landscape iPhone */
+  #mode-button-calendar,
   #mode-button-cardFlow,
   #mode-button-cardList {
     display: none;

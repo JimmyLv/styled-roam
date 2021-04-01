@@ -1,5 +1,4 @@
 import './index.less'
-import './flow.less'
 
 export const MODES = {
   cardList: { text: 'Card List', icon: 'bp3-icon-full-stacked-chart' },

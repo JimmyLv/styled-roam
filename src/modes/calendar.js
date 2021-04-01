@@ -1,24 +1,31 @@
 import { renderTimings } from '../components/Timings'
-import addToggleMode from './addToggleMode'
 import { switchTo } from '../utils/dom-helper'
+import addHotKeys from '../utils/hotkey'
 import addCalendarTimestamp from './addCalendarTimestamp'
+import addToggleMode from './addToggleMode'
 import './calendar.less'
 
-export default function toggleCalendarTimestamp() {
-  function turnOn() {
-    switchTo('calendar-mode')
-    renderTimings()
-    addCalendarTimestamp()
-  }
-  function turnOff() {
-    switchTo('simple-calendar-mode')
-  }
-
-  return addToggleMode({
+export default function initCalendarMode() {
+  const toggleCalendarMode = addToggleMode({
     id: 'mode-toggle-calendar',
     on: 'cube-add',
     off: 'cube',
-    turnOn,
-    turnOff,
+    turnOn() {
+      switchTo('calendar-mode')
+      renderTimings()
+      addCalendarTimestamp()
+    },
+    turnOff() {
+      switchTo('simple-calendar-mode')
+    },
+  })
+
+  addHotKeys({
+    shortcutKeys: '4/c',
+    modeId: '#mode-button-calendar',
+    modeName: 'Calendar',
+    modeAction() {
+      toggleCalendarMode()
+    },
   })
 }

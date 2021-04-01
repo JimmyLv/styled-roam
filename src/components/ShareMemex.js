@@ -1,6 +1,7 @@
-import { html } from 'htm/react';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { html } from 'htm/react'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './ShareMemex.less'
 
 export function Footer({ blocksNum, usageDays, block }) {
   return (
@@ -17,7 +18,7 @@ export function Footer({ blocksNum, usageDays, block }) {
       </div>
       <img src="" className="share-card" />
     </>
-  );
+  )
 }
 
 export function Header({ block }) {
@@ -28,20 +29,14 @@ export function Header({ block }) {
         <p>{block.string}</p>
         <p />
         <p>
-          <span className="tag">{"#" + block.tags.join("# ")}</span>
+          <span className="tag">{'#' + block.tags.join('# ')}</span>
         </p>
       </div>
     </div>
-  );
+  )
 }
 
-export const ShareMemex = ({
-  block,
-  usageDays,
-  blocksNum,
-  onClose,
-  onSave,
-}) => {
+export const ShareMemex = ({ block, usageDays, blocksNum, onClose, onSave }) => {
   return html`
     <div class="bp3-dialog-container share-memex-container">
       <div class="bp3-dialog">
@@ -60,39 +55,27 @@ export const ShareMemex = ({
           </div>
           <div class="card">
             <${Header} block=${block} />
-            <${Footer}
-              blocksNum=${blocksNum}
-              usageDays=${usageDays}
-              block=${block}
-            />
+            <${Footer} blocksNum=${blocksNum} usageDays=${usageDays} block=${block} />
           </div>
         </div>
         <div class="bp3-dialog-footer">
           <div class="bp3-dialog-footer-actions">
-            <button type="button" class="bp3-button" onClick=${onClose}>
-              Close
-            </button>
-            <button
-              type="submit"
-              class="bp3-button bp3-intent-primary"
-              onClick=${onSave}
-            >
-              Save Again
-            </button>
+            <button type="button" class="bp3-button" onClick=${onClose}>Close</button>
+            <button type="submit" class="bp3-button bp3-intent-primary" onClick=${onSave}>Save Again</button>
           </div>
         </div>
       </div>
     </div>
-  `;
-};
+  `
+}
 
 export function renderFooter(blocksNum, usageDays, memo) {
   ReactDOM.render(
     html`<${Footer} blocksNum=${blocksNum} usageDays=${usageDays} block=${memo} />`,
     document.getElementById('share-card-footer'),
-  );
+  )
 }
 
 export function renderHeader(memo) {
-  ReactDOM.render(html`<${Header} block=${memo} />`, document.getElementById('share-card-header'));
+  ReactDOM.render(html`<${Header} block=${memo} />`, document.getElementById('share-card-header'))
 }
