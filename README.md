@@ -7,7 +7,10 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 ## Quick Start
 
 1. Add a `{{[[roam/js]]}}` tag
-2. Add a child JavaScript code block to it with this code...
+2. Add a **CHILD** block `/JavaScript Code Block` with this code...
+
+![image](https://user-images.githubusercontent.com/4997466/113826270-8965f500-97b4-11eb-983f-26e693f28e8b.png)
+
 
 ```js
 var CARD_MODE_VERSION = "gh-pages";
@@ -24,7 +27,7 @@ if (!existing) {
 }
 ```
 
-3. Press the BIG RED button (also works with [roam42](https://github.com/roamhacker/roam42), so you can just put them together)
+3. Press the **BIG RED** button to enable the script
 
 ![Roam Research Calendar View switch-0001](https://raw.staticdn.net/JimmyLv/images/master/2021/Roam%20Research%20switch-0001.jpg)
 
