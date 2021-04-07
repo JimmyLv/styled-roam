@@ -6,7 +6,7 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 
 ## Quick Start
 
-1. Add a `{{[[roam/js]]}}` tag
+1. Add a `{{[[roam/js]]}}` block firstly
 2. Add a **CHILD** block `/JavaScript Code Block` with this code...
 
 ![image](https://user-images.githubusercontent.com/4997466/113826270-8965f500-97b4-11eb-983f-26e693f28e8b.png)
