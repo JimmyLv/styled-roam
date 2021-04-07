@@ -10,7 +10,7 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 2. Add a child JavaScript code block to it with this code...
 
 ```js
-const CARD_MODE_VERSION = "gh-pages";
+var CARD_MODE_VERSION = "gh-pages";
 window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
 
 var existing = document.getElementById("styled-roam");
