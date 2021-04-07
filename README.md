@@ -9,9 +9,6 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 1. Add a `{{[[roam/js]]}}` block firstly
 2. Add a **CHILD** block `/JavaScript Code Block` with this code...
 
-![image](https://user-images.githubusercontent.com/4997466/113826270-8965f500-97b4-11eb-983f-26e693f28e8b.png)
-
-
 ```js
 var CARD_MODE_VERSION = "gh-pages";
 window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
@@ -27,13 +24,15 @@ if (!existing) {
 }
 ```
 
+![image](https://user-images.githubusercontent.com/4997466/113826270-8965f500-97b4-11eb-983f-26e693f28e8b.png)
+
 3. Press the **BIG RED** button to enable the script
+
+## Quick Review
 
 ![Roam Research Calendar View switch-0001](https://raw.staticdn.net/JimmyLv/images/master/2021/Roam%20Research%20switch-0001.jpg)
 
 ![Roam Research 卡片式主题 Focus 模式](https://raw.staticdn.net/JimmyLv/images/master/2020/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E4%B8%BB%E9%A2%98%20Focus%20%E6%A8%A1%E5%BC%8F.jpg)
-
-## Quick Review
 
 ![Roam Research 卡片式写作 Candy 主题](https://cdn.jsdelivr.net/gh/jimmylv/images@master/2020/09/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C%20Candy%20%E4%B8%BB%E9%A2%98.jpg)
 
@@ -41,6 +40,8 @@ Related Twitter:
 
 - https://twitter.com/Jimmy_JingLv/status/1304451043594387456?s=20
 - https://twitter.com/Jimmy_JingLv/status/1343897637255143424?s=20
+- https://twitter.com/Jimmy_JingLv/status/1305893239187103749?s=20
+- https://twitter.com/Jimmy_JingLv/status/1376741905485033476?s=20
 
 ## Basic Usage
 
@@ -54,3 +55,4 @@ Related Twitter:
 
 - [Roamcult Themes](https://roamresearch.com/#/app/help/page/fJRcVITNY)
 - [palashkaria/roam-modifiers: userscripts/custom CSS files for Roam Research](https://github.com/palashkaria/roam-modifiers)
+- [roamhacker/roam42: Level up Roam with power user features. Automation, keyboard nav, dictionary, live preview and more.](https://github.com/roamhacker/roam42)
