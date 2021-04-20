@@ -1,10 +1,21 @@
 // And their styles (for UI plugins)
+import Uppy from '@uppy/core'
+import Dashboard from '@uppy/dashboard'
+import Dropbox from '@uppy/dropbox'
+import Facebook from '@uppy/facebook'
+import GoogleDrive from '@uppy/google-drive'
+import ImageEditor from '@uppy/image-editor'
+import Instagram from '@uppy/instagram'
+import OneDrive from '@uppy/onedrive'
+import ScreenCapture from '@uppy/screen-capture'
+import Tus from '@uppy/tus'
+import Webcam from '@uppy/webcam'
+import XHRUpload from '@uppy/xhr-upload'
 // With webpack and `style-loader`, you can require them like this:
-// import '@uppy/core/dist/style.css';
-// import '@uppy/dashboard/dist/style.css';
-import * as FilePond from 'filepond'
-import 'filepond/dist/filepond.min.css'
-import Uppy, { Dashboard, Tus } from 'uppy'
+import 'uppy/dist/uppy.min.css'
+import { appendIcon } from '../utils/dom-helper'
+import { Octokit } from "@octokit/core";
+const octokit = new Octokit({ auth: `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` });
 
 function appendCSSToPage(tagId, cssToAdd) {
   appendElementToPage(
@@ -27,70 +38,72 @@ function appendElementToPage(element, tagId, typeT) {
 
 appendCSSToPage('cssCalendar', 'http://localhost:8080/file.css')
 
-FilePond.setOptions({
-  // server: 'https://tusd.tusdemo.net/files/',
-  // server: 'https://api.imgbb.com/1/upload?expiration=600&key=2687d4e89d82c888e74c77949c68ff38'
-  // server: 'https://sm.ms/api/v2/upload'
-  server: {
-    url: 'https://api.imgur.com',
-    timeout: 7000,
-    process: {
-      url: './3/image',
-      method: 'POST',
-      headers: {
-        Authorization: 'Client-ID 4050060b7e47b38',
-      },
-      onload: (response) => {
-        console.log('response.key', response.key)
-      },
-      onerror: (response) => {
-        console.log('response.data', response.data)
-      },
-      ondata: (formData) => {
-        console.log('formData', formData)
-        // formData.append('Hello', 'World')
-        return formData
-      },
-    },
-    revert: './revert',
-    restore: './restore/',
-    load: './load/',
-    fetch: './fetch/',
-  },
-})
-// create a FilePond instance at the input element location
-const pond = FilePond.create({
-  name: 'filepond',
-  maxFiles: 10,
-  allowBrowse: false,
+appendIcon('file-upload', 'cloud-upload', function () {
+  const dashboard = window.uppy.getPlugin('Dashboard')
+  console.log('cloud-upload, dashboard', dashboard)
+  if (dashboard.isModalOpen()) {
+    dashboard.closeModal()
+    console.log('cloud-upload, dashboard close')
+  } else {
+    dashboard.openModal()
+    console.log('cloud-upload, dashboard open')
+  }
 })
 
-// add our pond to the body
-pond.appendTo(document.body)
-
-document.addEventListener('FilePond:pluginloaded', (e) => {
-  console.log('FilePond plugin is ready for use', e.detail)
-})
-
-var uppy = Uppy()
+var uppy = new Uppy({ id: 'uppy', debug: true })
   .use(Dashboard, {
-    inline: true,
-    target: '#app',
+    // inline: true,
+    trigger: '#mode-button-file-upload',
+    target: 'body',
+    onBeforeFileAdded: (currentFile, files) => {
+      const modifiedFile = {
+        ...currentFile,
+        name: currentFile.name + '__' + Date.now(),
+      }
+      console.log('modifiedFile', modifiedFile)
+      return modifiedFile
+    },
   })
-  .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+  .use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Facebook, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(OneDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Webcam, { target: Dashboard })
+  .use(ScreenCapture, { target: Dashboard })
+  .use(ImageEditor, { target: Dashboard })
+  // .use(DropTarget, {target: document.body })
+  // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+  .use(XHRUpload, {
+    endpoint: 'https://xhr-server.herokuapp.com/upload',
+    // endpoint: 'https://sm.ms/api/v2/upload',
+    formData: true,
+    fieldName: 'files[]',
+  })
+
+window.uppy = uppy
 
 uppy.on('complete', (result) => {
   console.log('Upload complete! We’ve uploaded these files:', result.successful)
   console.log('failed files:', result.failed)
 })
+uppy.on('file-added', (file) => {
+  console.log('Added file', file)
+})
 
-document.addEventListener('paste', async (event) => {
+const interceptImagePaste = async (event) => {
+  console.log('event', event)
+  event.stopPropagation()
+  event.preventDefault()
+
   var items = event.clipboardData && event.clipboardData.items
+  console.log('event.clipboardData.items', event.clipboardData.items)
+  // var image = items[0].getAsFile()
   var image = null
   if (items && items.length) {
     // 检索剪切板items
     for (var i = 0; i < items.length; i++) {
-      if (items[i].type.indexOf('image') !== -1) {
+      if (items[i].type.indexOf('image') !== -1 || items[i].type.includes('pdf')) {
         image = items[i].getAsFile()
         break
       }
@@ -98,13 +111,50 @@ document.addEventListener('paste', async (event) => {
   }
   // 此时file就是剪切板中的图片文件
   try {
+    await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+      owner: 'octocat',
+      repo: 'hello-world',
+      path: 'path',
+      message: 'message',
+      content: 'content'
+    })
+
     // const res = await pond.addFile(image)
     // const res = uploadFile(file)
-    const res = uppy.addFile(image);
+    const res = uppy.addFile({
+      source: 'image input',
+      name: image.name,
+      type: image.type,
+      data: image,
+    })
     console.log('res', res)
     // uppy.upload()
-    document.activeElement.value = 'https://' + res.filename
+    uppy.upload().then((result) => {
+      console.info('Successful uploads:', result.successful)
+
+      if (result.successful.length > 0) {
+        console.log('result.successful[0]', result.successful[0])
+
+        const { type, name, response, uploadURL } = result.successful[0]
+        console.log('response', response)
+
+        if (type === 'image/png') {
+          document.activeElement.value = `![](${uploadURL})`
+        } else {
+          document.activeElement.value = `{{iframe: ${uploadURL} }}`
+        }
+      }
+      if (result.failed.length > 0) {
+        console.error('Errors:')
+        result.failed.forEach((file) => {
+          console.error(file.error)
+        })
+      }
+    })
   } catch (e) {
     console.error(e, 'xxxxxxxxxxxx')
   }
-})
+}
+
+document.getElementById('app').removeEventListener('onpaste', interceptImagePaste)
+document.getElementById('app').onpaste = interceptImagePaste
