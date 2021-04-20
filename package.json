@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.js --port 8080",
+    "dev:file": "parcel src/entrys/file.js --port 8080",
     "prebuild": "rm -rf dist",
     "build": "parcel build src/index.js --out-dir dist/js",
     "deploy": "gh-pages -d dist"
@@ -18,7 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/JimmyLv/styled-roam.git"
   },
-  "keywords": ["Roam Research", "Roam", "Note-Taking", "React"],
+  "keywords": [
+    "Roam Research",
+    "Roam",
+    "Note-Taking",
+    "React"
+  ],
   "author": "JimmyLv",
   "license": "ISC",
   "bugs": {
@@ -33,14 +39,19 @@
   "dependencies": {
     "@blueprintjs/core": "^3.41.0",
     "dayjs": "^1.9.8",
+    "dropbox": "^9.6.0",
+    "filepond": "^4.27.0",
     "gh-pages": "^3.1.0",
     "hotkeys-js": "^3.8.1",
     "htm": "^3.0.4",
     "html2canvas": "^1.0.0-rc.7",
     "mobile-device-detect": "^0.4.3",
+    "paste-image": "^0.0.3",
     "react": "17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1",
-    "tippy.js": "^6.2.7"
+    "tippy.js": "^6.2.7",
+    "uppload": "^3.2.1",
+    "uppy": "^1.27.0"
   }
 }
