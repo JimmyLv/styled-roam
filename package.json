@@ -8,8 +8,9 @@
     "build:styled": "parcel build src/index.js --out-dir public/js",
     "dev:file": "parcel src/entrys/file.js --port 8080",
     "build:file": "parcel build src/entrys/file.js --out-dir public",
+    "build:md": "marked README.md -o public/index.html",
+    "build": "npm run build:styled && npm run build:file && npm run build:md",
     "prebuild": "rm -rf public",
-    "build": "npm run build:styled && npm run build:file",
     "deploy": "gh-pages -d public"
   },
   "husky": {
@@ -36,6 +37,7 @@
   "devDependencies": {
     "husky": "^3.1.0",
     "less": "^4.0.0",
+    "marked": "^2.0.3",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {

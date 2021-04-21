@@ -4737,6 +4737,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marked@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.nlark.com/marked/download/marked-2.0.3.tgz#3551c4958c4da36897bda2a16812ef1399c8d6b0"
+  integrity sha1-NVHElYxNo2iXvaKhaBLvE5nI1rA=
+
 math-log2@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/math-log2/download/math-log2-1.0.1.tgz#fb8941be5f5ebe8979e718e6273b178e58694565"
