@@ -10,8 +10,8 @@ import OneDrive from '@uppy/onedrive'
 import ScreenCapture from '@uppy/screen-capture'
 import Webcam from '@uppy/webcam'
 import XHRUpload from '@uppy/xhr-upload'
+import { updateActiveBlock } from 'roam-client'
 import { ProgressBar } from 'uppy'
-// With webpack and `style-loader`, you can require them like this:
 import 'uppy/dist/uppy.min.css'
 import { appendIcon } from '../utils/dom-helper'
 import { blobToBase64 } from './base64'
@@ -109,10 +109,20 @@ var uppy = new Uppy({
     method: 'put',
     formData: false,
     // fieldName: 'files[]',
+    // metaFields: null
     headers: {
       accept: 'application/json',
       'content-type': 'application/json',
       authorization: 'token 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',
+    },
+    getResponseData(responseText, response) {
+      const res = JSON.parse(responseText)
+      console.log('XHRUpload response', res)
+      return {
+        url: res.content.download_url,
+        preview: res.content.download_url,
+        data: res.content,
+      }
     },
   })
 
@@ -122,12 +132,7 @@ uppy.on('complete', (result) => {
   console.log('Upload complete! We’ve uploaded these files:', result.successful)
   console.log('failed files:', result.failed)
 })
-uppy.on('upload', (data) => {
-  console.log('uploading file', data.id)
-  uppy.getPlugin('XHRUpload').setOptions({
-    endpoint: `https://api.github.com/repos/JimmyLv/images/contents/2021/${+new Date()}.png`,
-  })
-})
+
 const interceptImagePaste = async (event) => {
   console.log('event', event)
   event.stopPropagation()
@@ -172,12 +177,11 @@ const interceptImagePaste = async (event) => {
 
         const { type, response } = result.successful[0]
         console.log('successful result response', response)
-        const uploadURL = response.body.content.download_url
 
         if (type === 'image/png') {
-          document.activeElement.value = `![](${uploadURL})`
+          updateActiveBlock(`![](${response.uploadURL})`)
         } else {
-          document.activeElement.value = `{{iframe: ${uploadURL} }}`
+          updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
         }
       }
       if (result.failed.length > 0) {
