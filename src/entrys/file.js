@@ -11,36 +11,16 @@ import ScreenCapture from '@uppy/screen-capture'
 import Webcam from '@uppy/webcam'
 import XHRUpload from '@uppy/xhr-upload'
 import { updateActiveBlock } from 'roam-client'
-import { ProgressBar } from 'uppy'
+import { DropTarget, ProgressBar } from 'uppy'
 import 'uppy/dist/uppy.min.css'
-import { appendIcon } from '../utils/dom-helper'
+import { appendCSSToPage, appendIcon } from '../utils/dom-helper'
 import { blobToBase64 } from './base64'
 import { formatBase64Payload } from './github'
-
-function appendCSSToPage(tagId, cssToAdd) {
-  appendElementToPage(
-    Object.assign(document.createElement('link'), {
-      href: cssToAdd,
-      rel: 'stylesheet',
-    }),
-    tagId,
-    'text/css',
-  )
-}
-
-function appendElementToPage(element, tagId, typeT) {
-  try {
-    document.getElementById(tagId).remove()
-  } catch (e) {} //Delete any existing reference
-  Object.assign(element, { type: typeT, async: false, tagId: tagId })
-  document.getElementsByTagName('head')[0].appendChild(element)
-}
 
 appendCSSToPage('cssCalendar', 'http://localhost:8080/file.css')
 
 appendIcon('file-upload', 'cloud-upload', function () {
   const dashboard = window.uppy.getPlugin('Dashboard')
-  console.log('cloud-upload, dashboard', dashboard)
   if (dashboard.isModalOpen()) {
     dashboard.closeModal()
     console.log('cloud-upload, dashboard close')
@@ -53,29 +33,22 @@ appendIcon('file-upload', 'cloud-upload', function () {
 var uppy = new Uppy({
   id: 'uppy',
   debug: true,
-  onBeforeFileAdded(currentFile, files) {
-    const modifiedFile = {
-      ...currentFile,
-      // name: currentFile.name + '__' + Date.now(),
-    }
-    console.log('modifiedFile', modifiedFile)
-    return modifiedFile
-  },
   onBeforeUpload(files) {
     // We’ll be careful to return a new object, not mutating the original `files`
     const updatedFiles = {}
     Object.keys(files).forEach((fileID) => {
-      // const base64Image = await blobToBase64(files[fileID])
-      console.log('files[fileID]', files[fileID])
-      // const base64Image = await blobToBase64(files[fileID].data)
-      const { endpoint, payload = {} } = files[fileID].meta
+      const currentFile = files[fileID]
+      console.log(`files[${fileID}]`, currentFile)
+
+      const { endpoint, payload } = currentFile.meta
+
       uppy.getPlugin('XHRUpload').setOptions({ endpoint })
-      console.log('{ endpoint, payload = {} }', { endpoint, payload })
+
       updatedFiles[fileID] = {
-        ...files[fileID],
-        name: 'myCustomPrefix' + '__' + files[fileID].name,
+        ...currentFile,
+        name: 'Roam Research' + '__' + currentFile.name,
         data: JSON.stringify({
-          ...files[fileID].data,
+          ...currentFile.data,
           ...payload,
         }),
       }
@@ -100,7 +73,7 @@ var uppy = new Uppy({
   .use(Webcam, { target: Dashboard })
   .use(ScreenCapture, { target: Dashboard })
   .use(ImageEditor, { target: Dashboard })
-  // .use(DropTarget, {target: document.body })
+  .use(DropTarget, { target: document.body })
   // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
   .use(XHRUpload, {
     // endpoint: 'https://xhr-server.herokuapp.com/upload',
@@ -118,6 +91,7 @@ var uppy = new Uppy({
     getResponseData(responseText, response) {
       const res = JSON.parse(responseText)
       console.log('XHRUpload response', res)
+
       return {
         url: res.content.download_url,
         preview: res.content.download_url,
@@ -125,39 +99,37 @@ var uppy = new Uppy({
       }
     },
   })
+  .on('complete', (result) => {
+    console.log('Upload complete! We’ve uploaded these files:', result.successful)
+    console.log('failed files:', result.failed)
+  })
 
 window.uppy = uppy
 
-uppy.on('complete', (result) => {
-  console.log('Upload complete! We’ve uploaded these files:', result.successful)
-  console.log('failed files:', result.failed)
-})
-
 const interceptImagePaste = async (event) => {
-  console.log('event', event)
   event.stopPropagation()
   event.preventDefault()
 
-  var items = event.clipboardData && event.clipboardData.items
-  console.log('event.clipboardData.items', event.clipboardData.items)
+  const items = event.clipboardData && event.clipboardData.items
   var image = null
   if (items && items.length) {
     // 检索剪切板items
-    for (var i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
       console.log('items[i]', items[i])
-      if (items[i].type.indexOf('image') !== -1 || items[i].type.includes('pdf')) {
+      if (items[i].type.includes('image') || items[i].type.includes('pdf')) {
         image = items[i].getAsFile()
         break
       }
     }
   }
+
   // 此时file就是剪切板中的图片文件
   try {
     const base64Image = await blobToBase64(image)
     // const imageUrl = await uploadAsBase64(base64Image)
     const { endpoint, payload } = formatBase64Payload(base64Image)
-    // const res = uploadFile(file)
-    const res = uppy.addFile({
+
+    uppy.addFile({
       source: 'image from clipboard',
       name: image.name,
       type: image.type,
@@ -167,8 +139,7 @@ const interceptImagePaste = async (event) => {
         payload,
       },
     })
-    console.log('res', res)
-    // uppy.upload()
+
     uppy.upload().then((result) => {
       console.info('Successful uploads:', result.successful)
 
@@ -178,7 +149,7 @@ const interceptImagePaste = async (event) => {
         const { type, response } = result.successful[0]
         console.log('successful result response', response)
 
-        if (type === 'image/png') {
+        if (type.includes('image/')) {
           updateActiveBlock(`![](${response.uploadURL})`)
         } else {
           updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
