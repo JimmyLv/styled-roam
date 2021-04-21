@@ -12,7 +12,7 @@ import { blobToBase64 } from './base64'
 import { config } from './config'
 import { saveToDropbox } from './dropbox'
 import { formatBase64Payload } from './github'
-import { appendImageBlock } from './roam'
+import { appendFileBlock } from './roam'
 
 appendCSSToPageByEnv('cssFileUploader', 'file.css')
 
@@ -142,9 +142,28 @@ var uppy = new Uppy({
         },
       })
       if (file.source === 'GoogleDrive') {
+        const type =
+          {
+            // https://docs.google.com/presentation/d/1l5l4ctSUt3rBtojprP60HCLarS7jryZArY-5mAlBm_g/edit
+            ppt: 'presentation',
+            // https://docs.google.com/spreadsheets/d/0BwLlItXN6SRuWHlpakdpS2ltdHM/edit
+            xlsx: 'spreadsheets',
+            csv: 'spreadsheets',
+            // https://docs.google.com/document/d/0BwLlItXN6SRuRDdBOFR0TExDbHc/edit
+            docx: 'document',
+            doc: 'document',
+            pdf: 'download',
+          }[file.extension] || 'file'
+
+        if (type === 'download') {
+          appendFileBlock(`{{pdf: https://drive.google.com/uc?export=download&id=${file.id}}}`)
+        } else {
+          appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.id}/edit}}`)
+        }
+      } else if (file.source === 'OneDrive') {
+      } else {
+        appendFileBlock(`![](${file.preview})`)
       }
-      const mdLink = `![](${file.preview})`
-      appendImageBlock(mdLink)
     } else {
       const base64Image = await blobToBase64(image)
       // const imageUrl = await uploadAsBase64(base64Image)
@@ -182,7 +201,7 @@ var uppy = new Uppy({
 
       // if (response.uploadURL.endsWith('png')) {
       const mdLink = `![](${response.uploadURL})`
-      appendImageBlock(mdLink)
+      appendFileBlock(mdLink)
       /*} else {
         updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
       }*/
