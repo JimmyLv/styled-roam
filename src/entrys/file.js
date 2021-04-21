@@ -1,7 +1,7 @@
 import Uppy from '@uppy/core'
 import Dashboard from '@uppy/dashboard'
 import XHRUpload from '@uppy/xhr-upload'
-import { updateActiveBlock } from 'roam-client'
+import { createBlock, updateActiveBlock } from 'roam-client'
 import { ProgressBar } from 'uppy'
 import 'uppy/dist/uppy.min.css'
 import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper'
@@ -102,7 +102,14 @@ var uppy = new Uppy({
       console.log('successful[0] result response', response)
 
       // if (response.uploadURL.endsWith('png')) {
-      updateActiveBlock(`![](${response.uploadURL})`)
+      const mdLink = `![](${response.uploadURL})`
+      if (document.activeElement.type === 'textarea') {
+        updateActiveBlock(mdLink)
+      } else {
+        // 'https://roamresearch.com/#/app/Note-Tasking/page/1OLUyHxAM'
+        const uid = location.href.substring(location.href.length - 9)
+        createBlock({ node: { text: mdLink }, parentUid: uid })
+      }
       /*} else {
         updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
       }*/
