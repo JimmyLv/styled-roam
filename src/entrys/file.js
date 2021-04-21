@@ -9,7 +9,7 @@ import { blobToBase64 } from './base64'
 import { formatBase64Payload } from './github'
 import { config } from './config'
 
-appendCSSToPageByEnv('cssFileUploader', 'http://localhost:8080/file.css')
+appendCSSToPageByEnv('cssFileUploader', 'file.css')
 
 appendIcon('file-upload', 'cloud-upload', function () {
   const dashboard = window.uppy.getPlugin('Dashboard')
