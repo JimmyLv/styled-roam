@@ -1,8 +1,11 @@
 import Uppy from '@uppy/core'
 import Dashboard from '@uppy/dashboard'
+import Facebook from '@uppy/facebook'
+import ImageEditor from '@uppy/image-editor'
+import OneDrive from '@uppy/onedrive'
 import XHRUpload from '@uppy/xhr-upload'
 import { createBlock, updateActiveBlock } from 'roam-client'
-import { ProgressBar } from 'uppy'
+import { Dropbox, DropTarget, GoogleDrive, Instagram, ProgressBar, ScreenCapture, Transloadit, Webcam } from 'uppy'
 import 'uppy/dist/uppy.min.css'
 import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper'
 import { blobToBase64 } from './base64'
@@ -22,6 +25,12 @@ appendIcon('file-upload', 'cloud-upload', function () {
   }
 })
 
+const companionOptions = {
+  target: Dashboard,
+  companionUrl: Transloadit.COMPANION,
+  companionAllowedHosts: Transloadit.COMPANION_PATTERN,
+}
+
 var uppy = new Uppy({
   id: 'uppy',
   debug: true,
@@ -35,15 +44,40 @@ var uppy = new Uppy({
     target: 'body',
     fixed: true,
   })
-  /*.use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
-  .use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
-  .use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
-  .use(Facebook, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
-  .use(OneDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Transloadit, {
+    importFromUploadURLs: true,
+    alwaysRunAssembly: false,
+    waitForEncoding: false,
+    params: {
+      auth: {
+        key: config.companion_auth_key,
+      },
+      steps: {
+        ':original': {
+          robot: '/upload/handle',
+        },
+        compress_image: {
+          use: 'import',
+          robot: '/image/optimize',
+          progressive: true,
+        },
+        export: {
+          use: ['compress_image'],
+          robot: '/file/serve',
+        },
+      },
+      // https://transloadit.com/c/
+    },
+  })
+  .use(Dropbox, companionOptions)
+  .use(GoogleDrive, companionOptions)
+  .use(Instagram, companionOptions)
+  .use(Facebook, companionOptions)
+  .use(OneDrive, companionOptions)
   .use(Webcam, { target: Dashboard })
   .use(ScreenCapture, { target: Dashboard })
   .use(ImageEditor, { target: Dashboard })
-  .use(DropTarget, { target: document.body })*/
+  .use(DropTarget, { target: 'document.body' })
   // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
   .use(XHRUpload, {
     // endpoint: 'https://xhr-server.herokuapp.com/upload',
@@ -62,6 +96,10 @@ var uppy = new Uppy({
       const res = JSON.parse(responseText)
       console.log('XHRUpload response', res)
 
+      if (res.message) {
+        alert(`GitHub Error Message: ${res.message}`)
+        uppy.info(res.message, 'error', 3000)
+      }
       return {
         url: res.content.download_url,
         preview: res.content.download_url,

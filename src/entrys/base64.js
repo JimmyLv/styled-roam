@@ -1,4 +1,5 @@
 export async function blobToBase64(blob) {
+  console.log('blobToBase64', typeof blob)
   return new Promise((resolve, _) => {
     const reader = new FileReader()
     reader.onloadend = () => resolve(reader.result)

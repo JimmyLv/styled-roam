@@ -70,7 +70,6 @@
     "roam-client": "^1.49.3",
     "styled-components": "^5.2.1",
     "tippy.js": "^6.2.7",
-    "uppload": "^3.2.1",
     "uppy": "^1.27.0"
   }
 }
