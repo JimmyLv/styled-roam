@@ -43,6 +43,15 @@ export function appendCSSToPage(tagId, cssToAdd) {
   )
 }
 
+export function appendCSSToPageByEnv(tagId, cssToAdd) {
+  console.log('window.URLScriptServer', window.URLScriptServer)
+  if (window.URLScriptServer.includes('localhost')) {
+    appendCSSToPage(tagId, `http://localhost:8080/${cssToAdd}`)
+  } else {
+    appendCSSToPage(tagId, `${window.URLScriptServer}js/${cssToAdd}`)
+  }
+}
+
 function appendElementToPage(element, tagId, typeT) {
   try {
     document.getElementById(tagId).remove()

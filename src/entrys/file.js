@@ -1,23 +1,14 @@
-// And their styles (for UI plugins)
-import Uppy from '@uppy/core'
-import Dashboard from '@uppy/dashboard'
-import Dropbox from '@uppy/dropbox'
-import Facebook from '@uppy/facebook'
-import GoogleDrive from '@uppy/google-drive'
-import ImageEditor from '@uppy/image-editor'
-import Instagram from '@uppy/instagram'
-import OneDrive from '@uppy/onedrive'
-import ScreenCapture from '@uppy/screen-capture'
-import Webcam from '@uppy/webcam'
-import XHRUpload from '@uppy/xhr-upload'
-import { updateActiveBlock } from 'roam-client'
-import { DropTarget, ProgressBar } from 'uppy'
-import 'uppy/dist/uppy.min.css'
-import { appendCSSToPage, appendIcon } from '../utils/dom-helper'
-import { blobToBase64 } from './base64'
-import { formatBase64Payload } from './github'
+import Uppy from '@uppy/core';
+import Dashboard from '@uppy/dashboard';
+import XHRUpload from '@uppy/xhr-upload';
+import { updateActiveBlock } from 'roam-client';
+import { ProgressBar } from 'uppy';
+import 'uppy/dist/uppy.min.css';
+import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper';
+import { blobToBase64 } from './base64';
+import { formatBase64Payload } from './github';
 
-appendCSSToPage('cssCalendar', 'http://localhost:8080/file.css')
+appendCSSToPageByEnv('cssFileUploader', 'http://localhost:8080/file.css')
 
 appendIcon('file-upload', 'cloud-upload', function () {
   const dashboard = window.uppy.getPlugin('Dashboard')
