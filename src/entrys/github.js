@@ -1,11 +1,7 @@
 import { Octokit } from '@octokit/core'
-const octokit = new Octokit({ auth: `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` })
+import { config } from './config'
 
-const config = {
-  repo: 'JimmyLv/images',
-  branch: 'master',
-  savePath: '2021',
-}
+const octokit = new Octokit({ auth: config.token })
 
 function generateUuid() {
   return +new Date()

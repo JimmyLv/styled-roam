@@ -1,12 +1,13 @@
-import Uppy from '@uppy/core';
-import Dashboard from '@uppy/dashboard';
-import XHRUpload from '@uppy/xhr-upload';
-import { updateActiveBlock } from 'roam-client';
-import { ProgressBar } from 'uppy';
-import 'uppy/dist/uppy.min.css';
-import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper';
-import { blobToBase64 } from './base64';
-import { formatBase64Payload } from './github';
+import Uppy from '@uppy/core'
+import Dashboard from '@uppy/dashboard'
+import XHRUpload from '@uppy/xhr-upload'
+import { updateActiveBlock } from 'roam-client'
+import { ProgressBar } from 'uppy'
+import 'uppy/dist/uppy.min.css'
+import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper'
+import { blobToBase64 } from './base64'
+import { formatBase64Payload } from './github'
+import { config } from './config'
 
 appendCSSToPageByEnv('cssFileUploader', 'http://localhost:8080/file.css')
 
@@ -55,7 +56,7 @@ var uppy = new Uppy({
     headers: {
       accept: 'application/json',
       'content-type': 'application/json',
-      authorization: 'token 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',
+      authorization: `token ${config.token}`,
     },
     getResponseData(responseText, response) {
       const res = JSON.parse(responseText)
@@ -97,7 +98,7 @@ var uppy = new Uppy({
     if (result.successful.length > 0) {
       console.log('result.successful', result.successful)
 
-      const { type, response } = result.successful[0]
+      const { response } = result.successful[0]
       console.log('successful[0] result response', response)
 
       // if (response.uploadURL.endsWith('png')) {
@@ -118,9 +119,6 @@ var uppy = new Uppy({
 window.uppy = uppy
 
 const interceptImagePaste = async (event) => {
-  event.stopPropagation()
-  event.preventDefault()
-
   const items = event.clipboardData && event.clipboardData.items
   var image = null
   if (items && items.length) {
@@ -135,14 +133,24 @@ const interceptImagePaste = async (event) => {
   }
 
   // 此时file就是剪切板中的图片文件
-  try {
-    uppy.addFile({ source: 'image from clipboard', data: image })
-    // await uppy.upload()
-  } catch (e) {
-    console.error(e, 'xxxxxxxxxxxx')
-  }
+  if (image) {
+    // only handle for image files
+    event.stopPropagation()
+    event.preventDefault()
 
-  //todo: throw text clipboard event
+    try {
+      uppy.addFile({
+        source: 'image from clipboard',
+        name: image.name,
+        type: image.type,
+        data: image,
+        preview: URL.createObjectURL(image),
+      })
+      // await uppy.upload()
+    } catch (e) {
+      console.error(e, 'xxxxxxxxxxxx')
+    }
+  }
 }
 
 document.getElementById('app').removeEventListener('onpaste', interceptImagePaste)
