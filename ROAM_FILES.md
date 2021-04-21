@@ -1,8 +1,8 @@
 # Roam𐃏Files (Research)
 
-Roam Research ✍️ **Files Attachment Dashboard**
+Roam Research ✍️ **Files Attachment Dashboard** 🗃
 
-Upload images to custom servers rather than default Firebase
+Upload files to custom servers rather than default Firebase storage, and manage your files in one place
 
 > the story begins from [@RoamBounties](https://twitter.com/RoamBounties/status/1384169593208332295?s=20)
 
@@ -15,7 +15,9 @@ Upload images to custom servers rather than default Firebase
 // 1. New token from https://github.com/settings/tokens/new?scopes=repo
 // 2. Create your GitHub repo and choose savePath to upload images 👇👇👇👇👇👇
 // e.g. https://raw.githubusercontent.com/JimmyLv/images/master/2021/1618990038204.png
+// 3. optional? DROPBOX_APP_KEY https://www.dropbox.com/developers/saver
 window.roamFiles = {
+  DROPBOX_APP_KEY: 'PLEASE UPDATE TO YOURS!!!',
   GITHUB_ACCESS_TOKEN: 'PLEASE UPDATE TO YOURS!!!',
   repo: 'JimmyLv/images',
   branch: 'main',
@@ -52,3 +54,11 @@ if (!existing) {
 4. Just Copy and Paste (Ctrl-C/Ctrl-V) to save image into Roam Research as normal
 
 https://twitter.com/Jimmy_JingLv/status/1384795856939847684?s=20
+
+## How to get your `DROPBOX_APP_KEY`
+
+Create a new @Dropbox app and get the APP_KEY here: https://www.dropbox.com/developers/saver
+
+(don't forget to add http://roamresearch.com into the Saver domains, and File Permission Scopes)
+
+![5L5bjx](https://raw.githubusercontents.com/JimmyLv/images/master/2021/5L5bjx.jpg)
