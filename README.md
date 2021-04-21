@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/public/yue.css">
+
 # Styled Roam (Research)
 
 Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme 🎨

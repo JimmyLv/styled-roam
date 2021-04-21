@@ -1,5 +1,8 @@
 .idea/
 .cache/
 dist/
+public/
 *.log
 node_modules
+
+.vercel
