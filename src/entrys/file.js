@@ -8,14 +8,12 @@ import ImageEditor from '@uppy/image-editor'
 import Instagram from '@uppy/instagram'
 import OneDrive from '@uppy/onedrive'
 import ScreenCapture from '@uppy/screen-capture'
-import Tus from '@uppy/tus'
 import Webcam from '@uppy/webcam'
 import XHRUpload from '@uppy/xhr-upload'
 // With webpack and `style-loader`, you can require them like this:
 import 'uppy/dist/uppy.min.css'
+import { ProgressBar } from 'uppy'
 import { appendIcon } from '../utils/dom-helper'
-import { Octokit } from "@octokit/core";
-const octokit = new Octokit({ auth: `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` });
 
 function appendCSSToPage(tagId, cssToAdd) {
   appendElementToPage(
@@ -64,6 +62,10 @@ var uppy = new Uppy({ id: 'uppy', debug: true })
       return modifiedFile
     },
   })
+  .use(ProgressBar, {
+    target: 'body',
+    fixed: true,
+  })
   .use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
   .use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
   .use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
@@ -98,11 +100,11 @@ const interceptImagePaste = async (event) => {
 
   var items = event.clipboardData && event.clipboardData.items
   console.log('event.clipboardData.items', event.clipboardData.items)
-  // var image = items[0].getAsFile()
   var image = null
   if (items && items.length) {
     // 检索剪切板items
     for (var i = 0; i < items.length; i++) {
+      console.log('items[i]', items[i])
       if (items[i].type.indexOf('image') !== -1 || items[i].type.includes('pdf')) {
         image = items[i].getAsFile()
         break
@@ -111,15 +113,9 @@ const interceptImagePaste = async (event) => {
   }
   // 此时file就是剪切板中的图片文件
   try {
-    await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
-      owner: 'octocat',
-      repo: 'hello-world',
-      path: 'path',
-      message: 'message',
-      content: 'content'
-    })
+    // const base64Image = await blobToBase64(image)
+    // const imageUrl = await uploadAsBase64(base64Image)
 
-    // const res = await pond.addFile(image)
     // const res = uploadFile(file)
     const res = uppy.addFile({
       source: 'image input',
@@ -135,7 +131,7 @@ const interceptImagePaste = async (event) => {
       if (result.successful.length > 0) {
         console.log('result.successful[0]', result.successful[0])
 
-        const { type, name, response, uploadURL } = result.successful[0]
+        const { type, response, uploadURL } = result.successful[0]
         console.log('response', response)
 
         if (type === 'image/png') {
@@ -154,6 +150,8 @@ const interceptImagePaste = async (event) => {
   } catch (e) {
     console.error(e, 'xxxxxxxxxxxx')
   }
+
+  //todo: throw text clipboard event
 }
 
 document.getElementById('app').removeEventListener('onpaste', interceptImagePaste)
