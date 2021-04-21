@@ -173,8 +173,29 @@ var uppy = new Uppy({
           appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.data.id}/edit}}`)
         }
       } else if (file.source === 'OneDrive') {
+        const type =
+          {
+            // https://onedrive.live.com/edit.aspx?page=view&resid=879869B902DC45E2!1098&app=PowerPoint
+            ppt: 'PowerPoint',
+            // https://onedrive.live.com/edit.aspx?page=view&resid=879869B902DC45E2!1109&app=Excel
+            xlsx: 'Excel',
+            csv: 'Excel',
+            // https://onedrive.live.com/edit.aspx?page=view&resid=879869B902DC45E2!1113&app=Word
+            docx: 'Word',
+            doc: 'Word',
+            // https://onedrive.live.com/pdf?resid=879869B902DC45E2%211092&open=1&serve=1
+            pdf: 'PDF',
+          }[file.extension] || 'file'
+
+        if (type === 'file') {
+          appendFileBlock(`![${file.name}](${file.preview})`)
+        } else if (type === 'PDF') {
+          appendFileBlock(`{{iframe: https://onedrive.live.com/pdf?resid=${file.data.id}&open=1&serve=1}}`)
+        } else {
+          appendFileBlock(`{{iframe: https://onedrive.live.com/edit.aspx?page=view&resid=${file.data.id}&app=${type}}}`)
+        }
       } else {
-        appendFileBlock(`![](${file.preview})`)
+        appendFileBlock(`![${file.name || ''}](${file.preview})`)
       }
     } else {
       const base64Image = await blobToBase64(image)
