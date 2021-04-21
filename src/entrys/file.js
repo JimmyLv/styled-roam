@@ -4,13 +4,15 @@ import Facebook from '@uppy/facebook'
 import ImageEditor from '@uppy/image-editor'
 import OneDrive from '@uppy/onedrive'
 import XHRUpload from '@uppy/xhr-upload'
-import { createBlock, updateActiveBlock } from 'roam-client'
+// import Dropins from 'dropbox-dropins'
 import { Dropbox, DropTarget, GoogleDrive, Instagram, ProgressBar, ScreenCapture, Transloadit, Webcam } from 'uppy'
 import 'uppy/dist/uppy.min.css'
 import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper'
 import { blobToBase64 } from './base64'
-import { formatBase64Payload } from './github'
 import { config } from './config'
+import { saveToDropbox } from './dropbox'
+import { formatBase64Payload } from './github'
+import { appendImageBlock } from './roam'
 
 appendCSSToPageByEnv('cssFileUploader', 'file.css')
 
@@ -31,6 +33,21 @@ const companionOptions = {
   companionAllowedHosts: Transloadit.COMPANION_PATTERN,
 }
 
+// <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="dsug98rvaux3fit"></script>
+
+if (config.dropbox_app_key) {
+  var existing = document.getElementById('dropboxjs')
+  if (!existing) {
+    var extension = document.createElement('script')
+    extension.src = 'https://www.dropbox.com/static/api/2/dropins.js'
+    extension.id = 'dropboxjs'
+    extension.dataset.appKey = config.dropbox_app_key
+    extension.async = true
+    extension.type = 'text/javascript'
+    document.getElementsByTagName('head')[0].appendChild(extension)
+  }
+}
+
 var uppy = new Uppy({
   id: 'uppy',
   debug: true,
@@ -44,7 +61,7 @@ var uppy = new Uppy({
     target: 'body',
     fixed: true,
   })
-  .use(Transloadit, {
+  /*.use(Transloadit, {
     importFromUploadURLs: true,
     alwaysRunAssembly: false,
     waitForEncoding: false,
@@ -57,7 +74,7 @@ var uppy = new Uppy({
           robot: '/upload/handle',
         },
         compress_image: {
-          use: 'import',
+          use: ':original',
           robot: '/image/optimize',
           progressive: true,
         },
@@ -68,7 +85,7 @@ var uppy = new Uppy({
       },
       // https://transloadit.com/c/
     },
-  })
+  })*/
   .use(Dropbox, companionOptions)
   .use(GoogleDrive, companionOptions)
   .use(Instagram, companionOptions)
@@ -108,29 +125,53 @@ var uppy = new Uppy({
     },
   })
   .on('file-added', async (file) => {
+    console.log('file-added', file)
     const image = file.data
-    const base64Image = await blobToBase64(image)
-    // const imageUrl = await uploadAsBase64(base64Image)
-    const { endpoint, payload } = formatBase64Payload(base64Image)
-    console.log('file-added', file, { endpoint, payload })
 
-    uppy.setFileState(file.id, {
-      ...file,
-      name: 'Roam Research' + '__' + file.name,
-      // preview: URL.createObjectURL(file),
-      xhrUpload: { endpoint },
-      data: JSON.stringify({
-        ...file.data,
-        ...payload,
-      }),
-    })
+    if (file.isRemote) {
+      uppy.setFileState(file.id, {
+        ...file,
+        // fake data
+        progress: {
+          bytesTotal: 677375,
+          bytesUploaded: 677375,
+          percentage: 100,
+          postprocess: null,
+          uploadComplete: true,
+          uploadStarted: 1619027556863,
+        },
+      })
+      if (file.source === 'GoogleDrive') {
+      }
+      const mdLink = `![](${file.preview})`
+      appendImageBlock(mdLink)
+    } else {
+      const base64Image = await blobToBase64(image)
+      // const imageUrl = await uploadAsBase64(base64Image)
+      const { endpoint, payload } = formatBase64Payload(base64Image)
+      console.log('file-added format', { endpoint, payload })
 
-    await uppy.upload()
+      uppy.setFileState(file.id, {
+        ...file,
+        name: 'Roam Research' + '__' + file.name,
+        // preview: URL.createObjectURL(file),
+        xhrUpload: { endpoint },
+        data: JSON.stringify({
+          ...file.data,
+          ...payload,
+        }),
+      })
+
+      await uppy.upload()
+    }
   })
   .on('upload', ({ id, fileIDs }) => {
     // data object consists of `id` with upload ID and `fileIDs` array
     // with file IDs in current upload
     console.log(`Starting upload ${id} for files ${fileIDs}`)
+  })
+  .on('upload-success', (file, response) => {
+    console.log('upload-success', file, response.uploadURL)
   })
   .on('complete', (result) => {
     if (result.successful.length > 0) {
@@ -141,16 +182,13 @@ var uppy = new Uppy({
 
       // if (response.uploadURL.endsWith('png')) {
       const mdLink = `![](${response.uploadURL})`
-      if (document.activeElement.type === 'textarea') {
-        updateActiveBlock(mdLink)
-      } else {
-        // 'https://roamresearch.com/#/app/Note-Tasking/page/1OLUyHxAM'
-        const uid = location.href.substring(location.href.length - 9)
-        createBlock({ node: { text: mdLink }, parentUid: uid })
-      }
+      appendImageBlock(mdLink)
       /*} else {
         updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
       }*/
+      if (config.dropbox_app_key) {
+        saveToDropbox(response.uploadURL)
+      }
     }
     if (result.failed.length > 0) {
       console.log('failed files:', result.failed)

@@ -1,5 +1,41 @@
+export const getImgBase64 = async (url) => {
+  const convertImgToBase64URL = (url) => {
+    console.log('url', url)
+    return new Promise((resolve, reject) => {
+      const img = new Image()
+      img.crossOrigin = 'Anonymous'
+      img.onload = () => {
+        let canvas = document.createElement('CANVAS')
+        const ctx = canvas.getContext('2d')
+        canvas.height = img.height
+        canvas.width = img.width
+        ctx.drawImage(img, 0, 0)
+        const dataURL = canvas.toDataURL()
+        canvas = null
+        resolve(dataURL)
+      }
+      img.src = url
+    })
+  }
+  const image = await convertImgToBase64URL(url)
+  console.log('image convertImgToBase64URL', image)
+}
+
 export async function blobToBase64(blob) {
-  console.log('blobToBase64', typeof blob)
+  console.log('blobToBase64', blob)
+  if (blob.thumbnail) {
+    // console.log('blob.thumbnail', JSON.stringify(blob.toString()))
+    // console.log('blob.thumbnail', JSON.parse(blob.toString()))
+    const data = await fetch(blob.thumbnail)
+    const blob = await data.blob()
+    return new Promise((resolve) => {
+      const reader = new FileReader()
+      reader.readAsDataURL(blob)
+      reader.onloadend = () => {
+        resolve(reader.result)
+      }
+    })
+  }
   return new Promise((resolve, _) => {
     const reader = new FileReader()
     reader.onloadend = () => resolve(reader.result)
