@@ -49,6 +49,7 @@
     "@uppy/onedrive": "^1.1.26",
     "@uppy/screen-capture": "^1.0.17",
     "@uppy/tus": "^1.8.7",
+    "@uppy/utils": "^3.5.0",
     "@uppy/webcam": "^1.8.8",
     "@uppy/xhr-upload": "^1.7.2",
     "dayjs": "^1.9.8",

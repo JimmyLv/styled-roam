@@ -33,28 +33,6 @@ appendIcon('file-upload', 'cloud-upload', function () {
 var uppy = new Uppy({
   id: 'uppy',
   debug: true,
-  onBeforeUpload(files) {
-    // We’ll be careful to return a new object, not mutating the original `files`
-    const updatedFiles = {}
-    Object.keys(files).forEach((fileID) => {
-      const currentFile = files[fileID]
-      console.log(`files[${fileID}]`, currentFile)
-
-      const { endpoint, payload } = currentFile.meta
-
-      uppy.getPlugin('XHRUpload').setOptions({ endpoint })
-
-      updatedFiles[fileID] = {
-        ...currentFile,
-        name: 'Roam Research' + '__' + currentFile.name,
-        data: JSON.stringify({
-          ...currentFile.data,
-          ...payload,
-        }),
-      }
-    })
-    return updatedFiles
-  },
 })
   .use(Dashboard, {
     // inline: true,
@@ -65,7 +43,7 @@ var uppy = new Uppy({
     target: 'body',
     fixed: true,
   })
-  .use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  /*.use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
   .use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
   .use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
   .use(Facebook, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
@@ -73,7 +51,7 @@ var uppy = new Uppy({
   .use(Webcam, { target: Dashboard })
   .use(ScreenCapture, { target: Dashboard })
   .use(ImageEditor, { target: Dashboard })
-  .use(DropTarget, { target: document.body })
+  .use(DropTarget, { target: document.body })*/
   // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
   .use(XHRUpload, {
     // endpoint: 'https://xhr-server.herokuapp.com/upload',
@@ -99,9 +77,51 @@ var uppy = new Uppy({
       }
     },
   })
+  .on('file-added', async (file) => {
+    const image = file.data
+    const base64Image = await blobToBase64(image)
+    // const imageUrl = await uploadAsBase64(base64Image)
+    const { endpoint, payload } = formatBase64Payload(base64Image)
+    console.log('file-added', file, { endpoint, payload })
+
+    uppy.setFileState(file.id, {
+      ...file,
+      name: 'Roam Research' + '__' + file.name,
+      // preview: URL.createObjectURL(file),
+      xhrUpload: { endpoint },
+      data: JSON.stringify({
+        ...file.data,
+        ...payload,
+      }),
+    })
+
+    await uppy.upload()
+  })
+  .on('upload', ({ id, fileIDs }) => {
+    // data object consists of `id` with upload ID and `fileIDs` array
+    // with file IDs in current upload
+    console.log(`Starting upload ${id} for files ${fileIDs}`)
+  })
   .on('complete', (result) => {
-    console.log('Upload complete! We’ve uploaded these files:', result.successful)
-    console.log('failed files:', result.failed)
+    if (result.successful.length > 0) {
+      console.log('result.successful', result.successful)
+
+      const { type, response } = result.successful[0]
+      console.log('successful[0] result response', response)
+
+      // if (response.uploadURL.endsWith('png')) {
+      updateActiveBlock(`![](${response.uploadURL})`)
+      /*} else {
+        updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
+      }*/
+    }
+    if (result.failed.length > 0) {
+      console.log('failed files:', result.failed)
+      console.error('Errors:')
+      result.failed.forEach((file) => {
+        console.error(file.error)
+      })
+    }
   })
 
 window.uppy = uppy
@@ -115,7 +135,7 @@ const interceptImagePaste = async (event) => {
   if (items && items.length) {
     // 检索剪切板items
     for (let i = 0; i < items.length; i++) {
-      console.log('items[i]', items[i])
+      console.log(`event.clipboardData items[${i}]`, items[i])
       if (items[i].type.includes('image') || items[i].type.includes('pdf')) {
         image = items[i].getAsFile()
         break
@@ -125,43 +145,8 @@ const interceptImagePaste = async (event) => {
 
   // 此时file就是剪切板中的图片文件
   try {
-    const base64Image = await blobToBase64(image)
-    // const imageUrl = await uploadAsBase64(base64Image)
-    const { endpoint, payload } = formatBase64Payload(base64Image)
-
-    uppy.addFile({
-      source: 'image from clipboard',
-      name: image.name,
-      type: image.type,
-      data: image,
-      meta: {
-        endpoint,
-        payload,
-      },
-    })
-
-    uppy.upload().then((result) => {
-      console.info('Successful uploads:', result.successful)
-
-      if (result.successful.length > 0) {
-        console.log('result.successful[0]', result.successful[0])
-
-        const { type, response } = result.successful[0]
-        console.log('successful result response', response)
-
-        if (type.includes('image/')) {
-          updateActiveBlock(`![](${response.uploadURL})`)
-        } else {
-          updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
-        }
-      }
-      if (result.failed.length > 0) {
-        console.error('Errors:')
-        result.failed.forEach((file) => {
-          console.error(file.error)
-        })
-      }
-    })
+    uppy.addFile({ source: 'image from clipboard', data: image })
+    // await uppy.upload()
   } catch (e) {
     console.error(e, 'xxxxxxxxxxxx')
   }
