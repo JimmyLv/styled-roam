@@ -48,7 +48,7 @@ export function appendCSSToPageByEnv(tagId, cssToAdd) {
   if (window.URLScriptServer.includes('localhost')) {
     appendCSSToPage(tagId, `http://localhost:8080/${cssToAdd}`)
   } else {
-    appendCSSToPage(tagId, `${window.URLScriptServer}js/${cssToAdd}`)
+    appendCSSToPage(tagId, `${window.URLScriptServer}${cssToAdd}`)
   }
 }
 
