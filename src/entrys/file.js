@@ -152,13 +152,25 @@ var uppy = new Uppy({
             // https://docs.google.com/document/d/0BwLlItXN6SRuRDdBOFR0TExDbHc/edit
             docx: 'document',
             doc: 'document',
+            // https://docs.google.com/drawings/d/1sMeeh3GZgVG2xUY5fxmhQA7meHjzDJEaDam-xRWA5Dw/edit
             pdf: 'download',
           }[file.extension] || 'file'
 
-        if (type === 'download') {
-          appendFileBlock(`{{pdf: https://drive.google.com/uc?export=download&id=${file.id}}}`)
+        if (type === 'file') {
+          if (file.id.includes('drawing')) {
+            //.png
+            appendFileBlock(`{{iframe: https://docs.google.com/drawings/d/${file.data.id}/edit}}`)
+          } else if (file.type === 'image/jpeg') {
+            // images
+            const imageUrl = file.preview.replace('=s220', '')
+            appendFileBlock(`![${file.name}](${imageUrl})`)
+          } else {
+            appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.data.id}/edit}}`)
+          }
+        } else if (type === 'download') {
+          appendFileBlock(`{{pdf: https://docs.google.com/file/d/${file.data.id}/preview}}`)
         } else {
-          appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.id}/edit}}`)
+          appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.data.id}/edit}}`)
         }
       } else if (file.source === 'OneDrive') {
       } else {
