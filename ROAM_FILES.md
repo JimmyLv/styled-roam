@@ -13,12 +13,12 @@ Upload images to custom servers rather than default Firebase
 
 ```js
 // 1. New token from https://github.com/settings/tokens/new?scopes=repo
-// 2. Setup your GitHub repo and savePath to upload images 👇👇👇👇👇👇
+// 2. Create your GitHub repo and choose savePath to upload images 👇👇👇👇👇👇
 // e.g. https://raw.githubusercontent.com/JimmyLv/images/master/2021/1618990038204.png
 window.roamFiles = {
-  GITHUB_ACCESS_TOKEN: 'please update to yours',
+  GITHUB_ACCESS_TOKEN: 'PLEASE UPDATE TO YOURS!!!',
   repo: 'JimmyLv/images',
-  branch: 'master',
+  branch: 'main',
   savePath: '2021',
 }
 window.URLScriptServer = "https://styled-roam.vercel.app/";
@@ -34,3 +34,21 @@ if (!existing) {
 ```
 
 3. Update the `window.roamFiles` config and Press the <span style="color:red;">BIG RED</span> button
+
+## How to get your `GITHUB_ACCESS_TOKEN`
+
+1. Generate new token from <https://github.com/settings/tokens/new?scopes=repo>
+
+![0421-GoogleChrome-Newpersonalaccesstoken](https://raw.githubusercontents.com/JimmyLv/images/master/2021/0421-Google%20Chrome-New%20personal%20access%20token.jpg)
+
+2. Create your GitHub repo (e.g. [JimmyLv/images](https://github.com/JimmyLv/images)) here: <https://repo.new>
+
+![0421-GoogleChrome-CreateaNewRepository](https://raw.githubusercontents.com/JimmyLv/images/master/2021/0421-Google%20Chrome-Create%20a%20New%20Repository.jpg)
+
+3. Update the `window.roamFiles` config in `{{roam/js}}`
+
+![0421-RoamResearch-roamjsfile-attachment](https://raw.githubusercontents.com/JimmyLv/images/master/2021/0421-Roam%20Research-roamjsfile-attachment.jpg)
+
+4. Just Copy and Paste (Ctrl-C/Ctrl-V) to save image into Roam Research as normal
+
+https://twitter.com/Jimmy_JingLv/status/1384795856939847684?s=20
