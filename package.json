@@ -8,7 +8,7 @@
     "build:styled": "parcel build src/index.js --out-dir public/js",
     "dev:file": "parcel src/entrys/file.js --port 8080",
     "build:file": "parcel build src/entrys/file.js --out-dir public",
-    "build:md": "marked README.md -o public/index.html",
+    "build:md": "marked README.md -o public/index.html && marked ROAM_FILES.md -o public/file.html",
     "build": "npm run build:styled && npm run build:file && npm run build:md",
     "prebuild": "rm -rf public",
     "deploy": "gh-pages -d public"
