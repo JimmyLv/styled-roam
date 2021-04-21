@@ -10,10 +10,12 @@ import OneDrive from '@uppy/onedrive'
 import ScreenCapture from '@uppy/screen-capture'
 import Webcam from '@uppy/webcam'
 import XHRUpload from '@uppy/xhr-upload'
+import { ProgressBar } from 'uppy'
 // With webpack and `style-loader`, you can require them like this:
 import 'uppy/dist/uppy.min.css'
-import { ProgressBar } from 'uppy'
 import { appendIcon } from '../utils/dom-helper'
+import { blobToBase64 } from './base64'
+import { formatBase64Payload } from './github'
 
 function appendCSSToPage(tagId, cssToAdd) {
   appendElementToPage(
@@ -48,19 +50,43 @@ appendIcon('file-upload', 'cloud-upload', function () {
   }
 })
 
-var uppy = new Uppy({ id: 'uppy', debug: true })
+var uppy = new Uppy({
+  id: 'uppy',
+  debug: true,
+  onBeforeFileAdded(currentFile, files) {
+    const modifiedFile = {
+      ...currentFile,
+      // name: currentFile.name + '__' + Date.now(),
+    }
+    console.log('modifiedFile', modifiedFile)
+    return modifiedFile
+  },
+  onBeforeUpload(files) {
+    // We’ll be careful to return a new object, not mutating the original `files`
+    const updatedFiles = {}
+    Object.keys(files).forEach((fileID) => {
+      // const base64Image = await blobToBase64(files[fileID])
+      console.log('files[fileID]', files[fileID])
+      // const base64Image = await blobToBase64(files[fileID].data)
+      const { endpoint, payload = {} } = files[fileID].meta
+      uppy.getPlugin('XHRUpload').setOptions({ endpoint })
+      console.log('{ endpoint, payload = {} }', { endpoint, payload })
+      updatedFiles[fileID] = {
+        ...files[fileID],
+        name: 'myCustomPrefix' + '__' + files[fileID].name,
+        data: JSON.stringify({
+          ...files[fileID].data,
+          ...payload,
+        }),
+      }
+    })
+    return updatedFiles
+  },
+})
   .use(Dashboard, {
     // inline: true,
     trigger: '#mode-button-file-upload',
     target: 'body',
-    onBeforeFileAdded: (currentFile, files) => {
-      const modifiedFile = {
-        ...currentFile,
-        name: currentFile.name + '__' + Date.now(),
-      }
-      console.log('modifiedFile', modifiedFile)
-      return modifiedFile
-    },
   })
   .use(ProgressBar, {
     target: 'body',
@@ -77,10 +103,17 @@ var uppy = new Uppy({ id: 'uppy', debug: true })
   // .use(DropTarget, {target: document.body })
   // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
   .use(XHRUpload, {
-    endpoint: 'https://xhr-server.herokuapp.com/upload',
+    // endpoint: 'https://xhr-server.herokuapp.com/upload',
     // endpoint: 'https://sm.ms/api/v2/upload',
-    formData: true,
-    fieldName: 'files[]',
+    endpoint: 'https://api.github.com',
+    method: 'put',
+    formData: false,
+    // fieldName: 'files[]',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      authorization: 'token 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',
+    },
   })
 
 window.uppy = uppy
@@ -89,10 +122,12 @@ uppy.on('complete', (result) => {
   console.log('Upload complete! We’ve uploaded these files:', result.successful)
   console.log('failed files:', result.failed)
 })
-uppy.on('file-added', (file) => {
-  console.log('Added file', file)
+uppy.on('upload', (data) => {
+  console.log('uploading file', data.id)
+  uppy.getPlugin('XHRUpload').setOptions({
+    endpoint: `https://api.github.com/repos/JimmyLv/images/contents/2021/${+new Date()}.png`,
+  })
 })
-
 const interceptImagePaste = async (event) => {
   console.log('event', event)
   event.stopPropagation()
@@ -113,15 +148,19 @@ const interceptImagePaste = async (event) => {
   }
   // 此时file就是剪切板中的图片文件
   try {
-    // const base64Image = await blobToBase64(image)
+    const base64Image = await blobToBase64(image)
     // const imageUrl = await uploadAsBase64(base64Image)
-
+    const { endpoint, payload } = formatBase64Payload(base64Image)
     // const res = uploadFile(file)
     const res = uppy.addFile({
-      source: 'image input',
+      source: 'image from clipboard',
       name: image.name,
       type: image.type,
       data: image,
+      meta: {
+        endpoint,
+        payload,
+      },
     })
     console.log('res', res)
     // uppy.upload()
@@ -131,8 +170,9 @@ const interceptImagePaste = async (event) => {
       if (result.successful.length > 0) {
         console.log('result.successful[0]', result.successful[0])
 
-        const { type, response, uploadURL } = result.successful[0]
-        console.log('response', response)
+        const { type, response } = result.successful[0]
+        console.log('successful result response', response)
+        const uploadURL = response.body.content.download_url
 
         if (type === 'image/png') {
           document.activeElement.value = `![](${uploadURL})`
