@@ -6,6 +6,8 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 
 > My custom CSS and JavaScript extension for [Roam Research](https://roamresearch.com)
 
+🆕 [#roam𐃏files](https://twitter.com/hashtag/roam%F0%90%83%8Ffiles?src=hashtag_click) Roam Research ✍️ [Files Attachment Dashboard](./ROAM_FILES.md) 🗃
+
 ## Quick Start
 
 1. Add a `{{[[roam/js]]}}` block firstly
