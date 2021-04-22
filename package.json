@@ -36,6 +36,17 @@
             "docs/CHANGELOG.md"
           ]
         }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "src",
+              "label": "styled-roam"
+            }
+          ]
+        }
       ]
     ]
   },
