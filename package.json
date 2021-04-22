@@ -1,6 +1,7 @@
 {
   "name": "styled-roam",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
+  "private": "true",
   "description": "Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme 🎨",
   "main": "index.js",
   "scripts": {
@@ -11,7 +12,32 @@
     "build:md": "marked README.md -o public/index.html && marked ROAM_FILES.md -o public/file.html",
     "build": "npm run build:styled && npm run build:file && npm run build:md",
     "prebuild": "rm -rf public",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "release": "semantic-release"
+  },
+  "release": {
+    "branches": [
+      "master",
+      "dev"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "docs/CHANGELOG.md"
+          ]
+        }
+      ]
+    ]
   },
   "husky": {
     "hooks": {
@@ -20,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JimmyLv/styled-roam.git"
+    "url": "https://github.com/JimmyLv/styled-roam.git"
   },
   "keywords": [
     "Roam Research",
@@ -35,10 +61,13 @@
   },
   "homepage": "https://github.com/JimmyLv/styled-roam#readme",
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "husky": "^3.1.0",
     "less": "^4.0.0",
     "marked": "^2.0.3",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "semantic-release": "^17.4.2"
   },
   "dependencies": {
     "@blueprintjs/core": "^3.41.0",
