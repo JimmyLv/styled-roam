@@ -12,6 +12,8 @@ import { blobToBase64 } from './base64'
 import { config } from './config'
 import { saveToDropbox } from './dropbox'
 import { formatBase64Payload } from './github'
+import { getGoogleDriveIframeLink } from './providers/google-drive'
+import { getOneDriveIframeLink } from './providers/onedrive'
 import { appendFileBlock } from './roam'
 
 appendCSSToPageByEnv('cssFileUploader', 'file.css')
@@ -142,58 +144,11 @@ var uppy = new Uppy({
         },
       })
       if (file.source === 'GoogleDrive') {
-        const type =
-          {
-            // https://docs.google.com/presentation/d/1l5l4ctSUt3rBtojprP60HCLarS7jryZArY-5mAlBm_g/edit
-            ppt: 'presentation',
-            // https://docs.google.com/spreadsheets/d/0BwLlItXN6SRuWHlpakdpS2ltdHM/edit
-            xlsx: 'spreadsheets',
-            csv: 'spreadsheets',
-            // https://docs.google.com/document/d/0BwLlItXN6SRuRDdBOFR0TExDbHc/edit
-            docx: 'document',
-            doc: 'document',
-            // https://docs.google.com/drawings/d/1sMeeh3GZgVG2xUY5fxmhQA7meHjzDJEaDam-xRWA5Dw/edit
-            pdf: 'download',
-          }[file.extension] || 'file'
-
-        if (type === 'file') {
-          if (file.id.includes('drawing')) {
-            //.png
-            appendFileBlock(`{{iframe: https://docs.google.com/drawings/d/${file.data.id}/edit}}`)
-          } else if (file.type === 'image/jpeg') {
-            // images
-            const imageUrl = file.preview.replace('=s220', '')
-            appendFileBlock(`![${file.name}](${imageUrl})`)
-          } else {
-            appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.data.id}/edit}}`)
-          }
-        } else if (type === 'download') {
-          appendFileBlock(`{{pdf: https://docs.google.com/file/d/${file.data.id}/preview}}`)
-        } else {
-          appendFileBlock(`{{iframe: https://docs.google.com/${type}/d/${file.data.id}/edit}}`)
-        }
+        const iframeLink = getGoogleDriveIframeLink(file)
+        appendFileBlock(iframeLink)
       } else if (file.source === 'OneDrive') {
-        const type =
-          {
-            // https://onedrive.live.com/edit.aspx?page=view&resid=879869B902DC45E2!1098&app=PowerPoint
-            ppt: 'PowerPoint',
-            // https://onedrive.live.com/edit.aspx?page=view&resid=879869B902DC45E2!1109&app=Excel
-            xlsx: 'Excel',
-            csv: 'Excel',
-            // https://onedrive.live.com/edit.aspx?page=view&resid=879869B902DC45E2!1113&app=Word
-            docx: 'Word',
-            doc: 'Word',
-            // https://onedrive.live.com/pdf?resid=879869B902DC45E2%211092&open=1&serve=1
-            pdf: 'PDF',
-          }[file.extension] || 'file'
-
-        if (type === 'file') {
-          appendFileBlock(`![${file.name}](${file.preview})`)
-        } else if (type === 'PDF') {
-          appendFileBlock(`{{iframe: https://onedrive.live.com/pdf?resid=${file.data.id}&open=1&serve=1}}`)
-        } else {
-          appendFileBlock(`{{iframe: https://onedrive.live.com/edit.aspx?page=view&resid=${file.data.id}&app=${type}}}`)
-        }
+        const iframeLink = getOneDriveIframeLink(file)
+        appendFileBlock(iframeLink)
       } else {
         appendFileBlock(`![${file.name || ''}](${file.preview})`)
       }
