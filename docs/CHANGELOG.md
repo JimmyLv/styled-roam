@@ -1,3 +1,21 @@
+# [2.2.0](https://github.com/JimmyLv/styled-roam/compare/v2.1.0...v2.2.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* added config ([9e7beb2](https://github.com/JimmyLv/styled-roam/commit/9e7beb25477a453b875497181700a1ca2a7f574b))
+
+
+### Features
+
+* add auto release with emoji ([139cf9a](https://github.com/JimmyLv/styled-roam/commit/139cf9abbb4fff0ae24af98bceebfab35132f15c))
+
+
+
+
+
+# [v2.2.0](https://github.com/JimmyLv/styled-roam/compare/v2.1.0...v2.2.0) (2021-04-22)
+
 # [2.1.0](https://github.com/JimmyLv/styled-roam/compare/v2.0.0...v2.1.0) (2021-04-22)
 
 
