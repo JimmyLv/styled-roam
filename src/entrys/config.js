@@ -7,6 +7,7 @@ export const config = {
   repo: window.roamFiles.repo || 'JimmyLv/images',
   branch: window.roamFiles.branch || 'master',
   savePath: window.roamFiles.savePath || new Date().getFullYear().toString(),
+  embedType: window.roamFiles.embedType || 'preview',
 }
 export const companionOptions = {
   target: Dashboard,

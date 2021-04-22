@@ -22,6 +22,7 @@ window.roamFiles = {
   repo: 'JimmyLv/images',
   branch: 'main',
   savePath: '2021',
+  embedType: 'preview', // or 'edit'
 }
 window.URLScriptServer = "https://styled-roam.vercel.app/";
 var existing = document.getElementById("roam-files");
