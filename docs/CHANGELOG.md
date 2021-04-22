@@ -1,3 +1,16 @@
+## [2.2.1](https://github.com/JimmyLv/styled-roam/compare/v2.2.0...v2.2.1) (2021-04-22)
+
+
+### Bug Fixes
+
+* update the release script ([0c36be7](https://github.com/JimmyLv/styled-roam/commit/0c36be7536404d13bce1df747b10c49df290cb45))
+
+
+
+
+
+# [v2.2.1](https://github.com/JimmyLv/styled-roam/compare/v2.2.0...v2.2.1) (2021-04-22)
+
 # [2.2.0](https://github.com/JimmyLv/styled-roam/compare/v2.1.0...v2.2.0) (2021-04-22)
 
 
