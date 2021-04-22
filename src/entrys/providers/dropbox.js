@@ -74,7 +74,7 @@ export function uploadFile(file) {
   return false
 }
 
-export function saveToDropbox(fileUrl) {
+export async function saveToDropbox(fileUrl) {
   var options = {
     files: [
       // You can specify up to 100 files.
@@ -105,7 +105,7 @@ export function saveToDropbox(fileUrl) {
       alert(`Error! ${errorMessage}`)
     },
   }
-  window.Dropbox.save(options)
+  await window.Dropbox.save(options)
 }
 
 export function loadDropboxScript() {

@@ -96,6 +96,7 @@ var uppy = new Uppy({
     // endpoint: 'https://sm.ms/api/v2/upload',
     endpoint: 'https://api.github.com',
     method: 'put',
+    limit: 1,
     formData: false,
     // fieldName: 'files[]',
     // metaFields: null
@@ -120,6 +121,7 @@ var uppy = new Uppy({
     },
   })
   .on('file-added', fileAdded)
+  // .on('files-added', filesAdded)
   .on('upload', upload)
   .on('upload-success', uploadSuccess)
   .on('complete', complete)

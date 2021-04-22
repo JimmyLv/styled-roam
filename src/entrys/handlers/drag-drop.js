@@ -2,13 +2,9 @@ import { getUids } from 'roam-client'
 import { getCurrentPageUid } from '../roam'
 import { handleFiles } from './handle-files'
 
-export const interceptImageDrop = (event) => {
+export const interceptImageDrop = async (event) => {
   const items = event.dataTransfer?.items
-  const images = handleFiles(items)
-  if (images) {
-    event.stopPropagation()
-    event.preventDefault()
-  }
+  await handleFiles(items, event)
 
   Array.from(document.getElementsByClassName('dnd-drop-bar'))
     .map((c) => c)

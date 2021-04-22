@@ -24,7 +24,7 @@ export const getImgBase64 = async (url) => {
 export async function blobToBase64(blob) {
   console.log('blobToBase64', blob)
   if (blob.thumbnail) {
-    // console.log('blob.thumbnail', JSON.stringify(blob.toString()))
+    console.log('blob.thumbnail', blob.thumbnail)
     // console.log('blob.thumbnail', JSON.parse(blob.toString()))
     const data = await fetch(blob.thumbnail)
     const blob = await data.blob()

@@ -1,28 +1,31 @@
-import { config } from '../config';
-import { saveToDropbox } from '../providers/dropbox';
-import { appendFileBlock } from '../roam';
+import { updateActiveBlock } from 'roam-client'
+import { config } from '../config'
+import { saveToDropbox } from '../providers/dropbox'
+import { appendFileBlock } from '../roam'
 
-export function complete() {
-  return (result) => {
-    if (result.successful.length > 0) {
-      console.log('result.successful', result.successful);
+export function complete(result) {
+  if (result.successful.length > 0) {
+    result.successful.forEach(async (result) => {
+      const { uploadURL } = result.response
+      console.log('successful result response', result.response)
+      const mdLink = `![](${uploadURL})`
 
-      const { response } = result.successful[0];
-      console.log('successful[0] result response', response);
-
-      const mdLink = `![](${response.uploadURL})`;
-      appendFileBlock(mdLink);
+      if (result.successful.length === 1 && document.activeElement.type === 'textarea') {
+        updateActiveBlock(mdLink)
+      } else {
+        await appendFileBlock(mdLink)
+      }
 
       if (config.dropbox_app_key) {
-        saveToDropbox(response.uploadURL);
+        await saveToDropbox(uploadURL)
       }
-    }
-    if (result.failed.length > 0) {
-      console.log('failed files:', result.failed);
-      console.error('Errors:');
-      result.failed.forEach((file) => {
-        console.error(file.error);
-      });
-    }
-  };
+    })
+  }
+  if (result.failed.length > 0) {
+    console.log('failed files:', result.failed)
+    console.error('Errors:')
+    result.failed.forEach((file) => {
+      console.error(file.error)
+    })
+  }
 }
