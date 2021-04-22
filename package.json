@@ -45,7 +45,8 @@
               "path": "src",
               "label": "styled-roam"
             }
-          ]
+          ],
+          "addReleases": "top"
         }
       ]
     ]
