@@ -49,12 +49,6 @@ module.exports = {
     [
       '@semantic-release/github',
       {
-        assets: [
-          {
-            path: 'src',
-            label: 'styled-roam',
-          },
-        ],
         addReleases: 'top',
       },
     ],
