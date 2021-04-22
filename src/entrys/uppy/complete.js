@@ -5,9 +5,9 @@ import { appendFileBlock } from '../roam'
 
 export function complete(result) {
   if (result.successful.length > 0) {
-    result.successful.forEach(async (result) => {
-      const { uploadURL } = result.response
-      console.log('successful result response', result.response)
+    result.successful.forEach(async ({ response }) => {
+      const { uploadURL } = response
+      console.log('successful result response', response)
       const mdLink = `![](${uploadURL})`
 
       if (result.successful.length === 1 && document.activeElement.type === 'textarea') {
