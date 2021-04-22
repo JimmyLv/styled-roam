@@ -1,3 +1,16 @@
+## [2.2.2](https://github.com/JimmyLv/styled-roam/compare/v2.2.1...v2.2.2) (2021-04-22)
+
+
+### Bug Fixes
+
+* update the result when complete ([b2c52eb](https://github.com/JimmyLv/styled-roam/commit/b2c52eb4117fbb183171c1aca27334ad35b6c51a))
+
+
+
+
+
+# [v2.2.2](https://github.com/JimmyLv/styled-roam/compare/v2.2.1...v2.2.2) (2021-04-22)
+
 ## [2.2.1](https://github.com/JimmyLv/styled-roam/compare/v2.2.0...v2.2.1) (2021-04-22)
 
 
