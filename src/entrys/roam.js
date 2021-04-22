@@ -1,11 +1,13 @@
-import { createBlock, updateActiveBlock } from 'roam-client';
+import { createBlock, getPageUidByPageTitle, toRoamDate, updateActiveBlock } from 'roam-client';
 
 export function appendFileBlock(fileLink) {
   if (document.activeElement.type === 'textarea') {
-    updateActiveBlock(fileLink);
+    updateActiveBlock(fileLink)
   } else {
     // 'https://roamresearch.com/#/app/Note-Tasking/page/1OLUyHxAM'
-    const uid = location.href.substring(location.href.length - 9);
-    createBlock({ node: { text: fileLink }, parentUid: uid });
+    // https://roamresearch.com/#/app/Note-Tasking
+    const uid = window.location.hash.match(/\/page\/(.*)$/)?.[1] ||
+      getPageUidByPageTitle(toRoamDate(new Date()))
+    createBlock({ node: { text: fileLink }, parentUid: uid })
   }
 }
