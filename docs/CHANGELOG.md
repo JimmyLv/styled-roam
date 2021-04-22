@@ -1,3 +1,16 @@
+## [2.2.3](https://github.com/JimmyLv/styled-roam/compare/v2.2.2...v2.2.3) (2021-04-22)
+
+
+### Bug Fixes
+
+* update blocks when multiple files ([74c3c80](https://github.com/JimmyLv/styled-roam/commit/74c3c80e1cf8a6e01cbe9ef4e30b154da34e2316))
+
+
+
+
+
+# [v2.2.3](https://github.com/JimmyLv/styled-roam/compare/v2.2.2...v2.2.3) (2021-04-22)
+
 ## [2.2.2](https://github.com/JimmyLv/styled-roam/compare/v2.2.1...v2.2.2) (2021-04-22)
 
 
