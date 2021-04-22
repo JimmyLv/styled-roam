@@ -1,4 +1,4 @@
-import { createBlock, getPageUidByPageTitle, toRoamDate } from 'roam-client';
+import { createBlock, getPageUidByPageTitle, toRoamDate } from 'roam-client'
 
 const sleep = (m) => new Promise((r) => setTimeout(r, m))
 
