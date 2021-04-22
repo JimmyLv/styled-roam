@@ -1,17 +1,26 @@
-import Uppy from '@uppy/core'
-import Dashboard from '@uppy/dashboard'
 import Facebook from '@uppy/facebook'
 import ImageEditor from '@uppy/image-editor'
 import OneDrive from '@uppy/onedrive'
-import XHRUpload from '@uppy/xhr-upload'
-// import Dropins from 'dropbox-dropins'
-import { Dropbox, DropTarget, GoogleDrive, Instagram, ProgressBar, ScreenCapture, Transloadit, Webcam } from 'uppy'
+import {
+  Core as Uppy,
+  Dashboard,
+  Dropbox,
+  DropTarget,
+  GoogleDrive,
+  Instagram,
+  ProgressBar,
+  ScreenCapture,
+  Webcam,
+  XHRUpload,
+} from 'uppy'
 import 'uppy/dist/uppy.min.css'
 import { appendCSSToPageByEnv, appendIcon } from '../utils/dom-helper'
 import { blobToBase64 } from './base64'
-import { config } from './config'
-import { saveToDropbox } from './dropbox'
-import { formatBase64Payload } from './github'
+import { companionOptions, config } from './config'
+import { interceptImageDrop } from './handlers/drag-drop'
+import { interceptImagePaste } from './handlers/paste'
+import { loadDropboxScript, saveToDropbox } from './providers/dropbox'
+import { formatBase64Payload } from './providers/github'
 import { getGoogleDriveIframeLink } from './providers/google-drive'
 import { getOneDriveIframeLink } from './providers/onedrive'
 import { appendFileBlock } from './roam'
@@ -29,25 +38,10 @@ appendIcon('file-upload', 'cloud-upload', function () {
   }
 })
 
-const companionOptions = {
-  target: Dashboard,
-  companionUrl: Transloadit.COMPANION,
-  companionAllowedHosts: Transloadit.COMPANION_PATTERN,
-}
-
 // <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="dsug98rvaux3fit"></script>
 
 if (config.dropbox_app_key) {
-  var existing = document.getElementById('dropboxjs')
-  if (!existing) {
-    var extension = document.createElement('script')
-    extension.src = 'https://www.dropbox.com/static/api/2/dropins.js'
-    extension.id = 'dropboxjs'
-    extension.dataset.appKey = config.dropbox_app_key
-    extension.async = true
-    extension.type = 'text/javascript'
-    document.getElementsByTagName('head')[0].appendChild(extension)
-  }
+  loadDropboxScript()
 }
 
 var uppy = new Uppy({
@@ -187,12 +181,9 @@ var uppy = new Uppy({
       const { response } = result.successful[0]
       console.log('successful[0] result response', response)
 
-      // if (response.uploadURL.endsWith('png')) {
       const mdLink = `![](${response.uploadURL})`
       appendFileBlock(mdLink)
-      /*} else {
-        updateActiveBlock(`{{iframe: ${response.uploadURL} }}`)
-      }*/
+
       if (config.dropbox_app_key) {
         saveToDropbox(response.uploadURL)
       }
@@ -208,40 +199,8 @@ var uppy = new Uppy({
 
 window.uppy = uppy
 
-const interceptImagePaste = async (event) => {
-  const items = event.clipboardData && event.clipboardData.items
-  var image = null
-  if (items && items.length) {
-    // 检索剪切板items
-    for (let i = 0; i < items.length; i++) {
-      console.log(`event.clipboardData items[${i}]`, items[i])
-      if (items[i].type.includes('image') || items[i].type.includes('pdf')) {
-        image = items[i].getAsFile()
-        break
-      }
-    }
-  }
-
-  // 此时file就是剪切板中的图片文件
-  if (image) {
-    // only handle for image files
-    event.stopPropagation()
-    event.preventDefault()
-
-    try {
-      uppy.addFile({
-        source: 'image from clipboard',
-        name: image.name,
-        type: image.type,
-        data: image,
-        preview: URL.createObjectURL(image),
-      })
-      // await uppy.upload()
-    } catch (e) {
-      console.error(e, 'xxxxxxxxxxxx')
-    }
-  }
-}
-
 document.getElementById('app').removeEventListener('onpaste', interceptImagePaste)
 document.getElementById('app').onpaste = interceptImagePaste
+
+document.getElementById('app').removeEventListener('ondrop', interceptImageDrop)
+document.getElementById('app').ondrop = interceptImageDrop
