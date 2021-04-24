@@ -42,15 +42,15 @@ if (!existing) {
 
 1. Generate new token from <https://github.com/settings/tokens/new?scopes=repo>
 
-![0421-GoogleChrome-Newpersonalaccesstoken](https://raw.githubusercontents.com/JimmyLv/images/master/2021/0421-Google%20Chrome-New%20personal%20access%20token.jpg)
+![0421-GoogleChrome-Newpersonalaccesstoken](https://raw.staticdn.net/JimmyLv/images/master/2021/0421-Google%20Chrome-New%20personal%20access%20token.jpg)
 
 2. Create your GitHub repo (e.g. [JimmyLv/images](https://github.com/JimmyLv/images)) here: <https://repo.new>
 
-![0421-GoogleChrome-CreateaNewRepository](https://raw.githubusercontents.com/JimmyLv/images/master/2021/0421-Google%20Chrome-Create%20a%20New%20Repository.jpg)
+![0421-GoogleChrome-CreateaNewRepository](https://raw.staticdn.net/JimmyLv/images/master/2021/0421-Google%20Chrome-Create%20a%20New%20Repository.jpg)
 
 3. Update the `window.roamFiles` config in `{{roam/js}}`
 
-![0421-RoamResearch-roamjsfile-attachment](https://raw.githubusercontents.com/JimmyLv/images/master/2021/0421-Roam%20Research-roamjsfile-attachment.jpg)
+![0421-RoamResearch-roamjsfile-attachment](https://raw.staticdn.net/JimmyLv/images/master/2021/0421-Roam%20Research-roamjsfile-attachment.jpg)
 
 4. Just Copy and Paste (Ctrl-C/Ctrl-V) to save image into Roam Research as normal
 
@@ -62,4 +62,4 @@ Create a new @Dropbox app and get the APP_KEY here: https://www.dropbox.com/deve
 
 (don't forget to add http://roamresearch.com into the Saver domains, and File Permission Scopes)
 
-![5L5bjx](https://raw.githubusercontents.com/JimmyLv/images/master/2021/5L5bjx.jpg)
+![5L5bjx](https://raw.staticdn.net/JimmyLv/images/master/2021/5L5bjx.jpg)
