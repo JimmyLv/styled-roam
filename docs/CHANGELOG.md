@@ -1,3 +1,16 @@
+# [2.3.0](https://github.com/JimmyLv/styled-roam/compare/v2.2.3...v2.3.0) (2021-05-07)
+
+
+### Features
+
+* extract github options and added gyazo support ([18c50ba](https://github.com/JimmyLv/styled-roam/commit/18c50baa57f9de14e10292d79d488aaec21a8995))
+
+
+
+
+
+# [v2.3.0](https://github.com/JimmyLv/styled-roam/compare/v2.2.3...v2.3.0) (2021-05-07)
+
 ## [2.2.3](https://github.com/JimmyLv/styled-roam/compare/v2.2.2...v2.2.3) (2021-04-22)
 
 
