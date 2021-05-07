@@ -19,6 +19,8 @@ import { companionOptions, config } from './config'
 import { interceptImageDrop } from './handlers/drag-drop'
 import { interceptImagePaste } from './handlers/paste'
 import { loadDropboxScript } from './providers/dropbox'
+import { githubOptions } from './providers/github'
+// import { gyazoOptions } from './providers/gyazo';
 import { complete } from './uppy/complete'
 import { fileAdded } from './uppy/file-added'
 import { upload } from './uppy/upload'
@@ -56,31 +58,7 @@ var uppy = new Uppy({
     target: 'body',
     fixed: true,
   })
-  /*.use(Transloadit, {
-    importFromUploadURLs: true,
-    alwaysRunAssembly: false,
-    waitForEncoding: false,
-    params: {
-      auth: {
-        key: config.companion_auth_key,
-      },
-      steps: {
-        ':original': {
-          robot: '/upload/handle',
-        },
-        compress_image: {
-          use: ':original',
-          robot: '/image/optimize',
-          progressive: true,
-        },
-        export: {
-          use: ['compress_image'],
-          robot: '/file/serve',
-        },
-      },
-      // https://transloadit.com/c/
-    },
-  })*/
+  /*.use(Transloadit, transloaditOptions)*/
   .use(Dropbox, companionOptions)
   .use(GoogleDrive, companionOptions)
   .use(Instagram, companionOptions)
@@ -91,35 +69,8 @@ var uppy = new Uppy({
   .use(ImageEditor, { target: Dashboard })
   .use(DropTarget, { target: 'document.body' })
   // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
-  .use(XHRUpload, {
-    // endpoint: 'https://xhr-server.herokuapp.com/upload',
-    // endpoint: 'https://sm.ms/api/v2/upload',
-    endpoint: 'https://api.github.com',
-    method: 'put',
-    limit: 1,
-    formData: false,
-    // fieldName: 'files[]',
-    // metaFields: null
-    headers: {
-      accept: 'application/json',
-      'content-type': 'application/json',
-      authorization: `token ${config.token}`,
-    },
-    getResponseData(responseText, response) {
-      const res = JSON.parse(responseText)
-      console.log('XHRUpload response', res)
-
-      if (res.message) {
-        alert(`GitHub Error Message: ${res.message}`)
-        uppy.info(res.message, 'error', 3000)
-      }
-      return {
-        url: res.content.download_url,
-        preview: res.content.download_url,
-        data: res.content,
-      }
-    },
-  })
+  .use(XHRUpload, githubOptions)
+  // .use(XHRUpload, gyazoOptions)
   .on('file-added', fileAdded)
   // .on('files-added', filesAdded)
   .on('upload', upload)

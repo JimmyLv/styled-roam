@@ -3,6 +3,36 @@ import { config } from '../config'
 
 const octokit = new Octokit({ auth: config.token })
 
+export const githubOptions = {
+  // endpoint: 'https://xhr-server.herokuapp.com/upload',
+  // endpoint: 'https://sm.ms/api/v2/upload',
+  endpoint: 'https://api.github.com',
+  method: 'put',
+  limit: 1,
+  formData: false,
+  // fieldName: 'files[]',
+  // metaFields: null
+  headers: {
+    accept: 'application/json',
+    'content-type': 'application/json',
+    authorization: `token ${config.token}`,
+  },
+  getResponseData(responseText, response) {
+    const res = JSON.parse(responseText)
+    console.log('XHRUpload response', res)
+
+    if (res.message) {
+      alert(`GitHub Error Message: ${res.message}`)
+      uppy.info(res.message, 'error', 3000)
+    }
+    return {
+      url: res.content.download_url,
+      preview: res.content.download_url,
+      data: res.content,
+    }
+  },
+}
+
 function generateUuid() {
   return +new Date()
 }

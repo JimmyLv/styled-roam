@@ -1,3 +1,4 @@
+import { config } from '../config'
 import { blobToBase64 } from '../base64'
 import { formatBase64Payload } from '../providers/github'
 
@@ -21,7 +22,13 @@ export async function handleFiles(items, event) {
     // only handle for image files currently
     images.forEach(({ image, base64Image }) => {
       try {
+        // enabledGitHub
+        if (config.github?.enabled) {
+        }
         const { endpoint, payload } = formatBase64Payload(base64Image)
+
+        if (config.gyazo?.enabled) {
+        }
         // https://uppy.io/docs/uppy/#uppy-addFile-fileObject
         window.uppy.addFile({
           name: image.name,
