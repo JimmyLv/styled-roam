@@ -1,3 +1,16 @@
+## [2.3.1](https://github.com/JimmyLv/styled-roam/compare/v2.3.0...v2.3.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* added "browserslist" ([0ea5cac](https://github.com/JimmyLv/styled-roam/commit/0ea5cac0e439a575d4c18f31000371e2c6b9fd35))
+
+
+
+
+
+# [v2.3.1](https://github.com/JimmyLv/styled-roam/compare/v2.3.0...v2.3.1) (2021-05-07)
+
 # [2.3.0](https://github.com/JimmyLv/styled-roam/compare/v2.2.3...v2.3.0) (2021-05-07)
 
 
