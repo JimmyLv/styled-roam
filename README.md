@@ -14,9 +14,7 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 2. Add a **CHILD** block `/JavaScript Code Block` with this code...
 
 ```js
-var CARD_MODE_VERSION = "gh-pages";
-window.URLScriptServer = `https://cdn.jsdelivr.net/gh/JimmyLv/styled-roam@${CARD_MODE_VERSION}/`;
-// window.URLScriptServer = `https://raw.githack.com/JimmyLv/styled-roam/${CARD_MODE_VERSION}/`;
+window.URLScriptServer = `"https://styled-roam.vercel.app/`;
 
 var existing = document.getElementById("styled-roam");
 if (!existing) {
