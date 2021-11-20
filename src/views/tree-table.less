@@ -17,18 +17,6 @@
     background-color: #f0bd66;
   }
 
-  .roam-block-container {
-    border-radius: 0;
-    border-bottom: 1px solid #BFCCD6;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-  .roam-block-container>.rm-block-children {
-    margin-left: -11px;
-  }
-
   // 标题
   [style="width: 100%; position: relative;"] {
     position: sticky !important;
@@ -38,6 +26,20 @@
 
   .roam-body-main > div {
     padding: 0 !important;
+  }
+
+  .rm-block-children {
+    align-self: baseline;
+
+
+    .roam-block-container {
+      border-right: 1px solid #BFCCD6;
+      border-bottom: 1px solid #BFCCD6;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
 
   .roam-article > div:first-child {
@@ -57,14 +59,11 @@
 
     .rm-block__children.rm-level-0 > .roam-block-container {
       width: calc(100vw - 30px) !important;
-      margin-bottom: -5px;
       border: 1px solid #BFCCD6;
       border-bottom: none;
       background: #f2f4f8;
-      //overflow-x: scroll;
-      position: sticky;
-      top: 0;
-
+      //position: sticky;
+      //top: 0;
       &:last-child {
         border-bottom: 1px solid #BFCCD6;
       }
@@ -72,7 +71,6 @@
 
     .rm-block-main.rm-block__self {
       height: fit-content;
-      min-height: 40px;
       width: 370px;
       //margin: 20px;
       background: #f2f4f8;
