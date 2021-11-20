@@ -1,3 +1,18 @@
+# [2.5.0](https://github.com/JimmyLv/styled-roam/compare/v2.4.0...v2.5.0) (2021-11-20)
+
+
+### Features
+
+* add pre-commit to prettier code ([8d055dd](https://github.com/JimmyLv/styled-roam/commit/8d055ddbb213a80139fa7d0e865c172a5b7618be))
+* added disabled mode config ([19cbf70](https://github.com/JimmyLv/styled-roam/commit/19cbf70ce90ce74dc8ada9831b87ac4907346817))
+* polished tree table view styling ([786416f](https://github.com/JimmyLv/styled-roam/commit/786416fc52ab30e1434fcbdc1684ccedab35102c))
+
+
+
+
+
+# [v2.5.0](https://github.com/JimmyLv/styled-roam/compare/v2.4.0...v2.5.0) (2021-11-20)
+
 # [2.4.0](https://github.com/JimmyLv/styled-roam/compare/v2.3.2...v2.4.0) (2021-11-20)
 
 
