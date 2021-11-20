@@ -1,3 +1,21 @@
+# [2.6.0](https://github.com/JimmyLv/styled-roam/compare/v2.5.0...v2.6.0) (2021-11-20)
+
+
+### Bug Fixes
+
+* make title sticky ([2e99f7f](https://github.com/JimmyLv/styled-roam/commit/2e99f7f9c33ef5f259bd3e6cc7fb7e6238122d83))
+
+
+### Features
+
+* added local images ([fa38982](https://github.com/JimmyLv/styled-roam/commit/fa3898217e146320db6f9fdbd37f4e0527728984))
+
+
+
+
+
+# [v2.6.0](https://github.com/JimmyLv/styled-roam/compare/v2.5.0...v2.6.0) (2021-11-20)
+
 # [2.5.0](https://github.com/JimmyLv/styled-roam/compare/v2.4.0...v2.5.0) (2021-11-20)
 
 
