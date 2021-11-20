@@ -14,16 +14,25 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 2. Add a **CHILD** block `/JavaScript Code Block` with this code...
 
 ```js
-window.URLScriptServer = `https://styled-roam.vercel.app/`;
+window.URLScriptServer = `https://styled-roam.vercel.app/`
+window.styledRoamDisabledFeatures = [
+  // 'CardListMode',
+  // 'CardFlowMode',
+  // 'TreeTableMode',
+  // 'DocumentMode',
+  // 'CalendarMode',
+  // 'DownloadMode',
+  // 'FocusMode',
+]
 
-var existing = document.getElementById("styled-roam");
+var existing = document.getElementById('styled-roam')
 if (!existing) {
-  var extension = document.createElement("script");
-  extension.src = window.URLScriptServer + "js/index.js";
-  extension.id = "styled-roam";
-  extension.async = true;
-  extension.type = "text/javascript";
-  document.getElementsByTagName("head")[0].appendChild(extension);
+  var extension = document.createElement('script')
+  extension.src = window.URLScriptServer + 'js/index.js'
+  extension.id = 'styled-roam'
+  extension.async = true
+  extension.type = 'text/javascript'
+  document.getElementsByTagName('head')[0].appendChild(extension)
 }
 ```
 
@@ -51,7 +60,7 @@ Related Twitter:
 配合 Candy 主题食用最佳，当然其他主题也好看，😉
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/JimmyLv/Roam-Research-Themes@patch-1/Candy.css");
+@import url('https://cdn.jsdelivr.net/gh/JimmyLv/Roam-Research-Themes@patch-1/Candy.css');
 ```
 
 ## References

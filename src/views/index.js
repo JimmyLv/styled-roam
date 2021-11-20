@@ -11,14 +11,18 @@ import './index.less'
 const initialMode = localStorage.getItem('INIT_MODE') || 'document'
 document.querySelector('html').classList.add(initialMode)
 
+function isEnabled(mode) {
+  return !(window.styledRoamDisabledFeatures || []).includes(mode)
+}
+
 export default function initModes() {
-  initCardListMode()
-  initCardFlowMode()
-  initTreeTableMode()
-  initDocumentMode()
-  initCalendarMode()
-  initDownloadMode()
-  initFocusMode()
+  isEnabled('CardListMode') && initCardListMode()
+  isEnabled('CardFlowMode') && initCardFlowMode()
+  isEnabled('TreeTableMode') && initTreeTableMode()
+  isEnabled('DocumentMode') && initDocumentMode()
+  isEnabled('CalendarMode') && initCalendarMode()
+  isEnabled('DownloadMode') && initDownloadMode()
+  isEnabled('FocusMode') && initFocusMode()
 
   addHotKeys({
     shortcutKeys: 'u',
