@@ -1,3 +1,16 @@
+## [2.3.2](https://github.com/JimmyLv/styled-roam/compare/v2.3.1...v2.3.2) (2021-11-20)
+
+
+### Bug Fixes
+
+* update card flow mode with sticky position ([e0914ff](https://github.com/JimmyLv/styled-roam/commit/e0914ffb34cc38793411ffbaa7ca91fd49a5480f))
+
+
+
+
+
+# [v2.3.2](https://github.com/JimmyLv/styled-roam/compare/v2.3.1...v2.3.2) (2021-11-20)
+
 ## [2.3.1](https://github.com/JimmyLv/styled-roam/compare/v2.3.0...v2.3.1) (2021-05-07)
 
 
