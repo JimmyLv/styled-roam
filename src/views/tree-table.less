@@ -18,26 +18,33 @@
   }
 
   // 标题
-  [style="width: 100%; position: relative;"] {
+  [style='width: 100%; position: relative;'] {
     position: sticky !important;
     top: 0;
     left: 0;
+    z-index: 3;
   }
 
   .roam-body-main > div {
     padding: 0 !important;
   }
+  .roam-block-container > .rm-block-children {
+    margin-left: 28px;
+    margin-top: -1px;
+  }
 
   .rm-block-children {
     align-self: baseline;
 
-
     .roam-block-container {
-      border-right: 1px solid #BFCCD6;
-      border-bottom: 1px solid #BFCCD6;
+      border: 1px solid #bfccd6;
+      border-bottom: none;
+      border-radius: 0;
+      background: #f2f4f8;
 
       &:last-child {
-        border-bottom: none;
+        border-bottom: 1px solid #bfccd6;
+        margin-bottom: -1px;
       }
     }
   }
@@ -48,7 +55,7 @@
       width: 400px;
     }
 
-    [style="margin-left: -20px;"] {
+    [style='margin-left: -20px;'] {
       overflow-x: auto;
       padding-bottom: 10px;
     }
@@ -59,22 +66,35 @@
 
     .rm-block__children.rm-level-0 > .roam-block-container {
       width: calc(100vw - 30px) !important;
-      border: 1px solid #BFCCD6;
+      border: 1px solid #bfccd6;
       border-bottom: none;
       background: #f2f4f8;
-      //position: sticky;
-      //top: 0;
+      position: sticky;
+      top: 50px;
+
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scrollbar-width: none; /* firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+      &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+
       &:last-child {
-        border-bottom: 1px solid #BFCCD6;
+        border-bottom: 1px solid #bfccd6;
+      }
+
+      .rm-block-main.rm-block__self {
+        position: sticky;
+        left: 0;
       }
     }
 
     .rm-block-main.rm-block__self {
       height: fit-content;
       width: 370px;
-      //margin: 20px;
       background: #f2f4f8;
-      padding: 20px 16px 16px 0;
+      padding: 10px 8px 8px 0;
     }
 
     .block-highlight-blue .rm-block-main.rm-block__self {
@@ -86,7 +106,7 @@
       overflow: scroll;
     }
 
-    [style="margin-left: 20px;"] {
+    [style='margin-left: 20px;'] {
       margin-left: 400px !important;
     }
 
