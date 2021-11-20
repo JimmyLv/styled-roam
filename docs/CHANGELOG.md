@@ -1,3 +1,21 @@
+# [2.4.0](https://github.com/JimmyLv/styled-roam/compare/v2.3.2...v2.4.0) (2021-11-20)
+
+
+### Bug Fixes
+
+* do updateCardsStickyTop when location changed ([2c726f2](https://github.com/JimmyLv/styled-roam/commit/2c726f21049349b7e4b25ecf200fd8331d0caf72))
+
+
+### Features
+
+* add tree-table view, game changer of Excel ([10a0d64](https://github.com/JimmyLv/styled-roam/commit/10a0d6488b5f348ee6562a6e41a54550023fbd22))
+
+
+
+
+
+# [v2.4.0](https://github.com/JimmyLv/styled-roam/compare/v2.3.2...v2.4.0) (2021-11-20)
+
 ## [2.3.2](https://github.com/JimmyLv/styled-roam/compare/v2.3.1...v2.3.2) (2021-11-20)
 
 
