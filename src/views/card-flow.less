@@ -17,8 +17,20 @@
     background-color: #f0bd66;
   }
 
+  // 标题
+  [style="width: 100%; position: relative;"] {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+  }
+
   .roam-body-main > div {
     padding: 0 !important;
+  }
+
+  .rm-block-children {
+    align-self: baseline;
   }
 
   .roam-article > div:first-child {
@@ -27,19 +39,28 @@
       width: 400px;
     }
 
-    .rm-block__children.rm-level-0,
     [style="margin-left: -20px;"] {
       overflow-x: auto;
       padding-bottom: 10px;
     }
 
+    .rm-block__children.rm-level-0 {
+      overflow-x: initial;
+    }
+
     .rm-block__children.rm-level-0 > .roam-block-container {
-      width: 100vw !important;
+      width: calc(100vw - 30px) !important;
+      border: 1px solid #BFCCD6;
+      background: #f2f4f8;
+      overflow-x: scroll;
+      position: sticky;
+      top: 0;
+
     }
 
     .rm-block-main.rm-block__self {
+      height: fit-content;
       width: 370px;
-      height: 200px;
       margin: 20px;
       box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff;
       border-radius: 8px;
@@ -62,7 +83,7 @@
       background: #f2f4f8;
       min-height: 160px;
       padding: 6px 10px 10px;*/
-      height: 160px;
+      height: fit-content;
       overflow: scroll;
     }
 

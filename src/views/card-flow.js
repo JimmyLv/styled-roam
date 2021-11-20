@@ -15,4 +15,10 @@ export default function initCardFlowMode() {
       switchTo('flow-mode')
     },
   })
+
+  const cards = document.querySelectorAll('.rm-block__children.rm-level-0 > .roam-block-container');
+
+  for(let i = 0; i < cards.length; i++) {
+    cards[i].style.top = String(130 + (i-1) * 70) + 'px';
+  }
 }
