@@ -42,11 +42,11 @@ if (!existing) {
 
 ## Quick Review
 
-![Roam Research 卡片式写作 Candy 主题](https://cdn.jsdelivr.net/gh/jimmylv/images@master/2020/09/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E5%86%99%E4%BD%9C%20Candy%20%E4%B8%BB%E9%A2%98.jpg)
+![Roam Research 卡片式写作 Candy 主题](./docs/images/candy.jpg)
 
-![Roam Research Calendar View switch-0001](https://raw.staticdn.net/JimmyLv/images/master/2021/Roam%20Research%20switch-0001.jpg)
+![Roam Research Calendar View switch-0001](./docs/images/switch.jpg)
 
-![Roam Research 卡片式主题 Focus 模式](https://raw.staticdn.net/JimmyLv/images/master/2020/Roam%20Research%20%E5%8D%A1%E7%89%87%E5%BC%8F%E4%B8%BB%E9%A2%98%20Focus%20%E6%A8%A1%E5%BC%8F.jpg)
+![Roam Research 卡片式主题 Focus 模式](./docs/images/focus.jpg)
 
 Related Twitter:
 
@@ -54,17 +54,20 @@ Related Twitter:
 - https://twitter.com/Jimmy_JingLv/status/1343897637255143424?s=20
 - https://twitter.com/Jimmy_JingLv/status/1305893239187103749?s=20
 - https://twitter.com/Jimmy_JingLv/status/1376741905485033476?s=20
+- https://twitter.com/Jimmy_JingLv/status/1462101666732335104?s=20
 
 ## Basic Usage
 
 配合 Candy 主题食用最佳，当然其他主题也好看，😉
 
 ```css
-@import url('https://cdn.jsdelivr.net/gh/JimmyLv/Roam-Research-Themes@patch-1/Candy.css');
+@import url('https://cdn.jsdelivr.net/gh/JimmyLv/Roam-Research-Themes/Candy.css');
 ```
 
 ## References
 
+- [dvargas92495/roam-js-extensions](https://github.com/dvargas92495/roam-js-extensions)
 - [Roamcult Themes](https://roamresearch.com/#/app/help/page/fJRcVITNY)
 - [palashkaria/roam-modifiers: userscripts/custom CSS files for Roam Research](https://github.com/palashkaria/roam-modifiers)
 - [roamhacker/roam42: Level up Roam with power user features. Automation, keyboard nav, dictionary, live preview and more.](https://github.com/roamhacker/roam42)
+- [yoyooyooo/roam-enhance: Enhance roam reasearch, similar to roam42's smartblock, except that it is triggered by a right-click menu](https://github.com/yoyooyooo/roam-enhance)
