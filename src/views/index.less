@@ -17,6 +17,7 @@ code {
   /* smartphones, Android phones, landscape iPhone */
   #mode-button-calendar,
   #mode-button-cardFlow,
+  #mode-button-treeTable,
   #mode-button-cardList {
     display: none;
   }
@@ -24,12 +25,14 @@ code {
 
 .document-mode #mode-button-document,
 .card-mode #mode-button-cardList,
+.table-mode #mode-button-treeTable,
 .flow-mode #mode-button-cardFlow {
   background: rgba(167, 182, 194, 0.3);
 }
 
 .document-mode,
 .card-mode,
+.table-mode,
 .flow-mode {
   .roam-block-container {
     max-width: none;

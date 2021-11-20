@@ -3,6 +3,7 @@ import initCardListMode from './card-list'
 import initDocumentMode from './document'
 import initDownloadMode from './download'
 import initCardFlowMode from './card-flow'
+import initTreeTableMode from './tree-table'
 import initFocusMode from './focus'
 import addHotKeys from '../utils/hotkey'
 import './index.less'
@@ -13,6 +14,7 @@ document.querySelector('html').classList.add(initialMode)
 export default function initModes() {
   initCardListMode()
   initCardFlowMode()
+  initTreeTableMode()
   initDocumentMode()
   initCalendarMode()
   initDownloadMode()
