@@ -1,3 +1,16 @@
+## [2.6.1](https://github.com/JimmyLv/styled-roam/compare/v2.6.0...v2.6.1) (2021-12-24)
+
+
+### Bug Fixes
+
+* move themes to public after build ([41120e5](https://github.com/JimmyLv/styled-roam/commit/41120e53c945ad01a63715670483d2dc5e182703))
+
+
+
+
+
+# [v2.6.1](https://github.com/JimmyLv/styled-roam/compare/v2.6.0...v2.6.1) (2021-12-24)
+
 # [2.6.0](https://github.com/JimmyLv/styled-roam/compare/v2.5.0...v2.6.0) (2021-11-20)
 
 
