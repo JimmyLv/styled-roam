@@ -61,7 +61,7 @@ Related Twitter:
 配合 Candy 主题食用最佳，当然其他主题也好看，😉
 
 ```css
-@import url('https://cdn.jsdelivr.net/gh/JimmyLv/Roam-Research-Themes/Candy.css');
+@import url('https://styled-roam.vercel.app/Candy.css');
 ```
 
 ## References
