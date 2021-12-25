@@ -26,7 +26,16 @@
 }
 
 .calendar-mode {
+  .roam-body .roam-app .roam-main .roam-article {
+    // TODO: 在最底下提醒“快去睡觉啦” | 目前睡眠时间段显示在底部，如果头图能够显示风景的话，就可以把睡眠时间放到上面
+    padding-bottom: 40px;
+    overflow-x: scroll;
+  }
   #rm-log-container {
+    .roam-log-container .roam-log-page {
+      max-height: 1516px;
+      overflow-y: hidden;
+    }
     [style="margin-top: 24px;"] {
       margin-top: 1442px !important;
     }
