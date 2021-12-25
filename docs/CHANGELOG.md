@@ -1,3 +1,16 @@
+## [2.6.3](https://github.com/JimmyLv/styled-roam/compare/v2.6.2...v2.6.3) (2021-12-25)
+
+
+### Bug Fixes
+
+* updated calendar styling ([e218dab](https://github.com/JimmyLv/styled-roam/commit/e218daba3ccb6d8ee5797748c16e760ac00ff888))
+
+
+
+
+
+# [v2.6.3](https://github.com/JimmyLv/styled-roam/compare/v2.6.2...v2.6.3) (2021-12-25)
+
 ## [2.6.2](https://github.com/JimmyLv/styled-roam/compare/v2.6.1...v2.6.2) (2021-12-25)
 
 
