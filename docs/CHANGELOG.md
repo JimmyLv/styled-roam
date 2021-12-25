@@ -1,3 +1,16 @@
+## [2.6.2](https://github.com/JimmyLv/styled-roam/compare/v2.6.1...v2.6.2) (2021-12-25)
+
+
+### Bug Fixes
+
+* updated presentation styling ([3e2d8e3](https://github.com/JimmyLv/styled-roam/commit/3e2d8e3a218472945f27077ce6f6532ebd9c13f5))
+
+
+
+
+
+# [v2.6.2](https://github.com/JimmyLv/styled-roam/compare/v2.6.1...v2.6.2) (2021-12-25)
+
 ## [2.6.1](https://github.com/JimmyLv/styled-roam/compare/v2.6.0...v2.6.1) (2021-12-24)
 
 
