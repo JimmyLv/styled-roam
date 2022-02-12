@@ -12,7 +12,7 @@
     "build:md": "marked README.md -o public/index.html && marked ROAM_FILES.md -o public/file.html",
     "build": "npm run build:styled && npm run build:file && npm run build:md",
     "prebuild": "rm -rf public",
-    "postbuild": "cp -rf src/themes/*.css public/",
+    "postbuild": "parcel build src/themes/*.less --out-dir public",
     "deploy": "gh-pages -d public",
     "release": "semantic-release"
   },
