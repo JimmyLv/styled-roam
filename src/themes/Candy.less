@@ -1,3 +1,9 @@
+/* Mobile optimization */
+.mobile {
+  [style='min-width: 24px;'] {
+    display: none;
+  }
+}
 /* Main document background */
 body {
   background-color: #fff;
@@ -10,7 +16,7 @@ div,
 textarea,
 a {
   font-family: Consolas;
-  color: #355C7D;
+  color: #355c7d;
 }
 
 /* Left sidebar */
@@ -25,7 +31,7 @@ a {
   font-weight: bold;
   cursor: pointer;
   font-size: 14px;
-  color: #355C7D;
+  color: #355c7d;
 }
 
 /* Shortcuts */
@@ -41,7 +47,7 @@ a {
 
 /* Top bar */
 .roam-topbar {
-  background: linear-gradient(to right, #355C7D, #F67280, #F8B195);
+  background: linear-gradient(to right, #355c7d, #f67280, #f8b195);
   border-bottom: 1px solid #e0e0e073;
 }
 
@@ -53,17 +59,17 @@ a {
 
 /* Page link */
 .rm-page-ref--link {
-  color: #F67280;
+  color: #f67280;
   font-weight: 600;
 }
 
 /* Reference block heading */
 a {
-  color: #F67280;
+  color: #f67280;
 }
 
 a:hover {
-  color: #F67280;
+  color: #f67280;
 }
 
 /* All pages */
@@ -82,11 +88,12 @@ a:hover {
 
 /* Vertical guides */
 .block-border-left {
-  border-color: #F8B195;
+  border-color: #f8b195;
 }
 
 /* Bullets */
-#right-sidebar .controls .roam-bullet-closed, .controls .roam-bullet-closed {
+#right-sidebar .controls .roam-bullet-closed,
+.controls .roam-bullet-closed {
   background: none;
   border: 1px solid #f672806e;
 }
@@ -101,7 +108,7 @@ a:hover {
 }
 
 .check-container input:checked ~ .checkmark {
-  background: #F8B195;
+  background: #f8b195;
 }
 
 .check-container input:checked ~ .checkmark:after {
@@ -132,7 +139,7 @@ a:hover {
 
 /* Text selection */
 ::selection {
-  color: #F67280;
+  color: #f67280;
   background: #f8b19547;
 }
 
@@ -160,11 +167,11 @@ a:hover {
 
 /* Block refs are not underlined or shrunk */
 .rm-block-ref {
-  border-bottom: 1px solid #F67280;
+  border-bottom: 1px solid #f67280;
   padding: 0 4px;
   font-size: 1em;
   margin: 0;
-  color: #355C7D;
+  color: #355c7d;
 }
 
 /* Align check-boxes better */
@@ -242,8 +249,7 @@ div#ras-results-container-dialog {
 }
 
 /* [[diagram]] improvement */
-svg[tabindex="-1"]
-{
+svg[tabindex='-1'] {
   background-color: #f2f4f8 !important;
 }
 
@@ -251,12 +257,12 @@ line {
   stroke-width: 1 !important;
 }
 
-[style="padding: 10px; flex: 1 0 auto;"] {
+[style='padding: 10px; flex: 1 0 auto;'] {
   padding: 5px 10px !important;
 }
 
-[style="padding: 10px; flex: 1 0 auto;"] > div,
-[style="padding: 10px; flex: 1 0 auto;"] textarea {
+[style='padding: 10px; flex: 1 0 auto;'] > div,
+[style='padding: 10px; flex: 1 0 auto;'] textarea {
   /*text-align: center;*/
 }
 
@@ -268,8 +274,13 @@ foreignObject .rm-block-children.rm-block__children {
 body {
   font-size: 16px;
 }
-body, html, a, div, textarea {
-  font-family: "Iowan Old Style", serif, "PingFang SC", -apple-system, "SF UI Text", "Lucida Grande", STheiti, "Microsoft YaHei", sans-serif !important;
+body,
+html,
+a,
+div,
+textarea {
+  font-family: 'Iowan Old Style', serif, 'PingFang SC', -apple-system, 'SF UI Text', 'Lucida Grande', STheiti,
+    'Microsoft YaHei', sans-serif !important;
 }
 
 code {
@@ -279,7 +290,8 @@ code {
   background-image: linear-gradient(to right, #f67280, #f8b195);
 }
 
-strong, .rm-bold {
+strong,
+.rm-bold {
   background-color: #cccccc82;
   color: #424242;
   border-radius: 0px;
