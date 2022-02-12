@@ -3,7 +3,55 @@
   [style='min-width: 24px;'] {
     display: none;
   }
+  #roam42-menu,
+  #unlink-finder-icon,
+  #mode-toggle-calendar,
+  .mode-button {
+    display: none;
+  }
+  .rm-topbar__spacer-sm {
+    flex: auto;
+  }
+  /*.rm-autocomplete__wrapper .bp3-elevation-3 {
+    width: calc(100vw - 84px) !important;
+  }*/
+  .rm-autocomplete__wrapper {
+    overflow-x: clip;
+  }
 }
+
+/* Headings */
+
+.rm-heading-level-1,
+.rm-heading-level-2,
+.rm-heading-level-3 {
+  > .rm-block__self .rm-block__input {
+    font-family: 'Iowan Old Style', sans-serif !important;
+    font-weight: bold;
+  }
+}
+
+.rm-heading-level-3 > .rm-block__self .rm-block__input {
+  color: #355c7d;
+}
+
+/* Table */
+.roam-table {
+  tbody tr td div {
+    margin-bottom: 4px;
+    span.rm-block-ref {
+      display: flex;
+    }
+  }
+  th,
+  td,
+  tr {
+    min-width: 200px;
+    max-height: fit-content;
+    /* vertical-align: baseline; */
+  }
+}
+
 /* Main document background */
 body {
   background-color: #fff;
