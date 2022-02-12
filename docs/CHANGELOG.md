@@ -1,3 +1,21 @@
+# [2.7.0](https://github.com/JimmyLv/styled-roam/compare/v2.6.3...v2.7.0) (2022-02-12)
+
+
+### Bug Fixes
+
+* update the background-color ([4b60ae1](https://github.com/JimmyLv/styled-roam/commit/4b60ae15528176d626455e3d61ae14423ca6fc15))
+
+
+### Features
+
+* just add rss importer entry ([365df4f](https://github.com/JimmyLv/styled-roam/commit/365df4f30e5596c9a148b1d8203f0c77afcf0021))
+
+
+
+
+
+# [v2.7.0](https://github.com/JimmyLv/styled-roam/compare/v2.6.3...v2.7.0) (2022-02-12)
+
 ## [2.6.3](https://github.com/JimmyLv/styled-roam/compare/v2.6.2...v2.6.3) (2021-12-25)
 
 
