@@ -1,3 +1,16 @@
+## [2.7.2](https://github.com/JimmyLv/styled-roam/compare/v2.7.1...v2.7.2) (2022-02-12)
+
+
+### Bug Fixes
+
+* hidden useless '+comment' space in mobile ([c582329](https://github.com/JimmyLv/styled-roam/commit/c582329436c1d279a226ff0ab4d8306ece2a8e5d))
+
+
+
+
+
+# [v2.7.2](https://github.com/JimmyLv/styled-roam/compare/v2.7.1...v2.7.2) (2022-02-12)
+
 ## [2.7.1](https://github.com/JimmyLv/styled-roam/compare/v2.7.0...v2.7.1) (2022-02-12)
 
 
