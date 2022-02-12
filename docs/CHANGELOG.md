@@ -1,3 +1,16 @@
+## [2.7.3](https://github.com/JimmyLv/styled-roam/compare/v2.7.2...v2.7.3) (2022-02-12)
+
+
+### Bug Fixes
+
+* optimize from mobile, headings, table ([402d632](https://github.com/JimmyLv/styled-roam/commit/402d63225f1dff1b817889765f33812e8940a8e9))
+
+
+
+
+
+# [v2.7.3](https://github.com/JimmyLv/styled-roam/compare/v2.7.2...v2.7.3) (2022-02-12)
+
 ## [2.7.2](https://github.com/JimmyLv/styled-roam/compare/v2.7.1...v2.7.2) (2022-02-12)
 
 
