@@ -1,3 +1,16 @@
+## [2.7.1](https://github.com/JimmyLv/styled-roam/compare/v2.7.0...v2.7.1) (2022-02-12)
+
+
+### Bug Fixes
+
+* update to use less ([96ab747](https://github.com/JimmyLv/styled-roam/commit/96ab747af96ddaa09934babbd6b424aaed07f7d7))
+
+
+
+
+
+# [v2.7.1](https://github.com/JimmyLv/styled-roam/compare/v2.7.0...v2.7.1) (2022-02-12)
+
 # [2.7.0](https://github.com/JimmyLv/styled-roam/compare/v2.6.3...v2.7.0) (2022-02-12)
 
 
