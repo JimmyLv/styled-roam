@@ -1,3 +1,16 @@
+## [2.7.4](https://github.com/JimmyLv/styled-roam/compare/v2.7.3...v2.7.4) (2022-02-24)
+
+
+### Bug Fixes
+
+* optimize for query content ([7360754](https://github.com/JimmyLv/styled-roam/commit/736075467108299c3055ee1878c344b8604ae46d))
+
+
+
+
+
+# [v2.7.4](https://github.com/JimmyLv/styled-roam/compare/v2.7.3...v2.7.4) (2022-02-24)
+
 ## [2.7.3](https://github.com/JimmyLv/styled-roam/compare/v2.7.2...v2.7.3) (2022-02-12)
 
 
