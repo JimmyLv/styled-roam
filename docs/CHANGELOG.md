@@ -1,3 +1,16 @@
+## [2.8.1](https://github.com/JimmyLv/styled-roam/compare/v2.8.0...v2.8.1) (2022-02-27)
+
+
+### Bug Fixes
+
+* 编辑时抖动 ([08ef5c2](https://github.com/JimmyLv/styled-roam/commit/08ef5c2bc3bdab34be4e19d29eb027ff9bd15ba1))
+
+
+
+
+
+# [v2.8.1](https://github.com/JimmyLv/styled-roam/compare/v2.8.0...v2.8.1) (2022-02-27)
+
 # [2.8.0](https://github.com/JimmyLv/styled-roam/compare/v2.7.4...v2.8.0) (2022-02-27)
 
 
