@@ -1,5 +1,36 @@
+/* 九宫格 */
+.jiugong [data-page-links='["kanban"]'] {
+  .kanban-board {
+    padding: 0;
+  }
+
+  .roam-block {
+    padding: 0;
+  }
+
+  .kanban-column {
+    margin: 4px 0 0 4px;
+    max-height: 28vh;
+    overflow: scroll;
+    &:last-child {
+      margin-right: 4px;
+    }
+  }
+
+  .kanban-title {
+    display: none;
+  }
+}
+
+.jiugong.title [data-page-links='["kanban"]'] {
+  .kanban-title {
+    display: block;
+  }
+}
+
 /* Query TODOs */
-.clear { /* customized #.clear classname tag */
+.clear {
+  /* customized #.clear classname tag */
   .rm-zoom.zoom-mentions-view {
     display: none;
   }
@@ -121,7 +152,7 @@ a {
 }
 
 .rm-reference-main.rm-query-content .rm-block__controls {
-    align-items: baseline;
+  align-items: baseline;
 }
 
 /* Page link */
