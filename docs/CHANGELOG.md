@@ -1,3 +1,16 @@
+## [2.8.2](https://github.com/JimmyLv/styled-roam/compare/v2.8.1...v2.8.2) (2022-02-27)
+
+
+### Bug Fixes
+
+* 不要的间距 ([d4b1ecd](https://github.com/JimmyLv/styled-roam/commit/d4b1ecdc3885811e07ec42c16e15c545f8fe8ef0))
+
+
+
+
+
+# [v2.8.2](https://github.com/JimmyLv/styled-roam/compare/v2.8.1...v2.8.2) (2022-02-27)
+
 ## [2.8.1](https://github.com/JimmyLv/styled-roam/compare/v2.8.0...v2.8.1) (2022-02-27)
 
 
