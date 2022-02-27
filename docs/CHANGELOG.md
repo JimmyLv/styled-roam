@@ -1,3 +1,16 @@
+# [2.8.0](https://github.com/JimmyLv/styled-roam/compare/v2.7.4...v2.8.0) (2022-02-27)
+
+
+### Features
+
+* add jiugong support ([9bd18ae](https://github.com/JimmyLv/styled-roam/commit/9bd18aeba9f7abd1a13c7864dcd49a41724eee8c))
+
+
+
+
+
+# [v2.8.0](https://github.com/JimmyLv/styled-roam/compare/v2.7.4...v2.8.0) (2022-02-27)
+
 ## [2.7.4](https://github.com/JimmyLv/styled-roam/compare/v2.7.3...v2.7.4) (2022-02-24)
 
 
