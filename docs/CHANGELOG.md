@@ -1,3 +1,16 @@
+## [2.8.3](https://github.com/JimmyLv/styled-roam/compare/v2.8.2...v2.8.3) (2022-02-28)
+
+
+### Bug Fixes
+
+* 最后一个kanban的边框 ([cfbcdea](https://github.com/JimmyLv/styled-roam/commit/cfbcdeaf44542e419c746023344574e86f7ade22))
+
+
+
+
+
+# [v2.8.3](https://github.com/JimmyLv/styled-roam/compare/v2.8.2...v2.8.3) (2022-02-28)
+
 ## [2.8.2](https://github.com/JimmyLv/styled-roam/compare/v2.8.1...v2.8.2) (2022-02-27)
 
 
