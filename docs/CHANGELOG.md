@@ -1,3 +1,16 @@
+## [2.8.4](https://github.com/JimmyLv/styled-roam/compare/v2.8.3...v2.8.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* 取消明显的 block ref 边框 ([ca14211](https://github.com/JimmyLv/styled-roam/commit/ca142111ebc9f0dffcdaabbf9128d87b6d725588))
+
+
+
+
+
+# [v2.8.4](https://github.com/JimmyLv/styled-roam/compare/v2.8.3...v2.8.4) (2022-02-28)
+
 ## [2.8.3](https://github.com/JimmyLv/styled-roam/compare/v2.8.2...v2.8.3) (2022-02-28)
 
 
