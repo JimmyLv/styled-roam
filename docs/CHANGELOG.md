@@ -1,3 +1,16 @@
+## [2.8.5](https://github.com/JimmyLv/styled-roam/compare/v2.8.4...v2.8.5) (2022-03-14)
+
+
+### Bug Fixes
+
+* 取消table cell最小宽度 ([7d3cfeb](https://github.com/JimmyLv/styled-roam/commit/7d3cfebe55fd39d9072e7bf6bf97654484b72bcc))
+
+
+
+
+
+# [v2.8.5](https://github.com/JimmyLv/styled-roam/compare/v2.8.4...v2.8.5) (2022-03-14)
+
 ## [2.8.4](https://github.com/JimmyLv/styled-roam/compare/v2.8.3...v2.8.4) (2022-02-28)
 
 
