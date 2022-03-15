@@ -1,3 +1,16 @@
+## [2.8.6](https://github.com/JimmyLv/styled-roam/compare/v2.8.5...v2.8.6) (2022-03-15)
+
+
+### Bug Fixes
+
+* hidden title for clear query ([f62beb4](https://github.com/JimmyLv/styled-roam/commit/f62beb4d66219201ddcf9b90cccd405bbf8e03d3))
+
+
+
+
+
+# [v2.8.6](https://github.com/JimmyLv/styled-roam/compare/v2.8.5...v2.8.6) (2022-03-15)
+
 ## [2.8.5](https://github.com/JimmyLv/styled-roam/compare/v2.8.4...v2.8.5) (2022-03-14)
 
 
