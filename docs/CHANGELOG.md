@@ -1,3 +1,16 @@
+## [2.8.7](https://github.com/JimmyLv/styled-roam/compare/v2.8.6...v2.8.7) (2022-04-15)
+
+
+### Bug Fixes
+
+* pomodoro button styling ([ac8bb7f](https://github.com/JimmyLv/styled-roam/commit/ac8bb7ff457eaa75e7edd1aee97ed54840055fe1))
+
+
+
+
+
+# [v2.8.7](https://github.com/JimmyLv/styled-roam/compare/v2.8.6...v2.8.7) (2022-04-15)
+
 ## [2.8.6](https://github.com/JimmyLv/styled-roam/compare/v2.8.5...v2.8.6) (2022-03-15)
 
 
