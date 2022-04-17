@@ -1,3 +1,16 @@
+## [2.8.8](https://github.com/JimmyLv/styled-roam/compare/v2.8.7...v2.8.8) (2022-04-17)
+
+
+### Bug Fixes
+
+* remove code styling of styled-roam ([252efbe](https://github.com/JimmyLv/styled-roam/commit/252efbe10766e90ae5fbf2b67ea56dd36d0d8c76))
+
+
+
+
+
+# [v2.8.8](https://github.com/JimmyLv/styled-roam/compare/v2.8.7...v2.8.8) (2022-04-17)
+
 ## [2.8.7](https://github.com/JimmyLv/styled-roam/compare/v2.8.6...v2.8.7) (2022-04-15)
 
 
