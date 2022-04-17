@@ -66,4 +66,8 @@ export default function initDownloadMode() {
       await shareAndDownloadImage()
     },
   })
+  roamAlphaAPI.ui.blockContextMenu.addCommand({
+    label: "Share Card",
+    callback: shareAndDownloadImage,
+  })
 }
