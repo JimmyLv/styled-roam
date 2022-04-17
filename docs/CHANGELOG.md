@@ -1,3 +1,16 @@
+## [2.8.9](https://github.com/JimmyLv/styled-roam/compare/v2.8.8...v2.8.9) (2022-04-17)
+
+
+### Bug Fixes
+
+* add context menu for shareAndDownloadImage ([ba78ca2](https://github.com/JimmyLv/styled-roam/commit/ba78ca2e6677fa8502c104bdb0bc241b6722b52b))
+
+
+
+
+
+# [v2.8.9](https://github.com/JimmyLv/styled-roam/compare/v2.8.8...v2.8.9) (2022-04-17)
+
 ## [2.8.8](https://github.com/JimmyLv/styled-roam/compare/v2.8.7...v2.8.8) (2022-04-17)
 
 
