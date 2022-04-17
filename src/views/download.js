@@ -67,7 +67,7 @@ export default function initDownloadMode() {
     },
   })
   roamAlphaAPI.ui.blockContextMenu.addCommand({
-    label: "Share Card",
+    label: "Share Block As Image (Alt+Shift+S)",
     callback: shareAndDownloadImage,
   })
 }
