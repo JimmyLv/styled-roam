@@ -1,3 +1,17 @@
+## [2.8.10](https://github.com/JimmyLv/styled-roam/compare/v2.8.9...v2.8.10) (2022-04-17)
+
+
+### Bug Fixes
+
+* remove height limit ([4b8aa20](https://github.com/JimmyLv/styled-roam/commit/4b8aa208dc952434316d07a2d86e4222cc8f5172))
+* update menu label ([1c7d9c8](https://github.com/JimmyLv/styled-roam/commit/1c7d9c80d980a854226796730ac49108e6564549))
+
+
+
+
+
+# [v2.8.10](https://github.com/JimmyLv/styled-roam/compare/v2.8.9...v2.8.10) (2022-04-17)
+
 ## [2.8.9](https://github.com/JimmyLv/styled-roam/compare/v2.8.8...v2.8.9) (2022-04-17)
 
 
