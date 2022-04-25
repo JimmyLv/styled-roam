@@ -1,3 +1,16 @@
+## [2.8.11](https://github.com/JimmyLv/styled-roam/compare/v2.8.10...v2.8.11) (2022-04-25)
+
+
+### Bug Fixes
+
+* remove margin-bottom ([fb90162](https://github.com/JimmyLv/styled-roam/commit/fb90162d309465234b193c91cb89149c75a72f41))
+
+
+
+
+
+# [v2.8.11](https://github.com/JimmyLv/styled-roam/compare/v2.8.10...v2.8.11) (2022-04-25)
+
 ## [2.8.10](https://github.com/JimmyLv/styled-roam/compare/v2.8.9...v2.8.10) (2022-04-17)
 
 
