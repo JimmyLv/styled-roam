@@ -1,3 +1,16 @@
+# [2.9.0](https://github.com/JimmyLv/styled-roam/compare/v2.8.11...v2.9.0) (2022-04-25)
+
+
+### Features
+
+* add page image less ([d66f562](https://github.com/JimmyLv/styled-roam/commit/d66f5624523e1c1e1d1d17d93457f9041af9a132))
+
+
+
+
+
+# [v2.9.0](https://github.com/JimmyLv/styled-roam/compare/v2.8.11...v2.9.0) (2022-04-25)
+
 ## [2.8.11](https://github.com/JimmyLv/styled-roam/compare/v2.8.10...v2.8.11) (2022-04-25)
 
 
