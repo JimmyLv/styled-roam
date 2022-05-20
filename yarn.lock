@@ -3674,10 +3674,10 @@ dropbox-dropins@^1.0.4:
   resolved "https://registry.nlark.com/dropbox-dropins/download/dropbox-dropins-1.0.4.tgz#90fd98b2ddc6c76c982e4dbcd7c8399e271f7282"
   integrity sha1-kP2Yst3Gx2yYLk2818g5nicfcoI=
 
-dropbox@^9.6.0:
-  version "9.6.0"
-  resolved "https://registry.npm.taobao.org/dropbox/download/dropbox-9.6.0.tgz#e2e256ecf9c066892c2ae9ccde2ba5e1aa6cfbc9"
-  integrity sha1-4uJW7PnAZoksKunM3iul4aps+8k=
+dropbox@^10.0.0:
+  version "10.30.0"
+  resolved "https://registry.yarnpkg.com/dropbox/-/dropbox-10.30.0.tgz#6b2a5bdf3fac8475645ea2d6d19b86abb0a504d5"
+  integrity sha512-ah4mb4YoI7WwS0yXtDLKxbp9apXp5TfPksDuEvvgCYR1bpMmQKUFG9raNMLC2NsF4Dc/9Axxqj436ErPvg9HeQ==
   dependencies:
     node-fetch "^2.6.1"
 
