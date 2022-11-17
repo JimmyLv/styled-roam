@@ -8,15 +8,13 @@ export default function addToggleMode({ id, on, turnOn, off, turnOff }) {
 
   function toggleMode() {
     if (
-      [].find.call(modeIcon.classList, (name) => {
-        return name === 'bp3-icon-' + on
-      })
+      [].find.call(modeIcon.classList, (name) => name === 'bp3-icon-' + on)
     ) {
       modeIcon.className = `bp3-button bp3-minimal bp3-icon-${off} bp3-small`
-      turnOff && turnOff()
+      turnOff?.()
     } else {
       modeIcon.className = `bp3-button bp3-minimal bp3-icon-${on} bp3-small`
-      turnOn && turnOn()
+      turnOn?.()
     }
   }
 

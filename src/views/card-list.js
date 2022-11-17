@@ -1,7 +1,7 @@
-import { appendIcon, switchTo } from '../utils/dom-helper'
-import addHotKeys from '../utils/hotkey'
-import './card-list.less'
-import addToggleMode from './addToggleMode'
+import { switchTo } from '../utils/dom-helper';
+import addHotKeys from '../utils/hotkey';
+import addToggleMode from './addToggleMode';
+import './card-list.less';
 
 export default function initCardListMode() {
   const toggleCardMode = addToggleMode({
