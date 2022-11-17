@@ -59,7 +59,7 @@ export default function MenuList() {
     <li>
       <a
         class="bp3-menu-item bp3-icon-download"
-        id="mode-toggle-download"
+        id="mode-button-download"
         tabindex="0"
         onClick="${() => switchTo('simple-calendar-mode')}"
         >Share Card</a

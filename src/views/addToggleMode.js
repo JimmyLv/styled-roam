@@ -4,7 +4,7 @@ export default function addToggleMode({ id, on, turnOn, off, turnOff }) {
   modeIcon.className = `bp3-button bp3-minimal bp3-icon-${off} bp3-small`
 
   var wrapper = document.querySelector('.rm-topbar')
-  wrapper.appendChild(modeIcon)
+  // wrapper.appendChild(modeIcon)
 
   function toggleMode() {
     if (

@@ -10,10 +10,10 @@ export function appendIcon(mode, icon, clickHandler) {
   iconElement.className = `bp3-button bp3-minimal bp3-small bp3-icon-${icon} mode-button`
   iconElement.setAttribute('style', 'position:relative;left:2px')
   iconElement.onclick = clickHandler
-  document.querySelector('.rm-topbar').appendChild(iconElement)
+  // document.querySelector('.rm-topbar').appendChild(iconElement)
 
   const spacer = createSpacer()
-  document.querySelector('.rm-topbar').appendChild(spacer)
+  // document.querySelector('.rm-topbar').appendChild(spacer)
 }
 
 export function switchTo(mode) {
