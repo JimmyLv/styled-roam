@@ -1,3 +1,18 @@
+# [2.10.0](https://github.com/JimmyLv/styled-roam/compare/v2.9.0...v2.10.0) (2022-11-17)
+
+
+### Features
+
+* add menu list ([f149075](https://github.com/JimmyLv/styled-roam/commit/f1490752c76a7997e421547d080de8f33dcaf0bd))
+* finished the styling ([c081bc8](https://github.com/JimmyLv/styled-roam/commit/c081bc8e12e9ccde86fdacf0a651cc2262b4d762))
+* setup menu item actions ([6637024](https://github.com/JimmyLv/styled-roam/commit/66370246f6cc6f9293f85e7f67e0bcc6e85bfff7))
+
+
+
+
+
+# [v2.10.0](https://github.com/JimmyLv/styled-roam/compare/v2.9.0...v2.10.0) (2022-11-17)
+
 # [2.9.0](https://github.com/JimmyLv/styled-roam/compare/v2.8.11...v2.9.0) (2022-04-25)
 
 
