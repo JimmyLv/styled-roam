@@ -3,7 +3,7 @@ import addToggleMode from './addToggleMode'
 import './focus.less'
 
 export default function initFocusMode() {
-  const toggleFocusMode = addToggleMode({
+  const { toggleMode: toggleFocusMode } = addToggleMode({
     id: 'mode-toggle-focus',
     on: 'eye-on',
     off: 'eye-open',

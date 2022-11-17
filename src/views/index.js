@@ -3,6 +3,7 @@ import initCardListMode from './card-list'
 import initDocumentMode from './document'
 import initDownloadMode from './download'
 import initCardFlowMode from './card-flow'
+import initMenuListMode from './menu-list';
 import initTreeTableMode from './tree-table'
 import initFocusMode from './focus'
 import addHotKeys from '../utils/hotkey'
@@ -16,6 +17,7 @@ function isEnabled(mode) {
 }
 
 export default function initModes() {
+  initMenuListMode()
   isEnabled('CardListMode') && initCardListMode()
   isEnabled('CardFlowMode') && initCardFlowMode()
   isEnabled('TreeTableMode') && initTreeTableMode()

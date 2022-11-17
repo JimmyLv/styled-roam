@@ -4,7 +4,7 @@ import addToggleMode from './addToggleMode';
 import './card-list.less';
 
 export default function initCardListMode() {
-  const toggleCardMode = addToggleMode({
+  const { toggleMode: toggleCardMode }  = addToggleMode({
     id: 'mode-button-cardList',
     on: 'full-stacked-chart',
     off: 'timeline-bar-chart',

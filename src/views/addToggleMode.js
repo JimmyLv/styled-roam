@@ -20,5 +20,5 @@ export default function addToggleMode({ id, on, turnOn, off, turnOff }) {
 
   modeIcon.addEventListener('click', toggleMode)
 
-  return toggleMode
+  return { modeIcon, toggleMode }
 }

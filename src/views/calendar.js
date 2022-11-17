@@ -6,7 +6,7 @@ import addToggleMode from './addToggleMode'
 import './calendar.less'
 
 export default function initCalendarMode() {
-  const toggleCalendarMode = addToggleMode({
+  const { toggleMode: toggleCalendarMode } = addToggleMode({
     id: 'mode-toggle-calendar',
     on: 'cube-add',
     off: 'cube',
