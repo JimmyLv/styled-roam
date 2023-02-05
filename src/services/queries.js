@@ -39,7 +39,7 @@ export const getBlockInfoByUID = async (
     let q = `[:find (pull ?page
                      [:node/title :block/string :block/uid :block/heading :block/props 
                       :entity/attrs :block/open :block/text-align :children/view-type
-                      :block/order :edit/time :user/display-name
+                      :block/order :create/time :user/display-name
                       ${withChildren ? "{:block/children ...}" : ""}
                       ${withParents ? "{:block/parents ...}" : ""}
                      ])
