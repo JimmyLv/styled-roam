@@ -1,3 +1,16 @@
+## [2.10.1](https://github.com/JimmyLv/styled-roam/compare/v2.10.0...v2.10.1) (2023-02-05)
+
+
+### Bug Fixes
+
+* use create time for sharing card ([716d568](https://github.com/JimmyLv/styled-roam/commit/716d56834a8c51e496340705b510a9fe4af71f60))
+
+
+
+
+
+# [v2.10.1](https://github.com/JimmyLv/styled-roam/compare/v2.10.0...v2.10.1) (2023-02-05)
+
 # [2.10.0](https://github.com/JimmyLv/styled-roam/compare/v2.9.0...v2.10.0) (2022-11-17)
 
 
