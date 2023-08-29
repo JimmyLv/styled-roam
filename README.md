@@ -10,6 +10,8 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 
 ## Quick Start
 
+https://vercel.com/jimmylv/styled-roam/deployments
+
 1. Add a `{{[[roam/js]]}}` block firstly
 2. Add a **CHILD** block `/JavaScript Code Block` with this code...
 
