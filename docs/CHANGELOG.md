@@ -1,3 +1,16 @@
+## [2.10.2](https://github.com/JimmyLv/styled-roam/compare/v2.10.1...v2.10.2) (2023-08-29)
+
+
+### Bug Fixes
+
+* Update ShareMemex.less ([4dff514](https://github.com/JimmyLv/styled-roam/commit/4dff51441b6e46a8025fda978fa357be754dda40))
+
+
+
+
+
+# [v2.10.2](https://github.com/JimmyLv/styled-roam/compare/v2.10.1...v2.10.2) (2023-08-29)
+
 ## [2.10.1](https://github.com/JimmyLv/styled-roam/compare/v2.10.0...v2.10.1) (2023-02-05)
 
 
