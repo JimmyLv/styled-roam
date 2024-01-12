@@ -41,15 +41,15 @@
     "since 2017-06"
   ],
   "devDependencies": {
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
     "husky": "^3.1.0",
     "less": "^4.0.0",
     "lint-staged": "^12.0.3",
     "marked": "4.0.17",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.4.1",
-    "semantic-release": "^17.4.2",
+    "semantic-release": "^23.0.0",
     "semantic-release-gitmoji": "1.4.5",
     "simple-git-hooks": "^2.7.0"
   },
