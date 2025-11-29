@@ -3537,9 +3537,9 @@ dateformat@^4.5.1:
   integrity sha1-wg56nKd9FHkGttwiYai+ClvSFzw=
 
 dayjs@^1.9.8:
-  version "1.9.8"
-  resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.9.8.tgz?cache=0&sync_timestamp=1609039104841&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdayjs%2Fdownload%2Fdayjs-1.9.8.tgz#9a65fbdca037e3d5835f98672da6e796f757cd58"
-  integrity sha1-mmX73KA349WDX5hnLabnlvdXzVg=
+  version "1.11.19"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.19.tgz#15dc98e854bb43917f12021806af897c58ae2938"
+  integrity sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==
 
 deasync@^0.1.14:
   version "0.1.21"
