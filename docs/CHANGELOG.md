@@ -1,3 +1,16 @@
+# [2.11.0](https://github.com/JimmyLv/styled-roam/compare/v2.10.2...v2.11.0) (2026-02-11)
+
+
+### Features
+
+* migrate deployment from Vercel to Cloudflare Pages ([25c4291](https://github.com/JimmyLv/styled-roam/commit/25c429148fdc9862a77259dbf42c8968d8c8b02c))
+
+
+
+
+
+# [v2.11.0](https://github.com/JimmyLv/styled-roam/compare/v2.10.2...v2.11.0) (2026-02-11)
+
 ## [2.10.2](https://github.com/JimmyLv/styled-roam/compare/v2.10.1...v2.10.2) (2023-08-29)
 
 
