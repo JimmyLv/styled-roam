@@ -13,7 +13,7 @@
     "build": "npm run build:styled && npm run build:file && npm run build:md",
     "prebuild": "rm -rf public",
     "postbuild": "parcel build src/themes/*.less --out-dir public",
-    "deploy": "gh-pages -d public",
+    "deploy": "wrangler pages deploy public --project-name styled-roam --commit-dirty=true",
     "release": "semantic-release"
   },
   "husky": {
@@ -51,7 +51,8 @@
     "prettier": "^2.4.1",
     "semantic-release": "^17.4.2",
     "semantic-release-gitmoji": "1.4.5",
-    "simple-git-hooks": "^2.7.0"
+    "simple-git-hooks": "^2.7.0",
+    "wrangler": "^4.64.0"
   },
   "dependencies": {
     "@blueprintjs/core": "^3.41.0",
@@ -84,7 +85,7 @@
     "paste-image": "^0.0.3",
     "react": "^16.8 || 17 || 18",
     "react-dom": "^16.8 || 17 || 18",
-    "roam-client": "^1.49.3",
+    "roam-client": "^2.0.0",
     "rss-parser": "^3.12.0",
     "styled-components": "^5.2.1",
     "tippy.js": "^6.2.7",

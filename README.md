@@ -10,13 +10,13 @@ Roam Research ✍️ Writing with your lovely cards 🧩 and beautiful theme �
 
 ## Quick Start
 
-https://vercel.com/jimmylv/styled-roam/deployments
+Deployed via [Cloudflare Pages](https://pages.cloudflare.com/)
 
 1. Add a `{{[[roam/js]]}}` block firstly
 2. Add a **CHILD** block `/JavaScript Code Block` with this code...
 
 ```js
-window.URLScriptServer = `https://styled-roam.vercel.app/`
+window.URLScriptServer = `https://styled-roam.pages.dev/`
 window.styledRoamDisabledFeatures = [
   // 'CardListMode',
   // 'CardFlowMode',
@@ -63,7 +63,7 @@ Related Twitter:
 配合 Candy 主题食用最佳，当然其他主题也好看，😉
 
 ```css
-@import url('https://styled-roam.vercel.app/Candy.css');
+@import url('https://styled-roam.pages.dev/Candy.css');
 ```
 
 ## References
