@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "styled-roam",
@@ -13,7 +14,7 @@
         "@uppy/dropbox": "^1.4.26",
         "@uppy/facebook": "^1.1.26",
         "@uppy/google-drive": "^1.6.0",
-        "@uppy/image-editor": "^0.2.4",
+        "@uppy/image-editor": "^0.4.0",
         "@uppy/instagram": "^1.4.26",
         "@uppy/onedrive": "^1.1.26",
         "@uppy/screen-capture": "^1.0.17",
@@ -518,7 +519,7 @@
 
     "@uppy/google-drive": ["@uppy/google-drive@1.7.2", "", { "dependencies": { "@uppy/companion-client": "^1.10.2", "@uppy/provider-views": "^1.12.3", "@uppy/utils": "^3.6.2", "preact": "8.2.9" }, "peerDependencies": { "@uppy/core": "^1.0.0" } }, "sha512-29w2e36gX4394ly5t+JMhg4WVr2vpo7a46PLHKZlNwbiPKrEqBUyLy/seCxHUH+6qNtrHFIWQoLTwrlMCEOi3w=="],
 
-    "@uppy/image-editor": ["@uppy/image-editor@0.2.6", "", { "dependencies": { "@uppy/utils": "^3.6.1", "cropperjs": "1.5.7", "preact": "8.2.9" }, "peerDependencies": { "@uppy/core": "^1.0.0" } }, "sha512-Z/GEKZmPpFHU5swQN4udZgMFMIxMHJ+AAZeXCN6sTDIJcbGweiXuV+aeWfwpPym26QG9ZdPdAYuvukf2sUIQww=="],
+    "@uppy/image-editor": ["@uppy/image-editor@0.4.0", "", { "dependencies": { "@uppy/utils": "^3.6.2", "cropperjs": "1.5.7", "preact": "8.2.9" }, "peerDependencies": { "@uppy/core": "^1.0.0" } }, "sha512-W6sFZSWjjx8+NmESPrbCOPK+svWES+T2Odrw6FV8MPZYs/k8hHlfKcqC2Dr+k1M2Ii1gVS7dSSAHEbEsurKoEQ=="],
 
     "@uppy/informer": ["@uppy/informer@1.6.6", "", { "dependencies": { "@uppy/utils": "^3.6.2", "preact": "8.2.9" }, "peerDependencies": { "@uppy/core": "^1.0.0" } }, "sha512-9rZoAqNrKQN/HINnGg8rGnKEliLgc+9/tQQ0f9QcBgRIu/rnbBCTwS+qnGGdjYBdEJTSbHx+U7X9ufjrrjB+CA=="],
 
@@ -3265,8 +3266,6 @@
     "union-value/is-extendable": ["is-extendable@0.1.1", "", {}, "sha512-5BMULNob1vgFX6EjQw5izWDxrecWK9AM72rugNr0TFldMOi0fj6Jk+zeKIt0xGj4cEfQIJth4w3OKWOJ4f+AFw=="],
 
     "unset-value/has-value": ["has-value@0.3.1", "", { "dependencies": { "get-value": "^2.0.3", "has-values": "^0.1.4", "isobject": "^2.0.0" } }, "sha512-gpG936j8/MzaeID5Yif+577c17TxaDmhuyVgSwtnL/q8UUTySg8Mecb+8Cf1otgLoD7DDH75axp86ER7LFsf3Q=="],
-
-    "uppy/@uppy/image-editor": ["@uppy/image-editor@0.4.0", "", { "dependencies": { "@uppy/utils": "^3.6.2", "cropperjs": "1.5.7", "preact": "8.2.9" }, "peerDependencies": { "@uppy/core": "^1.0.0" } }, "sha512-W6sFZSWjjx8+NmESPrbCOPK+svWES+T2Odrw6FV8MPZYs/k8hHlfKcqC2Dr+k1M2Ii1gVS7dSSAHEbEsurKoEQ=="],
 
     "uri-js/punycode": ["punycode@2.3.1", "", {}, "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="],
 
