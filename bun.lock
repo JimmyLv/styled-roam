@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "styled-roam",
@@ -47,7 +48,7 @@
         "husky": "^3.1.0",
         "less": "^4.0.0",
         "lint-staged": "^12.0.3",
-        "marked": "4.0.17",
+        "marked": "17.0.6",
         "parcel-bundler": "^1.12.4",
         "prettier": "^2.4.1",
         "semantic-release": "^17.4.2",
@@ -1558,7 +1559,7 @@
 
     "map-visit": ["map-visit@1.0.0", "", { "dependencies": { "object-visit": "^1.0.0" } }, "sha512-4y7uGv8bd2WdM9vpQsiQNo41Ln1NvhvDRuVt0k2JZQ+ezN2uaQes7lZeZ+QQUHOLQAtDaBJ+7wCbi+ab/KFs+w=="],
 
-    "marked": ["marked@4.0.17", "", { "bin": { "marked": "bin/marked.js" } }, "sha512-Wfk0ATOK5iPxM4ptrORkFemqroz0ZDxp5MWfYA7H/F+wO17NRWV5Ypxi6p3g2Xmw2bKeiYOl6oVnLHKxBA0VhA=="],
+    "marked": ["marked@17.0.6", "", { "bin": { "marked": "bin/marked.js" } }, "sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA=="],
 
     "marked-terminal": ["marked-terminal@4.2.0", "", { "dependencies": { "ansi-escapes": "^4.3.1", "cardinal": "^2.1.1", "chalk": "^4.1.0", "cli-table3": "^0.6.0", "node-emoji": "^1.10.0", "supports-hyperlinks": "^2.1.0" }, "peerDependencies": { "marked": "^1.0.0 || ^2.0.0" } }, "sha512-DQfNRV9svZf0Dm9Cf5x5xaVJ1+XjxQW6XjFJ5HFkVyK52SDpj5PCBzS5X5r2w9nHr3mlB0T5201UMLue9fmhUw=="],
 
