@@ -64,7 +64,7 @@
     "@uppy/dropbox": "^1.4.26",
     "@uppy/facebook": "^1.1.26",
     "@uppy/google-drive": "^1.6.0",
-    "@uppy/image-editor": "^0.2.4",
+    "@uppy/image-editor": "^0.4.0",
     "@uppy/instagram": "^1.4.26",
     "@uppy/onedrive": "^1.1.26",
     "@uppy/screen-capture": "^1.0.17",
